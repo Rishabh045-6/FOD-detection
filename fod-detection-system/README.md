@@ -1,165 +1,146 @@
 # Airport FOD Detection System
 
-A modern web application for detecting Foreign Object Debris (FOD) on airport runways using AI-powered video analysis.
+A full-stack runway inspection application for detecting Foreign Object Debris (FOD) from uploaded video.
 
-## 🎯 Features
+## Overview
 
-- **Video Upload**: Drag-and-drop or click to upload MP4, AVI, or MOV videos (up to 1GB)
-- **Real-time Processing**: Live progress tracking with detailed processing steps
-- **AI Detection**: Identify FOD with confidence scores and location data
-- **Comprehensive Dashboard**: 
-  - Processed video playback with bounding boxes
-  - Detection summary cards
-  - Detailed FOD table with sortable columns
-  - Alert banners for critical warnings
-- **Export Results**: Download detection results in JSON format
-- **Responsive Design**: Optimized for desktop and tablet displays
-- **Dark Theme**: Professional airport operations dashboard appearance
+The project includes:
 
-## 🛠️ Technology Stack
+- A React + TypeScript frontend for uploading video, tracking processing progress, and reviewing detections
+- A FastAPI backend for video processing, object detection, annotation, and result delivery
 
-- **Frontend Framework**: React 18 + TypeScript
-- **Build Tool**: Vite
-- **UI Library**: Material-UI (MUI) with custom dark theme
-- **HTTP Client**: Axios
-- **Routing**: React Router v7
-- **Notifications**: React Toastify
-- **Styling**: Emotion (MUI default)
+## Tech Stack
 
-## 📦 Project Structure
+### Frontend
 
-```
+- React 19
+- TypeScript 6
+- Vite 8
+- Material UI 9
+- React Router 7
+- Axios
+- React Toastify
+
+### Backend
+
+- FastAPI
+- Ultralytics YOLO
+- OpenCV
+- Pydantic
+- FFmpeg
+
+## Project Structure
+
+```text
 fod-detection-system/
-├── src/
-│   ├── components/          # Reusable UI components
-│   │   ├── VideoUploader.tsx
-│   │   ├── VideoPlayer.tsx
-│   │   ├── ProcessingStatus.tsx
-│   │   ├── DetectionSummary.tsx
-│   │   ├── AlertBanner.tsx
-│   │   ├── FODTable.tsx
-│   │   └── index.ts
-│   ├── pages/              # Page components
-│   │   ├── UploadPage.tsx
-│   │   ├── ProcessingPage.tsx
-│   │   ├── ResultsPage.tsx
-│   │   └── index.ts
-│   ├── services/           # API services
-│   │   └── api.ts
-│   ├── types/              # TypeScript interfaces
-│   │   └── detection.ts
-│   ├── styles/             # Theme configuration
-│   │   └── theme.ts
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css
-├── .env                    # Environment variables (dev)
-├── .env.example            # Example environment variables
-├── vite.config.ts
-├── tsconfig.json
-├── index.html
-└── package.json
+|-- src/
+|   |-- assets/
+|   |-- components/
+|   |-- pages/
+|   |-- services/
+|   |-- styles/
+|   |-- types/
+|   |-- App.css
+|   |-- App.tsx
+|   |-- index.css
+|   `-- main.tsx
+|-- backend/
+|   |-- app.py
+|   |-- config/
+|   |-- models/
+|   |-- routes/
+|   |-- services/
+|   |-- processed/
+|   |-- uploads/
+|   |-- README.md
+|   `-- requirements.txt
+|-- public/
+|-- dist/
+|-- .env
+|-- .env.example
+|-- API_ARCHITECTURE.md
+|-- BUILD_SUMMARY.md
+|-- IMPLEMENTATION_CHECKLIST.md
+|-- PROJECT_COMPLETE.md
+|-- QUICK_REFERENCE.md
+|-- SETUP_GUIDE.md
+|-- START_HERE.md
+`-- package.json
 ```
 
-## 🚀 Getting Started
+## Frontend Flow
 
-### Prerequisites
+### `/`
 
-- Node.js 16.x or higher
-- npm 7.x or higher
+- Upload MP4, AVI, or MOV video
+- Preview the selected file
+- Start FOD detection
 
-### Installation
+### `/processing`
 
-1. **Clone or navigate to the project directory**
-   ```bash
-   cd fod-detection-system
-   ```
+- Show upload progress
+- Display staged processing states
+- Redirect to results on success
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+### `/results`
 
-3. **Configure environment variables**
-   ```bash
-   cp .env.example .env
-   ```
-   
-   Edit `.env` and set your backend API URL:
-   ```env
-   VITE_API_BASE_URL=http://localhost:5000
-   ```
+- Play processed video
+- Review detection summary
+- Inspect detailed FOD table
+- Export detection data as JSON
 
-### Development
+## Quick Start
 
-Start the development server:
+### 1. Install frontend dependencies
+
+```bash
+cd fod-detection-system
+npm install
+```
+
+### 2. Configure the frontend API URL
+
+Set `VITE_API_BASE_URL` in `.env`.
+
+If you run the included FastAPI backend with `uvicorn app:app --reload`, use:
+
+```env
+VITE_API_BASE_URL=http://localhost:8000
+```
+
+### 3. Start the frontend
 
 ```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173`
+The Vite dev server is available at `http://localhost:5173`.
 
-### Building for Production
-
-```bash
-npm run build
-```
-
-The optimized production build will be created in the `dist/` directory.
-
-### Preview Production Build
+### 4. Start the backend
 
 ```bash
-npm run preview
+cd backend
+pip install -r requirements.txt
+uvicorn app:app --reload
 ```
 
-## 📱 Application Flow
+The backend runs at `http://localhost:8000`.
 
-### 1. **Upload Page** (`/`)
-- Display application title and features
-- Drag-and-drop or click to upload video
-- Show file details (name, size)
-- Display video preview
-- "Run Detection" button
+## Expected API Contract
 
-### 2. **Processing Page** (`/processing`)
-- Display upload progress
-- Show processing status with steps:
-  - Uploading Video
-  - Extracting Frames
-  - Running Detection
-  - Calculating Distance
-  - Generating Results
-- Disable user interactions during processing
+### Request
 
-### 3. **Results Page** (`/results`)
-- Display processed video with bounding boxes
-- Show detection summary (frames, FOD count, status, time)
-- Display alert banner (red for FOD, green for clear)
-- Show detailed FOD table with search and pagination
-- Export results button
-- Analyze another video link
+`POST /api/detect`
 
-## 🔌 Backend API Integration
+- Content type: `multipart/form-data`
+- Field: `video`
 
-The application expects a backend API at the URL specified in `VITE_API_BASE_URL`.
+### Response
 
-### Expected API Endpoint
-
-**POST** `/api/detect`
-
-**Request:**
-```
-Content-Type: multipart/form-data
-video: File
-```
-
-**Response:**
 ```json
 {
   "status": "success",
-  "processed_video_url": "https://...",
+  "processed_video_url": "/processed/example.mp4",
   "total_frames": 5000,
   "processing_time": 32.5,
   "fod_detected": true,
@@ -179,128 +160,27 @@ video: File
 }
 ```
 
-## 🎨 Customization
+## Scripts
 
-### Dark Theme
-
-The application uses a custom dark theme suitable for airport operations. To customize colors, edit `src/styles/theme.ts`:
-
-```typescript
-palette: {
-  primary: {
-    main: '#00bcd4',      // Cyan
-    light: '#4dd0e1',
-    dark: '#0097a7',
-  },
-  secondary: {
-    main: '#ff6f00',      // Orange
-    light: '#ffb74d',
-    dark: '#e65100',
-  },
-  // ... more colors
-}
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run lint
 ```
 
-### Component Styling
+## Documentation
 
-All components use Material-UI's `sx` prop for styling. To modify component appearance, edit the respective component files in `src/components/`.
+- [START_HERE.md](./START_HERE.md) - fastest path through the repo
+- [SETUP_GUIDE.md](./SETUP_GUIDE.md) - setup and configuration details
+- [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) - command and file cheat sheet
+- [API_ARCHITECTURE.md](./API_ARCHITECTURE.md) - system flow and API contract
+- [IMPLEMENTATION_CHECKLIST.md](./IMPLEMENTATION_CHECKLIST.md) - verification checklist
+- [PROJECT_COMPLETE.md](./PROJECT_COMPLETE.md) - current project status
+- [BUILD_SUMMARY.md](./BUILD_SUMMARY.md) - latest build validation summary
+- [backend/README.md](./backend/README.md) - backend-specific setup
 
-## 📊 Key Components
+## Notes
 
-### VideoUploader
-- File drag-and-drop support
-- File validation (format, size)
-- Preview thumbnail
-- Progress indication
-
-### VideoPlayer
-- Play/Pause controls
-- Seek bar
-- Volume control
-- Mute button
-- Time display
-
-### ProcessingStatus
-- Step-by-step progress visualization
-- Overall progress bar
-- Error handling and display
-- Current step indicator
-
-### DetectionSummary
-- 4 summary cards:
-  - Total Frames Processed
-  - Total FOD Detected
-  - Detection Status
-  - Processing Time
-
-### AlertBanner
-- Red banner for FOD detected (critical warning)
-- Green banner for no FOD (runway clear)
-- Closest object details
-- Number of detections
-
-### FODTable
-- Sortable and paginated table
-- Search functionality
-- 7 columns: ID, Frame, Timestamp, Distance, X, Y, Confidence
-- Color-coded confidence levels
-
-## 🔐 Environment Variables
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `VITE_API_BASE_URL` | Backend API base URL | `http://localhost:5000` |
-| `VITE_DEBUG` | Enable debug mode | `false` |
-
-## 🧪 Error Handling
-
-The application includes comprehensive error handling:
-
-- **File Validation**: Format and size checking
-- **Network Errors**: Graceful error messages with retry option
-- **API Errors**: Detailed error notifications
-- **Toast Notifications**: User-friendly feedback for all actions
-
-## 📈 Performance Considerations
-
-- Large video uploads (up to 1GB) use streaming
-- Progress callbacks for real-time feedback
-- Lazy loading of components
-- Optimized re-renders using React hooks
-- CSS-in-JS for dynamic styling
-
-## 📚 Documentation
-
-### Frontend Setup
-- **[SETUP_GUIDE.md](./SETUP_GUIDE.md)** - Installation, configuration, and customization
-- **[QUICK_REFERENCE.md](./QUICK_REFERENCE.md)** - Developer quick reference
-
-### System Design & Integration
-- **[API_ARCHITECTURE.md](./API_ARCHITECTURE.md)** - System design and data flow
-- **[PROJECT_COMPLETE.md](./PROJECT_COMPLETE.md)** - Project completion summary
-- **[BUILD_SUMMARY.md](./BUILD_SUMMARY.md)** - Build verification and next steps
-
-### Backend Implementation (Your ML Model Integration)
-- **[MODEL_INTEGRATION_GUIDE.md](./MODEL_INTEGRATION_GUIDE.md)** ⭐ **START HERE** - Quick guide for integrating your ML model
-- **[MINIMAL_BACKEND.py](./MINIMAL_BACKEND.py)** - Simple working backend template (60 lines)
-- **[BACKEND_IMPLEMENTATION_GUIDE.md](./BACKEND_IMPLEMENTATION_GUIDE.md)** - Complete backend guide with multiple backend options
-- **[BACKEND_EXAMPLE.md](./BACKEND_EXAMPLE.md)** - Complete working backend example with all modules
-
-## 🌐 Browser Support
-
-- Chrome/Chromium 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-
-## 📝 License
-
-This project is proprietary and intended for airport operations use.
-
-## 👨‍💼 Support
-
-For issues, questions, or feature requests, please contact the development team.
-
----
-
-**Note**: This is a frontend-only application. A backend API must be deployed separately to handle video processing and FOD detection.
+- The frontend fallback in `src/services/api.ts` is `http://localhost:5000`, so set `VITE_API_BASE_URL` explicitly if your backend runs on `8000`.
+- The current production build succeeds, but Vite reports a large client bundle warning for the main JavaScript chunk.
