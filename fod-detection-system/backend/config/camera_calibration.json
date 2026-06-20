@@ -1,0 +1,14 @@
+{
+  "camera_matrix": [
+    [1450.0, 0.0, 960.0],
+    [0.0, 1450.0, 540.0],
+    [0.0, 0.0, 1.0]
+  ],
+  "distortion_coefficients": [0.0, 0.0, 0.0, 0.0, 0.0],
+  "camera_height_m": 6.5,
+  "camera_pitch_deg": 68.0,
+  "image_width": 1920,
+  "image_height": 1080,
+  "runway_origin_x_m": 0.0,
+  "runway_origin_y_m": 0.0
+}
