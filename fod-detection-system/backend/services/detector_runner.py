@@ -21,6 +21,7 @@ class HawkeyeRunner:
             "tbd/detect_fused.py",
             "--video",
             str(video_path),
+            "--gpu",
             "--yolo-weights",
             str(self.yolo_weights.relative_to(self.hawkeye_dir)),
             "--out",

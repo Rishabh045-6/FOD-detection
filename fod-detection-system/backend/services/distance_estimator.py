@@ -19,6 +19,28 @@ class DistanceEstimator:
         self.calibration = calibration
         self.inverse_camera_matrix = np.linalg.inv(calibration.camera_matrix)
 
+    @staticmethod
+    def _pixel_position(detection):
+
+        pos = detection.get("pos")
+
+        if pos and len(pos) >= 2:
+            return float(pos[0]), float(pos[1])
+
+        bbox = detection.get("bbox")
+
+        if bbox and len(bbox) == 4:
+            x1, y1, x2, y2 = bbox
+
+            return (
+                (x1 + x2) / 2,
+                (y1 + y2) / 2,
+            )
+
+        raise ValueError(
+            "Detection missing position"
+        )
+
     def estimate(self, bbox_center: Tuple[float, float]) -> DistanceEstimate:
         pixel = np.array([bbox_center[0], bbox_center[1], 1.0], dtype=float)
         ray_camera = self.inverse_camera_matrix @ pixel

@@ -1,0 +1,8264 @@
+{
+  "video": "E:\\IAF\\fod-detection-system\\backend\\uploads\\de8b3a759741491fad17ef82972f8740.mp4",
+  "tbd_weights": "tbd/runs/cls_v7/best.pt",
+  "yolo_weights": "detection\\runs\\fod_train\\v5_spd_both\\weights\\best.pt",
+  "params": {
+    "cls_thresh_solo": 0.94,
+    "cls_thresh_boosted": 0.7,
+    "min_pos_frac": 0.6,
+    "min_streak_boosted": 3,
+    "min_streak_solo": 5,
+    "link_dist": 14.0,
+    "yolo_conf": 0.25,
+    "yolo_agree_dist": 20.0,
+    "yolo_imgsz": 640,
+    "yolo_stride": 8,
+    "yolo_runs": 93
+  },
+  "counts": {
+    "tbd_boosted": 15,
+    "tbd_solo": 135,
+    "yolo_only": 318,
+    "total": 468
+  },
+  "detections": [
+    {
+      "source": "tbd_boosted",
+      "track_id": 85,
+      "first_idx": 5,
+      "confirm_idx": 8,
+      "pos": [
+        788.7841186523438,
+        389.0454406738281
+      ],
+      "bbox": [
+        782,
+        385,
+        798,
+        394
+      ],
+      "side_px": 12.5,
+      "cls_prob": 0.9106849282979965,
+      "pos_frac": 1.0,
+      "hits": 4,
+      "yolo_boosted": true
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 8,
+      "pos": [
+        886.1934509277344,
+        455.8937072753906
+      ],
+      "bbox": [
+        867,
+        438,
+        904,
+        473
+      ],
+      "side_px": 37.52398681640625,
+      "yolo_conf": 0.4740222096443176
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 4,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        672.227294921875,
+        967.5454711914062
+      ],
+      "bbox": [
+        667,
+        955,
+        677,
+        982
+      ],
+      "side_px": 18.5,
+      "cls_prob": 0.982796847820282,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 5,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        790.4275512695312,
+        928.8985595703125
+      ],
+      "bbox": [
+        784,
+        918,
+        798,
+        941
+      ],
+      "side_px": 17.944358444926362,
+      "cls_prob": 0.9953688383102417,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 7,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        750.2903442382812,
+        702.5806274414062
+      ],
+      "bbox": [
+        746,
+        699,
+        755,
+        708
+      ],
+      "side_px": 9.0,
+      "cls_prob": 0.9910268187522888,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 25,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        546.0555419921875,
+        440.23333740234375
+      ],
+      "bbox": [
+        538,
+        436,
+        554,
+        446
+      ],
+      "side_px": 13.0,
+      "cls_prob": 0.964600431919098,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 41,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        486.1111145019531,
+        771.3778076171875
+      ],
+      "bbox": [
+        484,
+        765,
+        489,
+        779
+      ],
+      "side_px": 9.5,
+      "cls_prob": 0.9429334402084351,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 55,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        745.085693359375,
+        977.085693359375
+      ],
+      "bbox": [
+        740,
+        971,
+        750,
+        987
+      ],
+      "side_px": 12.649110640673518,
+      "cls_prob": 0.9846783757209778,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 61,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        1011.2058715820312,
+        621.7352905273438
+      ],
+      "bbox": [
+        1006,
+        619,
+        1017,
+        625
+      ],
+      "side_px": 8.5,
+      "cls_prob": 0.9502233386039733,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 109,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        737.5294189453125,
+        934.1411743164062
+      ],
+      "bbox": [
+        734,
+        928,
+        742,
+        941
+      ],
+      "side_px": 10.5,
+      "cls_prob": 0.9578348517417907,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 128,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        484.2799987792969,
+        544.97998046875
+      ],
+      "bbox": [
+        480,
+        538,
+        488,
+        551
+      ],
+      "side_px": 10.198039027185569,
+      "cls_prob": 0.9951166987419129,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 135,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        657.3970336914062,
+        582.8970336914062
+      ],
+      "bbox": [
+        647,
+        574,
+        663,
+        589
+      ],
+      "side_px": 15.5,
+      "cls_prob": 0.9758773922920227,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 153,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        515.2304077148438,
+        854.27392578125
+      ],
+      "bbox": [
+        509,
+        838,
+        524,
+        870
+      ],
+      "side_px": 23.5,
+      "cls_prob": 0.9974974274635315,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 166,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        512.0731811523438,
+        838.1219482421875
+      ],
+      "bbox": [
+        509,
+        833,
+        517,
+        844
+      ],
+      "side_px": 9.5,
+      "cls_prob": 0.9445293307304382,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 173,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        933.614013671875,
+        660.1929931640625
+      ],
+      "bbox": [
+        928,
+        655,
+        941,
+        665
+      ],
+      "side_px": 11.5,
+      "cls_prob": 0.9548772931098938,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 180,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        917.8793334960938,
+        522.5344848632812
+      ],
+      "bbox": [
+        911,
+        517,
+        926,
+        527
+      ],
+      "side_px": 12.24744871391589,
+      "cls_prob": 0.9831618905067444,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 200,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        837.0882568359375,
+        433.79412841796875
+      ],
+      "bbox": [
+        831,
+        432,
+        845,
+        437
+      ],
+      "side_px": 9.5,
+      "cls_prob": 0.985956859588623,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 205,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        855.326904296875,
+        807.6923217773438
+      ],
+      "bbox": [
+        850,
+        804,
+        864,
+        813
+      ],
+      "side_px": 11.5,
+      "cls_prob": 0.9437462687492371,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 221,
+      "first_idx": 5,
+      "confirm_idx": 9,
+      "pos": [
+        865.2307739257812,
+        405.73333740234375
+      ],
+      "bbox": [
+        856,
+        394,
+        877,
+        414
+      ],
+      "side_px": 20.5,
+      "cls_prob": 0.9997095823287964,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 9,
+      "pos": [
+        886.2076362230579,
+        455.9114450385907
+      ],
+      "bbox": [
+        867,
+        438,
+        904,
+        473
+      ],
+      "side_px": 37.525084992703114,
+      "yolo_conf": 0.4740222096443176
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 10,
+      "pos": [
+        886.2289032175972,
+        455.9607640290791
+      ],
+      "bbox": [
+        867,
+        438,
+        904,
+        473
+      ],
+      "side_px": 37.526071597659666,
+      "yolo_conf": 0.4740222096443176
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 245,
+      "first_idx": 6,
+      "confirm_idx": 11,
+      "pos": [
+        879.3636474609375,
+        968.0130004882812
+      ],
+      "bbox": [
+        872,
+        962,
+        889,
+        974
+      ],
+      "side_px": 14.5,
+      "cls_prob": 0.9977902889251709,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 11,
+      "pos": [
+        886.2576850841851,
+        456.0068119123713
+      ],
+      "bbox": [
+        867,
+        438,
+        905,
+        473
+      ],
+      "side_px": 37.52896075638148,
+      "yolo_conf": 0.4740222096443176
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 12,
+      "pos": [
+        886.2890208164422,
+        456.04442995320426
+      ],
+      "bbox": [
+        867,
+        438,
+        905,
+        473
+      ],
+      "side_px": 37.532496107493444,
+      "yolo_conf": 0.4740222096443176
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 36,
+      "first_idx": 5,
+      "confirm_idx": 13,
+      "pos": [
+        975.3142700195312,
+        584.05712890625
+      ],
+      "bbox": [
+        971,
+        582,
+        983,
+        588
+      ],
+      "side_px": 9.0,
+      "cls_prob": 0.9437392950057983,
+      "pos_frac": 1.0,
+      "hits": 8,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 13,
+      "pos": [
+        886.3241726220766,
+        456.09189595433656
+      ],
+      "bbox": [
+        867,
+        438,
+        905,
+        473
+      ],
+      "side_px": 37.53539333193271,
+      "yolo_conf": 0.4740222096443176
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 14,
+      "pos": [
+        886.3482893981616,
+        456.13021790932606
+      ],
+      "bbox": [
+        867,
+        438,
+        905,
+        473
+      ],
+      "side_px": 37.53730508151921,
+      "yolo_conf": 0.4740222096443176
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 15,
+      "pos": [
+        886.4050901395904,
+        456.2088463516511
+      ],
+      "bbox": [
+        867,
+        438,
+        905,
+        473
+      ],
+      "side_px": 37.54194802163522,
+      "yolo_conf": 0.4740222096443176
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 342,
+      "first_idx": 13,
+      "confirm_idx": 17,
+      "pos": [
+        999.5946044921875,
+        617.9865112304688
+      ],
+      "bbox": [
+        992,
+        615,
+        1007,
+        622
+      ],
+      "side_px": 11.0,
+      "cls_prob": 0.9898212313652038,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 354,
+      "first_idx": 13,
+      "confirm_idx": 18,
+      "pos": [
+        731.0,
+        634.65625
+      ],
+      "bbox": [
+        727,
+        630,
+        735,
+        639
+      ],
+      "side_px": 8.48528137423857,
+      "cls_prob": 0.979790198802948,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 338,
+      "first_idx": 12,
+      "confirm_idx": 19,
+      "pos": [
+        792.6956787109375,
+        303.6739196777344
+      ],
+      "bbox": [
+        787,
+        298,
+        798,
+        309
+      ],
+      "side_px": 11.0,
+      "cls_prob": 0.9611857175827027,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 365,
+      "first_idx": 14,
+      "confirm_idx": 19,
+      "pos": [
+        955.5357055664062,
+        324.3214416503906
+      ],
+      "bbox": [
+        947,
+        317,
+        964,
+        333
+      ],
+      "side_px": 16.5,
+      "cls_prob": 0.9434400300184885,
+      "pos_frac": 1.0,
+      "hits": 6,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 383,
+      "first_idx": 16,
+      "confirm_idx": 20,
+      "pos": [
+        880.0735473632812,
+        969.1470336914062
+      ],
+      "bbox": [
+        874,
+        963,
+        890,
+        976
+      ],
+      "side_px": 14.5,
+      "cls_prob": 0.9970589876174927,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 384,
+      "first_idx": 16,
+      "confirm_idx": 20,
+      "pos": [
+        637.7647094726562,
+        839.88232421875
+      ],
+      "bbox": [
+        634,
+        836,
+        642,
+        845
+      ],
+      "side_px": 8.5,
+      "cls_prob": 0.981200635433197,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 389,
+      "first_idx": 16,
+      "confirm_idx": 20,
+      "pos": [
+        973.5714111328125,
+        366.1190490722656
+      ],
+      "bbox": [
+        967,
+        364,
+        982,
+        369
+      ],
+      "side_px": 10.0,
+      "cls_prob": 0.9788586854934692,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 391,
+      "first_idx": 17,
+      "confirm_idx": 21,
+      "pos": [
+        787.743896484375,
+        821.4268188476562
+      ],
+      "bbox": [
+        782,
+        816,
+        794,
+        829
+      ],
+      "side_px": 12.5,
+      "cls_prob": 0.9517388343811035,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 396,
+      "first_idx": 17,
+      "confirm_idx": 21,
+      "pos": [
+        499.9591979980469,
+        771.5306396484375
+      ],
+      "bbox": [
+        495,
+        768,
+        504,
+        777
+      ],
+      "side_px": 9.0,
+      "cls_prob": 0.981051242351532,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 405,
+      "first_idx": 17,
+      "confirm_idx": 21,
+      "pos": [
+        991.65673828125,
+        392.0596923828125
+      ],
+      "bbox": [
+        984,
+        389,
+        1003,
+        398
+      ],
+      "side_px": 14.0,
+      "cls_prob": 0.9924024224281311,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 430,
+      "first_idx": 18,
+      "confirm_idx": 22,
+      "pos": [
+        789.4033813476562,
+        931.9075927734375
+      ],
+      "bbox": [
+        784,
+        920,
+        796,
+        945
+      ],
+      "side_px": 18.5,
+      "cls_prob": 0.9864162564277649,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 433,
+      "first_idx": 19,
+      "confirm_idx": 23,
+      "pos": [
+        748.7142944335938,
+        676.05712890625
+      ],
+      "bbox": [
+        743,
+        673,
+        755,
+        681
+      ],
+      "side_px": 10.0,
+      "cls_prob": 0.9620546460151672,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 452,
+      "first_idx": 22,
+      "confirm_idx": 27,
+      "pos": [
+        974.5294189453125,
+        623.88232421875
+      ],
+      "bbox": [
+        969,
+        620,
+        981,
+        627
+      ],
+      "side_px": 9.5,
+      "cls_prob": 0.9626780390739441,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 487,
+      "first_idx": 25,
+      "confirm_idx": 29,
+      "pos": [
+        924.48779296875,
+        534.3414916992188
+      ],
+      "bbox": [
+        920,
+        532,
+        930,
+        539
+      ],
+      "side_px": 8.5,
+      "cls_prob": 0.9873973965644837,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 507,
+      "first_idx": 27,
+      "confirm_idx": 31,
+      "pos": [
+        753.2807006835938,
+        704.4912109375
+      ],
+      "bbox": [
+        746,
+        700,
+        761,
+        708
+      ],
+      "side_px": 10.954451150103322,
+      "cls_prob": 0.9881891012191772,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 581,
+      "first_idx": 31,
+      "confirm_idx": 35,
+      "pos": [
+        261.9130554199219,
+        486.3043518066406
+      ],
+      "bbox": [
+        258,
+        482,
+        270,
+        493
+      ],
+      "side_px": 11.5,
+      "cls_prob": 0.9548208594322205,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 600,
+      "first_idx": 33,
+      "confirm_idx": 37,
+      "pos": [
+        823.5833129882812,
+        444.7916564941406
+      ],
+      "bbox": [
+        820,
+        439,
+        828,
+        454
+      ],
+      "side_px": 10.954451150103322,
+      "cls_prob": 0.9863370180130004,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 602,
+      "first_idx": 33,
+      "confirm_idx": 37,
+      "pos": [
+        971.8194580078125,
+        365.8055419921875
+      ],
+      "bbox": [
+        963,
+        362,
+        981,
+        370
+      ],
+      "side_px": 12.0,
+      "cls_prob": 0.9903593301773072,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 614,
+      "first_idx": 35,
+      "confirm_idx": 41,
+      "pos": [
+        968.3333129882812,
+        326.0888977050781
+      ],
+      "bbox": [
+        964,
+        322,
+        974,
+        331
+      ],
+      "side_px": 9.486832980505138,
+      "cls_prob": 0.9679972887039184,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 731,
+      "first_idx": 40,
+      "confirm_idx": 45,
+      "pos": [
+        835.5357055664062,
+        438.21429443359375
+      ],
+      "bbox": [
+        830,
+        436,
+        842,
+        442
+      ],
+      "side_px": 9.0,
+      "cls_prob": 0.9708460927009582,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 822,
+      "first_idx": 45,
+      "confirm_idx": 49,
+      "pos": [
+        729.3333129882812,
+        632.8666381835938
+      ],
+      "bbox": [
+        725,
+        627,
+        733,
+        638
+      ],
+      "side_px": 9.38083151964686,
+      "cls_prob": 0.9800338387489319,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 838,
+      "first_idx": 46,
+      "confirm_idx": 53,
+      "pos": [
+        263.0,
+        484.5082092285156
+      ],
+      "bbox": [
+        258,
+        480,
+        272,
+        490
+      ],
+      "side_px": 11.832159566199232,
+      "cls_prob": 0.9621786832809448,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 919,
+      "first_idx": 51,
+      "confirm_idx": 56,
+      "pos": [
+        970.1587524414062,
+        367.20635986328125
+      ],
+      "bbox": [
+        961,
+        364,
+        980,
+        372
+      ],
+      "side_px": 13.5,
+      "cls_prob": 0.9823469042778015,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 933,
+      "first_idx": 53,
+      "confirm_idx": 58,
+      "pos": [
+        789.257568359375,
+        928.9091186523438
+      ],
+      "bbox": [
+        783,
+        918,
+        797,
+        940
+      ],
+      "side_px": 18.0,
+      "cls_prob": 0.9992531061172485,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 996,
+      "first_idx": 56,
+      "confirm_idx": 62,
+      "pos": [
+        823.0,
+        448.327880859375
+      ],
+      "bbox": [
+        820,
+        441,
+        828,
+        458
+      ],
+      "side_px": 12.5,
+      "cls_prob": 0.9776789903640747,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 825,
+      "first_idx": 46,
+      "confirm_idx": 63,
+      "pos": [
+        527.21875,
+        951.59375
+      ],
+      "bbox": [
+        525,
+        944,
+        531,
+        960
+      ],
+      "side_px": 11.0,
+      "cls_prob": 0.9410294166633061,
+      "pos_frac": 1.0,
+      "hits": 14,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1123,
+      "first_idx": 63,
+      "confirm_idx": 67,
+      "pos": [
+        890.741943359375,
+        620.8064575195312
+      ],
+      "bbox": [
+        886,
+        618,
+        899,
+        625
+      ],
+      "side_px": 9.539392014169456,
+      "cls_prob": 0.9629555821418763,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 72,
+      "pos": [
+        867.8338012695312,
+        424.92608642578125
+      ],
+      "bbox": [
+        850,
+        408,
+        885,
+        440
+      ],
+      "side_px": 34.818115234375,
+      "yolo_conf": 0.7702412605285645
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1228,
+      "first_idx": 69,
+      "confirm_idx": 73,
+      "pos": [
+        800.4496459960938,
+        970.7818603515625
+      ],
+      "bbox": [
+        782,
+        957,
+        819,
+        981
+      ],
+      "side_px": 29.79932885150268,
+      "cls_prob": 0.9794810533523559,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 1258,
+      "first_idx": 70,
+      "confirm_idx": 73,
+      "pos": [
+        874.9024658203125,
+        447.4146423339844
+      ],
+      "bbox": [
+        870,
+        443,
+        881,
+        452
+      ],
+      "side_px": 10.0,
+      "cls_prob": 0.8067079583803812,
+      "pos_frac": 1.0,
+      "hits": 3,
+      "yolo_boosted": true
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1252,
+      "first_idx": 70,
+      "confirm_idx": 74,
+      "pos": [
+        861.3948364257812,
+        976.2575073242188
+      ],
+      "bbox": [
+        854,
+        962,
+        871,
+        988
+      ],
+      "side_px": 21.02379604162864,
+      "cls_prob": 0.9975448966026306,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1310,
+      "first_idx": 72,
+      "confirm_idx": 77,
+      "pos": [
+        948.6024169921875,
+        565.5300903320312
+      ],
+      "bbox": [
+        939,
+        559,
+        959,
+        573
+      ],
+      "side_px": 16.73320053068151,
+      "cls_prob": 0.9432012140750885,
+      "pos_frac": 1.0,
+      "hits": 6,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1319,
+      "first_idx": 73,
+      "confirm_idx": 77,
+      "pos": [
+        800.3468017578125,
+        952.9017333984375
+      ],
+      "bbox": [
+        788,
+        945,
+        812,
+        963
+      ],
+      "side_px": 20.784609690826528,
+      "cls_prob": 0.9476113080978393,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1386,
+      "first_idx": 74,
+      "confirm_idx": 78,
+      "pos": [
+        877.0,
+        601.9625244140625
+      ],
+      "bbox": [
+        871,
+        596,
+        885,
+        609
+      ],
+      "side_px": 13.490737563232042,
+      "cls_prob": 0.9745238542556762,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 78,
+      "pos": [
+        847.4711432474301,
+        383.2763370519067
+      ],
+      "bbox": [
+        831,
+        368,
+        863,
+        397
+      ],
+      "side_px": 32.55675141420829,
+      "yolo_conf": 0.7702412605285645
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1417,
+      "first_idx": 75,
+      "confirm_idx": 79,
+      "pos": [
+        1006.625,
+        611.4807739257812
+      ],
+      "bbox": [
+        995,
+        604,
+        1020,
+        619
+      ],
+      "side_px": 19.364916731037084,
+      "cls_prob": 0.9814559578895569,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 79,
+      "pos": [
+        844.7062680177639,
+        377.888299149704
+      ],
+      "bbox": [
+        828,
+        363,
+        860,
+        392
+      ],
+      "side_px": 32.268839907065285,
+      "yolo_conf": 0.7702412605285645
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 1358,
+      "first_idx": 74,
+      "confirm_idx": 80,
+      "pos": [
+        505.5454406738281,
+        716.1312866210938
+      ],
+      "bbox": [
+        499,
+        704,
+        514,
+        729
+      ],
+      "side_px": 19.364916731037084,
+      "cls_prob": 0.8787720033100673,
+      "pos_frac": 0.8571428571428571,
+      "hits": 7,
+      "yolo_boosted": true
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 80,
+      "pos": [
+        508.0478820800781,
+        707.3556213378906
+      ],
+      "bbox": [
+        495,
+        668,
+        520,
+        746
+      ],
+      "side_px": 77.35198974609375,
+      "yolo_conf": 0.3057861924171448
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1348,
+      "first_idx": 74,
+      "confirm_idx": 81,
+      "pos": [
+        811.1373901367188,
+        971.114501953125
+      ],
+      "bbox": [
+        804,
+        963,
+        824,
+        978
+      ],
+      "side_px": 17.5,
+      "cls_prob": 0.9920794367790222,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 81,
+      "pos": [
+        507.1789846328195,
+        693.0409029783162
+      ],
+      "bbox": [
+        495,
+        655,
+        519,
+        730
+      ],
+      "side_px": 75.5122209104893,
+      "yolo_conf": 0.3057861924171448
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1294,
+      "first_idx": 72,
+      "confirm_idx": 82,
+      "pos": [
+        987.5548095703125,
+        891.616455078125
+      ],
+      "bbox": [
+        975,
+        882,
+        1001,
+        906
+      ],
+      "side_px": 24.979991993593593,
+      "cls_prob": 0.9408649206161499,
+      "pos_frac": 1.0,
+      "hits": 11,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1464,
+      "first_idx": 77,
+      "confirm_idx": 84,
+      "pos": [
+        966.0701293945312,
+        911.6088256835938
+      ],
+      "bbox": [
+        953,
+        895,
+        981,
+        934
+      ],
+      "side_px": 33.04542328371661,
+      "cls_prob": 0.9432507753372192,
+      "pos_frac": 1.0,
+      "hits": 8,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1560,
+      "first_idx": 80,
+      "confirm_idx": 84,
+      "pos": [
+        228.0521697998047,
+        936.9130249023438
+      ],
+      "bbox": [
+        224,
+        926,
+        232,
+        950
+      ],
+      "side_px": 16.0,
+      "cls_prob": 0.9619850635528564,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 85,
+      "pos": [
+        510.65961119415215,
+        657.0781003361744
+      ],
+      "bbox": [
+        493,
+        622,
+        527,
+        691
+      ],
+      "side_px": 69.69618911051293,
+      "yolo_conf": 0.3676687777042389
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 85,
+      "pos": [
+        504.9499380244661,
+        658.4947115172915
+      ],
+      "bbox": [
+        493,
+        622,
+        516,
+        694
+      ],
+      "side_px": 71.2519655854461,
+      "yolo_conf": 0.3057861924171448
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 86,
+      "pos": [
+        510.3756025056008,
+        650.7983386609831
+      ],
+      "bbox": [
+        493,
+        616,
+        527,
+        685
+      ],
+      "side_px": 68.90951012711764,
+      "yolo_conf": 0.3676687777042389
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 86,
+      "pos": [
+        504.6986180683932,
+        652.1991111559985
+      ],
+      "bbox": [
+        493,
+        616,
+        516,
+        687
+      ],
+      "side_px": 70.44754634765093,
+      "yolo_conf": 0.3057861924171448
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1574,
+      "first_idx": 80,
+      "confirm_idx": 87,
+      "pos": [
+        1005.8666381835938,
+        511.760009765625
+      ],
+      "bbox": [
+        998,
+        507,
+        1014,
+        518
+      ],
+      "side_px": 13.5,
+      "cls_prob": 0.9559834599494934,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 87,
+      "pos": [
+        509.6370210748745,
+        641.8913150233166
+      ],
+      "bbox": [
+        492,
+        607,
+        526,
+        675
+      ],
+      "side_px": 67.8514142806307,
+      "yolo_conf": 0.3676687777042389
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 87,
+      "pos": [
+        504.00433009912933,
+        643.2689637958265
+      ],
+      "bbox": [
+        492,
+        608,
+        515,
+        677
+      ],
+      "side_px": 69.3622612789286,
+      "yolo_conf": 0.3057861924171448
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 88,
+      "pos": [
+        514.3166961669922,
+        637.5825500488281
+      ],
+      "bbox": [
+        492,
+        601,
+        535,
+        673
+      ],
+      "side_px": 71.49822998046875,
+      "yolo_conf": 0.4964927136898041
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 88,
+      "pos": [
+        508.36631774902344,
+        638.9345092773438
+      ],
+      "bbox": [
+        492,
+        603,
+        524,
+        673
+      ],
+      "side_px": 70.0450439453125,
+      "yolo_conf": 0.3917014002799988
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1601,
+      "first_idx": 82,
+      "confirm_idx": 89,
+      "pos": [
+        714.62744140625,
+        970.186279296875
+      ],
+      "bbox": [
+        710,
+        958,
+        723,
+        981
+      ],
+      "side_px": 17.291616465790582,
+      "cls_prob": 0.9438631057739257,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 89,
+      "pos": [
+        513.9758575093026,
+        632.3642645906966
+      ],
+      "bbox": [
+        492,
+        596,
+        535,
+        667
+      ],
+      "side_px": 70.82538667730773,
+      "yolo_conf": 0.4964927136898041
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 89,
+      "pos": [
+        508.05360646580027,
+        633.7044561812402
+      ],
+      "bbox": [
+        492,
+        599,
+        523,
+        668
+      ],
+      "side_px": 69.38637696611329,
+      "yolo_conf": 0.3917014002799988
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1709,
+      "first_idx": 86,
+      "confirm_idx": 90,
+      "pos": [
+        689.0,
+        960.3246459960938
+      ],
+      "bbox": [
+        684,
+        953,
+        696,
+        969
+      ],
+      "side_px": 13.856406460551018,
+      "cls_prob": 0.9927042365074158,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 90,
+      "pos": [
+        513.518068187979,
+        625.1692150181022
+      ],
+      "bbox": [
+        492,
+        590,
+        534,
+        660
+      ],
+      "side_px": 69.92241443424564,
+      "yolo_conf": 0.4964927136898041
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 90,
+      "pos": [
+        507.6344412100045,
+        626.4953662924534
+      ],
+      "bbox": [
+        492,
+        592,
+        523,
+        660
+      ],
+      "side_px": 68.5051023721145,
+      "yolo_conf": 0.3917014002799988
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 91,
+      "pos": [
+        513.1860324740713,
+        620.8881899710789
+      ],
+      "bbox": [
+        492,
+        586,
+        534,
+        655
+      ],
+      "side_px": 69.38297224367909,
+      "yolo_conf": 0.4964927136898041
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 91,
+      "pos": [
+        507.3249199385464,
+        622.2061875129498
+      ],
+      "bbox": [
+        491,
+        588,
+        522,
+        656
+      ],
+      "side_px": 67.9791193257081,
+      "yolo_conf": 0.3917014002799988
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1783,
+      "first_idx": 88,
+      "confirm_idx": 92,
+      "pos": [
+        952.6666870117188,
+        554.2083129882812
+      ],
+      "bbox": [
+        947,
+        546,
+        957,
+        560
+      ],
+      "side_px": 11.832159566199232,
+      "cls_prob": 0.976809024810791,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 92,
+      "pos": [
+        512.7736488215743,
+        615.280868483964
+      ],
+      "bbox": [
+        491,
+        580,
+        533,
+        649
+      ],
+      "side_px": 68.70145837852886,
+      "yolo_conf": 0.4964927136898041
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 92,
+      "pos": [
+        506.9419026018899,
+        616.5882472234175
+      ],
+      "bbox": [
+        491,
+        582,
+        522,
+        650
+      ],
+      "side_px": 67.31411863422511,
+      "yolo_conf": 0.3917014002799988
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 93,
+      "pos": [
+        512.5053125894435,
+        611.9984984708062
+      ],
+      "bbox": [
+        491,
+        577,
+        533,
+        646
+      ],
+      "side_px": 68.31806876279154,
+      "yolo_conf": 0.4964927136898041
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 93,
+      "pos": [
+        506.6901731608459,
+        613.3002512924947
+      ],
+      "bbox": [
+        491,
+        579,
+        521,
+        646
+      ],
+      "side_px": 66.94049744327583,
+      "yolo_conf": 0.3917014002799988
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 94,
+      "pos": [
+        512.213717448993,
+        609.2797977905118
+      ],
+      "bbox": [
+        491,
+        575,
+        533,
+        643
+      ],
+      "side_px": 67.98903789424855,
+      "yolo_conf": 0.4964927136898041
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 94,
+      "pos": [
+        506.4134441240949,
+        610.5760171035867
+      ],
+      "bbox": [
+        491,
+        577,
+        521,
+        643
+      ],
+      "side_px": 66.61867969683658,
+      "yolo_conf": 0.3917014002799988
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1841,
+      "first_idx": 91,
+      "confirm_idx": 95,
+      "pos": [
+        756.4600219726562,
+        960.0800170898438
+      ],
+      "bbox": [
+        751,
+        955,
+        762,
+        966
+      ],
+      "side_px": 11.0,
+      "cls_prob": 0.9548727154731751,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 95,
+      "pos": [
+        512.0116376160069,
+        606.8809185897337
+      ],
+      "bbox": [
+        491,
+        573,
+        532,
+        640
+      ],
+      "side_px": 67.72226135538392,
+      "yolo_conf": 0.4964927136898041
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 95,
+      "pos": [
+        506.2236303575513,
+        608.1721627113337
+      ],
+      "bbox": [
+        490,
+        574,
+        521,
+        641
+      ],
+      "side_px": 66.35701028068706,
+      "yolo_conf": 0.3917014002799988
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1853,
+      "first_idx": 92,
+      "confirm_idx": 96,
+      "pos": [
+        815.3252563476562,
+        973.791259765625
+      ],
+      "bbox": [
+        806,
+        962,
+        826,
+        989
+      ],
+      "side_px": 23.2379000772445,
+      "cls_prob": 0.9974730372428894,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1868,
+      "first_idx": 92,
+      "confirm_idx": 96,
+      "pos": [
+        996.8641967773438,
+        958.7901000976562
+      ],
+      "bbox": [
+        991,
+        954,
+        1003,
+        966
+      ],
+      "side_px": 12.0,
+      "cls_prob": 0.9464680433273316,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1528,
+      "first_idx": 79,
+      "confirm_idx": 101,
+      "pos": [
+        1000.4542846679688,
+        448.7665710449219
+      ],
+      "bbox": [
+        987,
+        438,
+        1020,
+        461
+      ],
+      "side_px": 27.54995462791182,
+      "cls_prob": 0.9411007862376131,
+      "pos_frac": 0.9565217391304348,
+      "hits": 23,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1633,
+      "first_idx": 83,
+      "confirm_idx": 106,
+      "pos": [
+        866.2321166992188,
+        962.2321166992188
+      ],
+      "bbox": [
+        859,
+        958,
+        873,
+        968
+      ],
+      "side_px": 11.832159566199232,
+      "cls_prob": 0.9418460347435691,
+      "pos_frac": 1.0,
+      "hits": 22,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 112,
+      "pos": [
+        499.9108428955078,
+        610.3962707519531
+      ],
+      "bbox": [
+        491,
+        579,
+        507,
+        641
+      ],
+      "side_px": 62.73419189453125,
+      "yolo_conf": 0.5516501069068909
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 112,
+      "pos": [
+        929.6687622070312,
+        65.63426399230957
+      ],
+      "bbox": [
+        920,
+        60,
+        938,
+        70
+      ],
+      "side_px": 17.7177734375,
+      "yolo_conf": 0.3904998302459717
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 113,
+      "pos": [
+        500.040461060398,
+        612.0473943207645
+      ],
+      "bbox": [
+        491,
+        580,
+        508,
+        643
+      ],
+      "side_px": 62.920286068113455,
+      "yolo_conf": 0.5516501069068909
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 113,
+      "pos": [
+        930.1696877670634,
+        65.7962718079272
+      ],
+      "bbox": [
+        921,
+        60,
+        939,
+        71
+      ],
+      "side_px": 17.743357353424358,
+      "yolo_conf": 0.3904998302459717
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 114,
+      "pos": [
+        500.1335555877106,
+        613.7534539499943
+      ],
+      "bbox": [
+        492,
+        582,
+        508,
+        645
+      ],
+      "side_px": 63.11731874521888,
+      "yolo_conf": 0.5516501069068909
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 114,
+      "pos": [
+        930.6224122666237,
+        66.01767669739876
+      ],
+      "bbox": [
+        921,
+        60,
+        939,
+        71
+      ],
+      "side_px": 17.768116299220765,
+      "yolo_conf": 0.3904998302459717
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 115,
+      "pos": [
+        500.21394379636536,
+        615.568680416402
+      ],
+      "bbox": [
+        492,
+        583,
+        508,
+        647
+      ],
+      "side_px": 63.312509143291095,
+      "yolo_conf": 0.5516501069068909
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 115,
+      "pos": [
+        931.0355882254769,
+        66.3992727614388
+      ],
+      "bbox": [
+        922,
+        61,
+        939,
+        71
+      ],
+      "side_px": 17.793860091817123,
+      "yolo_conf": 0.3904998302459717
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 116,
+      "pos": [
+        500.3384599977657,
+        617.3997899228061
+      ],
+      "bbox": [
+        492,
+        585,
+        508,
+        649
+      ],
+      "side_px": 63.519477185904975,
+      "yolo_conf": 0.5516501069068909
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 116,
+      "pos": [
+        931.5165615397201,
+        66.68958198305694
+      ],
+      "bbox": [
+        922,
+        61,
+        940,
+        71
+      ],
+      "side_px": 17.82240700456464,
+      "yolo_conf": 0.3904998302459717
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 117,
+      "pos": [
+        500.60490996239855,
+        620.179403004003
+      ],
+      "bbox": [
+        492,
+        588,
+        508,
+        652
+      ],
+      "side_px": 63.82931825964158,
+      "yolo_conf": 0.5516501069068909
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 117,
+      "pos": [
+        932.109934878194,
+        67.71501759085534
+      ],
+      "bbox": [
+        923,
+        62,
+        941,
+        72
+      ],
+      "side_px": 17.852852749422368,
+      "yolo_conf": 0.3904998302459717
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 118,
+      "pos": [
+        500.7662930399166,
+        622.081084429909
+      ],
+      "bbox": [
+        492,
+        590,
+        508,
+        654
+      ],
+      "side_px": 64.04475894142263,
+      "yolo_conf": 0.5516501069068909
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 118,
+      "pos": [
+        932.6133904205475,
+        68.09443597083066
+      ],
+      "bbox": [
+        923,
+        62,
+        941,
+        73
+      ],
+      "side_px": 17.88130600671684,
+      "yolo_conf": 0.3904998302459717
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 119,
+      "pos": [
+        500.92142323109897,
+        624.0175877430413
+      ],
+      "bbox": [
+        492,
+        591,
+        509,
+        656
+      ],
+      "side_px": 64.26774938707126,
+      "yolo_conf": 0.5516501069068909
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 119,
+      "pos": [
+        933.0788191843907,
+        68.55670037484991
+      ],
+      "bbox": [
+        924,
+        63,
+        942,
+        73
+      ],
+      "side_px": 17.906614187522337,
+      "yolo_conf": 0.3904998302459717
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 2239,
+      "first_idx": 117,
+      "confirm_idx": 121,
+      "pos": [
+        246.1325225830078,
+        819.0602416992188
+      ],
+      "bbox": [
+        242,
+        811,
+        250,
+        830
+      ],
+      "side_px": 13.5,
+      "cls_prob": 0.9521248579025269,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 2272,
+      "first_idx": 119,
+      "confirm_idx": 123,
+      "pos": [
+        926.3707885742188,
+        230.70787048339844
+      ],
+      "bbox": [
+        919,
+        226,
+        935,
+        238
+      ],
+      "side_px": 13.856406460551018,
+      "cls_prob": 0.954119348526001,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 1595,
+      "first_idx": 81,
+      "confirm_idx": 125,
+      "pos": [
+        710.2000122070312,
+        938.8470458984375
+      ],
+      "bbox": [
+        706,
+        927,
+        718,
+        948
+      ],
+      "side_px": 15.874507866387544,
+      "cls_prob": 0.9406245699660345,
+      "pos_frac": 0.9545454545454546,
+      "hits": 44,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 128,
+      "pos": [
+        507.5521545410156,
+        677.2405700683594
+      ],
+      "bbox": [
+        495,
+        637,
+        519,
+        717
+      ],
+      "side_px": 80.41802978515625,
+      "yolo_conf": 0.3402232825756073
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 129,
+      "pos": [
+        509.04647152442453,
+        694.8985870055596
+      ],
+      "bbox": [
+        497,
+        653,
+        520,
+        736
+      ],
+      "side_px": 82.94394573489592,
+      "yolo_conf": 0.3402232825756073
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 130,
+      "pos": [
+        510.20041309934754,
+        708.8708289515616
+      ],
+      "bbox": [
+        498,
+        666,
+        522,
+        751
+      ],
+      "side_px": 84.98081814769216,
+      "yolo_conf": 0.3402232825756073
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 2377,
+      "first_idx": 126,
+      "confirm_idx": 131,
+      "pos": [
+        934.5820922851562,
+        728.3880615234375
+      ],
+      "bbox": [
+        931,
+        724,
+        940,
+        734
+      ],
+      "side_px": 9.486832980505138,
+      "cls_prob": 0.9663386344909668,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 131,
+      "pos": [
+        511.4945001288376,
+        724.6675095046966
+      ],
+      "bbox": [
+        499,
+        681,
+        523,
+        768
+      ],
+      "side_px": 87.31266352197144,
+      "yolo_conf": 0.3402232825756073
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 132,
+      "pos": [
+        513.0495708999315,
+        742.9581674090501
+      ],
+      "bbox": [
+        500,
+        697,
+        525,
+        787
+      ],
+      "side_px": 90.0370038272506,
+      "yolo_conf": 0.3402232825756073
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 133,
+      "pos": [
+        515.7273478111933,
+        774.4824483981897
+      ],
+      "bbox": [
+        502,
+        727,
+        528,
+        821
+      ],
+      "side_px": 94.82506635860352,
+      "yolo_conf": 0.3402232825756073
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 2447,
+      "first_idx": 129,
+      "confirm_idx": 134,
+      "pos": [
+        514.5535888671875,
+        743.0
+      ],
+      "bbox": [
+        512,
+        735,
+        518,
+        752
+      ],
+      "side_px": 11.5,
+      "cls_prob": 0.9230179190635681,
+      "pos_frac": 1.0,
+      "hits": 4,
+      "yolo_boosted": true
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 136,
+      "pos": [
+        882.097412109375,
+        451.9339904785156
+      ],
+      "bbox": [
+        865,
+        435,
+        898,
+        468
+      ],
+      "side_px": 33.5352783203125,
+      "yolo_conf": 0.3961559236049652
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 1340,
+      "first_idx": 73,
+      "confirm_idx": 137,
+      "pos": [
+        867.896240234375,
+        431.0943298339844
+      ],
+      "bbox": [
+        861,
+        422,
+        880,
+        438
+      ],
+      "side_px": 17.435595774162696,
+      "cls_prob": 0.8465385033238318,
+      "pos_frac": 1.0,
+      "hits": 62,
+      "yolo_boosted": true
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 138,
+      "pos": [
+        900.0247733116337,
+        487.32431232597247
+      ],
+      "bbox": [
+        882,
+        469,
+        917,
+        505
+      ],
+      "side_px": 35.975172903174666,
+      "yolo_conf": 0.3961559236049652
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 2538,
+      "first_idx": 132,
+      "confirm_idx": 139,
+      "pos": [
+        526.6173095703125,
+        959.7761840820312
+      ],
+      "bbox": [
+        520,
+        942,
+        536,
+        978
+      ],
+      "side_px": 24.0,
+      "cls_prob": 0.9499979496002198,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 2682,
+      "first_idx": 135,
+      "confirm_idx": 139,
+      "pos": [
+        750.8026123046875,
+        690.2105102539062
+      ],
+      "bbox": [
+        745,
+        683,
+        757,
+        699
+      ],
+      "side_px": 13.856406460551018,
+      "cls_prob": 0.9883614659309388,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 139,
+      "pos": [
+        910.4387073912299,
+        507.6966241831643
+      ],
+      "bbox": [
+        892,
+        488,
+        928,
+        526
+      ],
+      "side_px": 37.58039465675574,
+      "yolo_conf": 0.3961559236049652
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 140,
+      "pos": [
+        927.9893429962266,
+        541.9673670890995
+      ],
+      "bbox": [
+        908,
+        521,
+        947,
+        562
+      ],
+      "side_px": 40.38600344748875,
+      "yolo_conf": 0.3961559236049652
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 141,
+      "pos": [
+        940.6635974981077,
+        568.8511211308631
+      ],
+      "bbox": [
+        920,
+        547,
+        960,
+        590
+      ],
+      "side_px": 42.538995962859644,
+      "yolo_conf": 0.3961559236049652
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 142,
+      "pos": [
+        954.6380275802874,
+        598.0501734796592
+      ],
+      "bbox": [
+        933,
+        575,
+        975,
+        620
+      ],
+      "side_px": 44.99928585141481,
+      "yolo_conf": 0.3961559236049652
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 2496,
+      "first_idx": 130,
+      "confirm_idx": 143,
+      "pos": [
+        983.9796142578125,
+        611.10205078125
+      ],
+      "bbox": [
+        979,
+        607,
+        991,
+        615
+      ],
+      "side_px": 9.797958971132712,
+      "cls_prob": 0.7176165050930448,
+      "pos_frac": 0.6666666666666666,
+      "hits": 9,
+      "yolo_boosted": true
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 2918,
+      "first_idx": 140,
+      "confirm_idx": 145,
+      "pos": [
+        913.0850830078125,
+        520.6170043945312
+      ],
+      "bbox": [
+        909,
+        516,
+        919,
+        527
+      ],
+      "side_px": 10.488088481701515,
+      "cls_prob": 0.9401041269302368,
+      "pos_frac": 1.0,
+      "hits": 6,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 2969,
+      "first_idx": 141,
+      "confirm_idx": 145,
+      "pos": [
+        886.2161865234375,
+        292.6756896972656
+      ],
+      "bbox": [
+        877,
+        289,
+        895,
+        298
+      ],
+      "side_px": 12.727922061357855,
+      "cls_prob": 0.987251341342926,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 146,
+      "pos": [
+        1024.8878515038325,
+        665.5384036737711
+      ],
+      "bbox": [
+        984,
+        627,
+        1065,
+        703
+      ],
+      "side_px": 80.47971365686908,
+      "yolo_conf": 0.39317989349365234
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 147,
+      "pos": [
+        1048.9872525595702,
+        709.384570564596
+      ],
+      "bbox": [
+        1006,
+        668,
+        1091,
+        750
+      ],
+      "side_px": 85.31592688137187,
+      "yolo_conf": 0.39317989349365234
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 148,
+      "pos": [
+        1092.2082294371678,
+        785.5649026309188
+      ],
+      "bbox": [
+        1044,
+        739,
+        1139,
+        832
+      ],
+      "side_px": 94.42506936707741,
+      "yolo_conf": 0.39317989349365234
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 149,
+      "pos": [
+        1126.0998034148852,
+        844.5634995860685
+      ],
+      "bbox": [
+        1075,
+        793,
+        1176,
+        895
+      ],
+      "side_px": 102.42868985646044,
+      "yolo_conf": 0.39317989349365234
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 150,
+      "pos": [
+        1165.1585412595496,
+        912.5309832547108
+      ],
+      "bbox": [
+        1109,
+        855,
+        1220,
+        969
+      ],
+      "side_px": 113.7300027715005,
+      "yolo_conf": 0.39317989349365234
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 151,
+      "pos": [
+        1236.3661970945677,
+        1034.5816141213907
+      ],
+      "bbox": [
+        1172,
+        966,
+        1300,
+        1102
+      ],
+      "side_px": 135.7499437901305,
+      "yolo_conf": 0.39317989349365234
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 160,
+      "pos": [
+        109.05023956298828,
+        268.22434997558594
+      ],
+      "bbox": [
+        91,
+        233,
+        126,
+        302
+      ],
+      "side_px": 68.75039672851562,
+      "yolo_conf": 0.39162182807922363
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 161,
+      "pos": [
+        101.13000755221046,
+        294.2549309593494
+      ],
+      "bbox": [
+        83,
+        257,
+        118,
+        331
+      ],
+      "side_px": 73.79692226752348,
+      "yolo_conf": 0.39162182807922363
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 162,
+      "pos": [
+        92.17803083105761,
+        323.44718569040424
+      ],
+      "bbox": [
+        74,
+        283,
+        109,
+        363
+      ],
+      "side_px": 79.53705916885514,
+      "yolo_conf": 0.39162182807922363
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 163,
+      "pos": [
+        76.71659799550136,
+        371.12557092512816
+      ],
+      "bbox": [
+        59,
+        326,
+        94,
+        416
+      ],
+      "side_px": 89.8221836251276,
+      "yolo_conf": 0.39162182807922363
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 164,
+      "pos": [
+        65.23398502550606,
+        406.3130615449338
+      ],
+      "bbox": [
+        47,
+        357,
+        82,
+        455
+      ],
+      "side_px": 98.03954972710437,
+      "yolo_conf": 0.39162182807922363
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 165,
+      "pos": [
+        52.61573686329847,
+        445.8288094441117
+      ],
+      "bbox": [
+        35,
+        392,
+        69,
+        499
+      ],
+      "side_px": 107.49477691527426,
+      "yolo_conf": 0.39162182807922363
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 166,
+      "pos": [
+        30.113596406464566,
+        513.4488520326154
+      ],
+      "bbox": [
+        13,
+        451,
+        46,
+        575
+      ],
+      "side_px": 124.69918232319458,
+      "yolo_conf": 0.39162182807922363
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 167,
+      "pos": [
+        11.954629228615937,
+        565.2832000946063
+      ],
+      "bbox": [
+        -3,
+        495,
+        27,
+        634
+      ],
+      "side_px": 138.93184934739566,
+      "yolo_conf": 0.39162182807922363
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 176,
+      "pos": [
+        753.1170349121094,
+        57.31749725341797
+      ],
+      "bbox": [
+        743,
+        51,
+        762,
+        63
+      ],
+      "side_px": 19.69317626953125,
+      "yolo_conf": 0.7128246426582336
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 177,
+      "pos": [
+        768.5077378858866,
+        80.06776972299039
+      ],
+      "bbox": [
+        758,
+        73,
+        779,
+        86
+      ],
+      "side_px": 20.9877371404458,
+      "yolo_conf": 0.7128246426582336
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 178,
+      "pos": [
+        780.0325414620122,
+        97.17362531245949
+      ],
+      "bbox": [
+        769,
+        90,
+        790,
+        104
+      ],
+      "side_px": 21.93376557978388,
+      "yolo_conf": 0.7128246426582336
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 179,
+      "pos": [
+        799.5087927563325,
+        125.59250386100798
+      ],
+      "bbox": [
+        787,
+        117,
+        811,
+        133
+      ],
+      "side_px": 23.576568228039264,
+      "yolo_conf": 0.7128246426582336
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 180,
+      "pos": [
+        813.0173344281955,
+        144.44418001920684
+      ],
+      "bbox": [
+        800,
+        136,
+        825,
+        152
+      ],
+      "side_px": 24.832016383492373,
+      "yolo_conf": 0.7128246426582336
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 5900,
+      "first_idx": 177,
+      "confirm_idx": 181,
+      "pos": [
+        473.4476318359375,
+        494.8571472167969
+      ],
+      "bbox": [
+        468,
+        478,
+        478,
+        508
+      ],
+      "side_px": 20.0,
+      "cls_prob": 0.9787290573120118,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 181,
+      "pos": [
+        828.1709771507785,
+        164.56536689105747
+      ],
+      "bbox": [
+        815,
+        155,
+        841,
+        173
+      ],
+      "side_px": 26.21981769672368,
+      "yolo_conf": 0.7128246426582336
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 182,
+      "pos": [
+        852.1164651347235,
+        200.00685534316835
+      ],
+      "bbox": [
+        837,
+        190,
+        866,
+        209
+      ],
+      "side_px": 28.578077575819748,
+      "yolo_conf": 0.7128246426582336
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 183,
+      "pos": [
+        868.7105580317465,
+        223.83310756691097
+      ],
+      "bbox": [
+        853,
+        213,
+        883,
+        234
+      ],
+      "side_px": 30.35008491317035,
+      "yolo_conf": 0.7128246426582336
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 184,
+      "pos": [
+        892.7427673339844,
+        248.8308334350586
+      ],
+      "bbox": [
+        876,
+        236,
+        908,
+        261
+      ],
+      "side_px": 32.41082763671875,
+      "yolo_conf": 0.8572341799736023
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 184,
+      "pos": [
+        897.1868591308594,
+        422.0250549316406
+      ],
+      "bbox": [
+        879,
+        416,
+        914,
+        427
+      ],
+      "side_px": 34.62005615234375,
+      "yolo_conf": 0.47751298546791077
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 6379,
+      "first_idx": 183,
+      "confirm_idx": 185,
+      "pos": [
+        926.9043579101562,
+        299.3101501464844
+      ],
+      "bbox": [
+        906,
+        285,
+        941,
+        311
+      ],
+      "side_px": 30.166206257996713,
+      "cls_prob": 0.9925200939178467,
+      "pos_frac": 1.0,
+      "hits": 3,
+      "yolo_boosted": true
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 185,
+      "pos": [
+        937.3682545026293,
+        497.71494278895034
+      ],
+      "bbox": [
+        918,
+        491,
+        956,
+        504
+      ],
+      "side_px": 38.34936559947732,
+      "yolo_conf": 0.47751298546791077
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 186,
+      "pos": [
+        967.1598547494705,
+        557.2993230884173
+      ],
+      "bbox": [
+        946,
+        550,
+        987,
+        564
+      ],
+      "side_px": 41.23745700361815,
+      "yolo_conf": 0.47751298546791077
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 187,
+      "pos": [
+        1018.2457762164458,
+        660.3545354790385
+      ],
+      "bbox": [
+        995,
+        651,
+        1041,
+        669
+      ],
+      "side_px": 46.472610452336426,
+      "yolo_conf": 0.47751298546791077
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 188,
+      "pos": [
+        1057.4697418728929,
+        742.1533390667564
+      ],
+      "bbox": [
+        1032,
+        731,
+        1082,
+        752
+      ],
+      "side_px": 50.63571088964477,
+      "yolo_conf": 0.47751298546791077
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 189,
+      "pos": [
+        1036.9811346773217,
+        489.19431905137026
+      ],
+      "bbox": [
+        1011,
+        465,
+        1062,
+        512
+      ],
+      "side_px": 51.5535353562359,
+      "yolo_conf": 0.8572341799736023
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 189,
+      "pos": [
+        1103.754645206414,
+        838.0976820898475
+      ],
+      "bbox": [
+        1075,
+        825,
+        1131,
+        850
+      ],
+      "side_px": 55.70736406252786,
+      "yolo_conf": 0.47751298546791077
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 190,
+      "pos": [
+        1088.5346127998446,
+        579.4745732743304
+      ],
+      "bbox": [
+        1058,
+        551,
+        1118,
+        607
+      ],
+      "side_px": 59.503542546053495,
+      "yolo_conf": 0.8572341799736023
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 190,
+      "pos": [
+        1188.8423769597925,
+        1016.1448688228153
+      ],
+      "bbox": [
+        1156,
+        1000,
+        1221,
+        1032
+      ],
+      "side_px": 65.35481902518245,
+      "yolo_conf": 0.47751298546791077
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 6598,
+      "first_idx": 186,
+      "confirm_idx": 191,
+      "pos": [
+        566.7123413085938,
+        378.6164245605469
+      ],
+      "bbox": [
+        563,
+        369,
+        576,
+        389
+      ],
+      "side_px": 16.1245154965971,
+      "cls_prob": 0.9423798620700836,
+      "pos_frac": 1.0,
+      "hits": 6,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 6651,
+      "first_idx": 187,
+      "confirm_idx": 191,
+      "pos": [
+        477.491455078125,
+        380.9871826171875
+      ],
+      "bbox": [
+        467,
+        372,
+        490,
+        388
+      ],
+      "side_px": 19.183326093250876,
+      "cls_prob": 0.9999820232391358,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 191,
+      "pos": [
+        1129.1681439188164,
+        647.5787167202541
+      ],
+      "bbox": [
+        1096,
+        615,
+        1162,
+        679
+      ],
+      "side_px": 66.2277323735791,
+      "yolo_conf": 0.8572341799736023
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 191,
+      "pos": [
+        1262.6914220242725,
+        1163.3643124059265
+      ],
+      "bbox": [
+        1225,
+        1143,
+        1299,
+        1182
+      ],
+      "side_px": 74.02455779593174,
+      "yolo_conf": 0.47751298546791077
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 7013,
+      "first_idx": 190,
+      "confirm_idx": 192,
+      "pos": [
+        919.6046752929688,
+        312.5348815917969
+      ],
+      "bbox": [
+        905,
+        304,
+        932,
+        321
+      ],
+      "side_px": 21.42428528562855,
+      "cls_prob": 0.9601030151049296,
+      "pos_frac": 1.0,
+      "hits": 3,
+      "yolo_boosted": true
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 196,
+      "pos": [
+        1031.8034997489376,
+        503.3905494668428
+      ],
+      "bbox": [
+        1019,
+        493,
+        1043,
+        513
+      ],
+      "side_px": 24.02733208031725,
+      "yolo_conf": 0.6083582639694214
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 197,
+      "pos": [
+        1065.5963267433185,
+        563.9050977326415
+      ],
+      "bbox": [
+        1052,
+        552,
+        1078,
+        574
+      ],
+      "side_px": 26.42793602090933,
+      "yolo_conf": 0.6083582639694214
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 198,
+      "pos": [
+        1128.163276793193,
+        673.8494962188502
+      ],
+      "bbox": [
+        1112,
+        660,
+        1143,
+        687
+      ],
+      "side_px": 31.097388494321876,
+      "yolo_conf": 0.6083582639694214
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 199,
+      "pos": [
+        1179.9371496752349,
+        763.1332086794924
+      ],
+      "bbox": [
+        1162,
+        747,
+        1197,
+        779
+      ],
+      "side_px": 35.14492791493012,
+      "yolo_conf": 0.6083582639694214
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 8198,
+      "first_idx": 205,
+      "confirm_idx": 208,
+      "pos": [
+        963.3297729492188,
+        428.5212707519531
+      ],
+      "bbox": [
+        956,
+        420,
+        973,
+        437
+      ],
+      "side_px": 17.0,
+      "cls_prob": 0.9370325058698654,
+      "pos_frac": 1.0,
+      "hits": 4,
+      "yolo_boosted": true
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 208,
+      "pos": [
+        904.9127197265625,
+        733.4613952636719
+      ],
+      "bbox": [
+        878,
+        702,
+        931,
+        764
+      ],
+      "side_px": 61.76934814453125,
+      "yolo_conf": 0.8229912519454956
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 209,
+      "pos": [
+        974.2115943867695,
+        913.1766507875584
+      ],
+      "bbox": [
+        941,
+        871,
+        1007,
+        954
+      ],
+      "side_px": 83.0570922525734,
+      "yolo_conf": 0.8229912519454956
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 210,
+      "pos": [
+        1036.1167736421116,
+        1075.7221924992489
+      ],
+      "bbox": [
+        996,
+        1023,
+        1075,
+        1127
+      ],
+      "side_px": 104.55458553281733,
+      "yolo_conf": 0.8229912519454956
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 210,
+      "pos": [
+        1063.4641942725561,
+        606.782300007377
+      ],
+      "bbox": [
+        1053,
+        598,
+        1073,
+        614
+      ],
+      "side_px": 19.64817314861466,
+      "yolo_conf": 0.4416234791278839
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 211,
+      "pos": [
+        1052.8161914730404,
+        1197.2623048195546
+      ],
+      "bbox": [
+        1014,
+        1144,
+        1091,
+        1250
+      ],
+      "side_px": 105.59801537966132,
+      "yolo_conf": 0.8229912519454956
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 211,
+      "pos": [
+        1036.9328871878533,
+        676.7435196416327
+      ],
+      "bbox": [
+        1028,
+        669,
+        1045,
+        684
+      ],
+      "side_px": 17.152330313442462,
+      "yolo_conf": 0.4416234791278839
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 212,
+      "pos": [
+        1138.5265844312257,
+        1435.748614738718
+      ],
+      "bbox": [
+        1091,
+        1365,
+        1185,
+        1505
+      ],
+      "side_px": 139.5312175356819,
+      "yolo_conf": 0.8229912519454956
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 212,
+      "pos": [
+        1089.4353115123558,
+        780.9052499531128
+      ],
+      "bbox": [
+        1079,
+        771,
+        1099,
+        790
+      ],
+      "side_px": 19.623314936212637,
+      "yolo_conf": 0.4416234791278839
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 213,
+      "pos": [
+        1256.9735128873663,
+        1764.2507164346903
+      ],
+      "bbox": [
+        1196,
+        1667,
+        1317,
+        1861
+      ],
+      "side_px": 193.7137565743203,
+      "yolo_conf": 0.8229912519454956
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 213,
+      "pos": [
+        1154.2455420253134,
+        909.763063503138
+      ],
+      "bbox": [
+        1142,
+        898,
+        1165,
+        921
+      ],
+      "side_px": 22.82999111111576,
+      "yolo_conf": 0.4416234791278839
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 214,
+      "pos": [
+        1538.5004686906118,
+        2544.723575953334
+      ],
+      "bbox": [
+        1438,
+        2366,
+        1638,
+        2723
+      ],
+      "side_px": 357.4266227752273,
+      "yolo_conf": 0.8229912519454956
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 214,
+      "pos": [
+        1282.4078978775158,
+        1163.801872627527
+      ],
+      "bbox": [
+        1267,
+        1147,
+        1297,
+        1179
+      ],
+      "side_px": 32.018382354458026,
+      "yolo_conf": 0.4416234791278839
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 215,
+      "pos": [
+        1889.1494948742447,
+        3503.4025007633722
+      ],
+      "bbox": [
+        1728,
+        3188,
+        2050,
+        3818
+      ],
+      "side_px": 630.7225339084844,
+      "yolo_conf": 0.8229912519454956
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 215,
+      "pos": [
+        1401.0327326920515,
+        1392.3911430061048
+      ],
+      "bbox": [
+        1382,
+        1371,
+        1419,
+        1413
+      ],
+      "side_px": 42.193438912039255,
+      "yolo_conf": 0.4416234791278839
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 216,
+      "pos": [
+        574.8988952636719,
+        17.75857973098755
+      ],
+      "bbox": [
+        567,
+        9,
+        581,
+        25
+      ],
+      "side_px": 16.00019359588623,
+      "yolo_conf": 0.2894657850265503
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 217,
+      "pos": [
+        574.9885129777349,
+        37.634579857844635
+      ],
+      "bbox": [
+        567,
+        29,
+        582,
+        46
+      ],
+      "side_px": 17.077455732865783,
+      "yolo_conf": 0.2894657850265503
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 218,
+      "pos": [
+        578.6690515663145,
+        57.24851263100777
+      ],
+      "bbox": [
+        571,
+        48,
+        586,
+        66
+      ],
+      "side_px": 18.185240829793493,
+      "yolo_conf": 0.2894657850265503
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 219,
+      "pos": [
+        588.8605160785842,
+        88.72185903257378
+      ],
+      "bbox": [
+        580,
+        78,
+        596,
+        98
+      ],
+      "side_px": 20.14356993042584,
+      "yolo_conf": 0.2894657850265503
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 220,
+      "pos": [
+        594.8015405322701,
+        110.07724816292223
+      ],
+      "bbox": [
+        586,
+        99,
+        603,
+        120
+      ],
+      "side_px": 21.835511307027303,
+      "yolo_conf": 0.2894657850265503
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 221,
+      "pos": [
+        600.1573208382088,
+        135.67677387892917
+      ],
+      "bbox": [
+        591,
+        123,
+        609,
+        147
+      ],
+      "side_px": 23.7079620423155,
+      "yolo_conf": 0.2894657850265503
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 222,
+      "pos": [
+        610.3669518400941,
+        178.83886152801458
+      ],
+      "bbox": [
+        600,
+        165,
+        620,
+        192
+      ],
+      "side_px": 26.99572096155032,
+      "yolo_conf": 0.2894657850265503
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 223,
+      "pos": [
+        618.67056789158,
+        209.9153977826005
+      ],
+      "bbox": [
+        608,
+        195,
+        629,
+        224
+      ],
+      "side_px": 29.614170296606716,
+      "yolo_conf": 0.2894657850265503
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 224,
+      "pos": [
+        628.820556640625,
+        242.98086547851562
+      ],
+      "bbox": [
+        618,
+        228,
+        639,
+        257
+      ],
+      "side_px": 28.42578125,
+      "yolo_conf": 0.35159558057785034
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 225,
+      "pos": [
+        638.2627931776215,
+        280.1365361705656
+      ],
+      "bbox": [
+        626,
+        264,
+        649,
+        295
+      ],
+      "side_px": 31.653465268806713,
+      "yolo_conf": 0.35159558057785034
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 10092,
+      "first_idx": 224,
+      "confirm_idx": 226,
+      "pos": [
+        653.374267578125,
+        348.119873046875
+      ],
+      "bbox": [
+        640,
+        320,
+        667,
+        366
+      ],
+      "side_px": 35.24202037341219,
+      "cls_prob": 0.9695079922676086,
+      "pos_frac": 1.0,
+      "hits": 3,
+      "yolo_boosted": true
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 228,
+      "pos": [
+        691.0275992852737,
+        481.6573739891912
+      ],
+      "bbox": [
+        674,
+        455,
+        707,
+        507
+      ],
+      "side_px": 52.25938878913115,
+      "yolo_conf": 0.35159558057785034
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 229,
+      "pos": [
+        710.174902792159,
+        551.7577513817341
+      ],
+      "bbox": [
+        692,
+        521,
+        728,
+        582
+      ],
+      "side_px": 60.86578625437744,
+      "yolo_conf": 0.35159558057785034
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 230,
+      "pos": [
+        732.7177687158717,
+        633.9402174731993
+      ],
+      "bbox": [
+        712,
+        598,
+        753,
+        669
+      ],
+      "side_px": 71.85763145833891,
+      "yolo_conf": 0.35159558057785034
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 231,
+      "pos": [
+        759.2796788852668,
+        729.607692485847
+      ],
+      "bbox": [
+        735,
+        686,
+        782,
+        772
+      ],
+      "side_px": 85.59799265224478,
+      "yolo_conf": 0.35159558057785034
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 232,
+      "pos": [
+        636.9997863769531,
+        647.9712219238281
+      ],
+      "bbox": [
+        622,
+        629,
+        651,
+        666
+      ],
+      "side_px": 37.18682861328125,
+      "yolo_conf": 0.708942174911499
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 233,
+      "pos": [
+        654.1544089601961,
+        746.6369601060002
+      ],
+      "bbox": [
+        637,
+        724,
+        670,
+        768
+      ],
+      "side_px": 44.66162112672782,
+      "yolo_conf": 0.708942174911499
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 234,
+      "pos": [
+        676.1775864859721,
+        866.1056052901098
+      ],
+      "bbox": [
+        657,
+        838,
+        694,
+        893
+      ],
+      "side_px": 54.61535573698666,
+      "yolo_conf": 0.708942174911499
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 235,
+      "pos": [
+        718.1010912691319,
+        1111.5619821492974
+      ],
+      "bbox": [
+        694,
+        1072,
+        741,
+        1151
+      ],
+      "side_px": 79.09438832092678,
+      "yolo_conf": 0.708942174911499
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 236,
+      "pos": [
+        757.3434306111958,
+        1332.1855028480193
+      ],
+      "bbox": [
+        729,
+        1280,
+        785,
+        1384
+      ],
+      "side_px": 104.16999232412263,
+      "yolo_conf": 0.708942174911499
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 237,
+      "pos": [
+        811.0254117774907,
+        1623.5496390069102
+      ],
+      "bbox": [
+        776,
+        1552,
+        845,
+        1694
+      ],
+      "side_px": 142.31867679971674,
+      "yolo_conf": 0.708942174911499
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 238,
+      "pos": [
+        889.7036485287622,
+        2043.044038502908
+      ],
+      "bbox": [
+        844,
+        1938,
+        934,
+        2147
+      ],
+      "side_px": 208.6943986037818,
+      "yolo_conf": 0.708942174911499
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 239,
+      "pos": [
+        801.76981507159,
+        1592.6787573970587
+      ],
+      "bbox": [
+        770,
+        1535,
+        833,
+        1649
+      ],
+      "side_px": 113.95215825440096,
+      "yolo_conf": 0.708942174911499
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 240,
+      "pos": [
+        770.5872192382812,
+        988.7796325683594
+      ],
+      "bbox": [
+        758,
+        965,
+        782,
+        1011
+      ],
+      "side_px": 46.21136474609375,
+      "yolo_conf": 0.6396836638450623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 241,
+      "pos": [
+        812.5994092793998,
+        1170.6615135950572
+      ],
+      "bbox": [
+        798,
+        1140,
+        826,
+        1200
+      ],
+      "side_px": 59.41674689897354,
+      "yolo_conf": 0.6396836638450623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 242,
+      "pos": [
+        867.7279291650584,
+        1403.5832147756148
+      ],
+      "bbox": [
+        850,
+        1364,
+        885,
+        1442
+      ],
+      "side_px": 78.54998642071496,
+      "yolo_conf": 0.6396836638450623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 243,
+      "pos": [
+        986.5885532671746,
+        1917.8667276481342
+      ],
+      "bbox": [
+        960,
+        1853,
+        1012,
+        1982
+      ],
+      "side_px": 129.21427876591224,
+      "yolo_conf": 0.6396836638450623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 244,
+      "pos": [
+        1123.089891935373,
+        2488.1002465481474
+      ],
+      "bbox": [
+        1085,
+        2386,
+        1160,
+        2589
+      ],
+      "side_px": 202.82401212226796,
+      "yolo_conf": 0.6396836638450623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 245,
+      "pos": [
+        1349.860924113385,
+        3438.5676031940593
+      ],
+      "bbox": [
+        1289,
+        3257,
+        1410,
+        3619
+      ],
+      "side_px": 361.61009042287515,
+      "yolo_conf": 0.6396836638450623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 246,
+      "pos": [
+        2270.483439806717,
+        7292.025297134789
+      ],
+      "bbox": [
+        2060,
+        6558,
+        2480,
+        8025
+      ],
+      "side_px": 1467.3840572297477,
+      "yolo_conf": 0.6396836638450623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 247,
+      "pos": [
+        5998.065844893281,
+        22976.897633254124
+      ],
+      "bbox": [
+        4384,
+        16611,
+        7612,
+        29342
+      ],
+      "side_px": 12730.547896475371,
+      "yolo_conf": 0.6396836638450623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 248,
+      "pos": [
+        809.2750854492188,
+        703.7774658203125
+      ],
+      "bbox": [
+        800,
+        685,
+        817,
+        721
+      ],
+      "side_px": 35.840087890625,
+      "yolo_conf": 0.685370922088623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 248,
+      "pos": [
+        490.6083526611328,
+        156.48262786865234
+      ],
+      "bbox": [
+        479,
+        151,
+        502,
+        161
+      ],
+      "side_px": 22.800018310546875,
+      "yolo_conf": 0.3553435802459717
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 249,
+      "pos": [
+        865.9361772544745,
+        877.6855926493344
+      ],
+      "bbox": [
+        854,
+        853,
+        876,
+        901
+      ],
+      "side_px": 47.85166284466163,
+      "yolo_conf": 0.685370922088623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 249,
+      "pos": [
+        494.12661783319675,
+        199.28569066158457
+      ],
+      "bbox": [
+        481,
+        193,
+        506,
+        204
+      ],
+      "side_px": 24.475027153409144,
+      "yolo_conf": 0.3553435802459717
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 250,
+      "pos": [
+        917.6224955047924,
+        1030.016166221304
+      ],
+      "bbox": [
+        904,
+        999,
+        931,
+        1060
+      ],
+      "side_px": 60.13017950338087,
+      "yolo_conf": 0.685370922088623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 250,
+      "pos": [
+        497.11430241328765,
+        230.6466443662892
+      ],
+      "bbox": [
+        484,
+        224,
+        509,
+        236
+      ],
+      "side_px": 25.73177357780554,
+      "yolo_conf": 0.3553435802459717
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 251,
+      "pos": [
+        982.502355929631,
+        1223.8044920168486
+      ],
+      "bbox": [
+        965,
+        1185,
+        999,
+        1262
+      ],
+      "side_px": 77.55925514885234,
+      "yolo_conf": 0.685370922088623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 251,
+      "pos": [
+        500.96557740229326,
+        266.9402817987266
+      ],
+      "bbox": [
+        487,
+        260,
+        514,
+        273
+      ],
+      "side_px": 27.122732688911242,
+      "yolo_conf": 0.3553435802459717
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 12567,
+      "first_idx": 250,
+      "confirm_idx": 252,
+      "pos": [
+        506.3616027832031,
+        308.0
+      ],
+      "bbox": [
+        493,
+        298,
+        517,
+        315
+      ],
+      "side_px": 20.199009876724155,
+      "cls_prob": 0.9743168552716573,
+      "pos_frac": 1.0,
+      "hits": 3,
+      "yolo_boosted": true
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 252,
+      "pos": [
+        1066.2380517972579,
+        1476.0610061594489
+      ],
+      "bbox": [
+        1044,
+        1424,
+        1087,
+        1527
+      ],
+      "side_px": 103.45550329735352,
+      "yolo_conf": 0.685370922088623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 253,
+      "pos": [
+        1250.544297219684,
+        2039.2896121855354
+      ],
+      "bbox": [
+        1215,
+        1951,
+        1285,
+        2126
+      ],
+      "side_px": 174.83197066428647,
+      "yolo_conf": 0.685370922088623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 254,
+      "pos": [
+        1459.51263790814,
+        2669.1123897140124
+      ],
+      "bbox": [
+        1406,
+        2530,
+        1512,
+        2807
+      ],
+      "side_px": 277.6665275013911,
+      "yolo_conf": 0.685370922088623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 255,
+      "pos": [
+        2085.6699998403374,
+        4572.6339940103
+      ],
+      "bbox": [
+        1953,
+        4208,
+        2217,
+        4936
+      ],
+      "side_px": 727.4336757684396,
+      "yolo_conf": 0.685370922088623
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 12715,
+      "first_idx": 252,
+      "confirm_idx": 256,
+      "pos": [
+        310.05126953125,
+        470.974365234375
+      ],
+      "bbox": [
+        303,
+        465,
+        320,
+        477
+      ],
+      "side_px": 14.2828568570857,
+      "cls_prob": 0.9422548174858093,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 259,
+      "pos": [
+        567.830004304354,
+        1022.6924799070291
+      ],
+      "bbox": [
+        544,
+        1005,
+        591,
+        1039
+      ],
+      "side_px": 46.34192139686502,
+      "yolo_conf": 0.6492051482200623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 260,
+      "pos": [
+        582.9222259799039,
+        1210.4349132920584
+      ],
+      "bbox": [
+        556,
+        1188,
+        609,
+        1232
+      ],
+      "side_px": 52.71086757559908,
+      "yolo_conf": 0.6492051482200623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 261,
+      "pos": [
+        603.6528373149829,
+        1458.1712585493526
+      ],
+      "bbox": [
+        572,
+        1428,
+        634,
+        1487
+      ],
+      "side_px": 61.49853512858738,
+      "yolo_conf": 0.6492051482200623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 262,
+      "pos": [
+        652.6911272252823,
+        2000.5284928559277
+      ],
+      "bbox": [
+        612,
+        1951,
+        693,
+        2049
+      ],
+      "side_px": 98.13939180982447,
+      "yolo_conf": 0.6492051482200623
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 263,
+      "pos": [
+        705.8289978615558,
+        2591.0813226291184
+      ],
+      "bbox": [
+        653,
+        2514,
+        757,
+        2667
+      ],
+      "side_px": 153.11778081124612,
+      "yolo_conf": 0.6492051482200623
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 14361,
+      "first_idx": 271,
+      "confirm_idx": 275,
+      "pos": [
+        716.7686767578125,
+        764.6903686523438
+      ],
+      "bbox": [
+        707,
+        752,
+        730,
+        781
+      ],
+      "side_px": 25.826343140289914,
+      "cls_prob": 0.9912164449691773,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 15030,
+      "first_idx": 278,
+      "confirm_idx": 282,
+      "pos": [
+        717.0484619140625,
+        880.0484619140625
+      ],
+      "bbox": [
+        706,
+        868,
+        726,
+        894
+      ],
+      "side_px": 22.80350850198276,
+      "cls_prob": 0.9738321304321289,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 15083,
+      "first_idx": 278,
+      "confirm_idx": 282,
+      "pos": [
+        654.6507568359375,
+        586.2437133789062
+      ],
+      "bbox": [
+        644,
+        565,
+        666,
+        609
+      ],
+      "side_px": 31.11269837220809,
+      "cls_prob": 0.9664733648300171,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 15213,
+      "first_idx": 280,
+      "confirm_idx": 284,
+      "pos": [
+        746.0289916992188,
+        940.8985595703125
+      ],
+      "bbox": [
+        740,
+        930,
+        754,
+        955
+      ],
+      "side_px": 18.708286933869708,
+      "cls_prob": 0.9842187285423278,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 15235,
+      "first_idx": 280,
+      "confirm_idx": 284,
+      "pos": [
+        567.2520141601562,
+        351.59600830078125
+      ],
+      "bbox": [
+        561,
+        339,
+        576,
+        368
+      ],
+      "side_px": 20.85665361461421,
+      "cls_prob": 0.9796053886413574,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 15239,
+      "first_idx": 280,
+      "confirm_idx": 284,
+      "pos": [
+        593.5473022460938,
+        417.229736328125
+      ],
+      "bbox": [
+        587,
+        411,
+        601,
+        424
+      ],
+      "side_px": 13.490737563232042,
+      "cls_prob": 0.963304054737091,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 17158,
+      "first_idx": 299,
+      "confirm_idx": 303,
+      "pos": [
+        432.38043212890625,
+        500.4456481933594
+      ],
+      "bbox": [
+        427,
+        491,
+        440,
+        513
+      ],
+      "side_px": 16.911534525287763,
+      "cls_prob": 0.9526910185813904,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 304,
+      "pos": [
+        524.9012451171875,
+        773.4053649902344
+      ],
+      "bbox": [
+        499,
+        748,
+        550,
+        798
+      ],
+      "side_px": 50.7236328125,
+      "yolo_conf": 0.5506490468978882
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 305,
+      "pos": [
+        534.2897763634192,
+        895.0094590068701
+      ],
+      "bbox": [
+        506,
+        864,
+        562,
+        925
+      ],
+      "side_px": 61.4520305355984,
+      "yolo_conf": 0.5506490468978882
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 17435,
+      "first_idx": 302,
+      "confirm_idx": 306,
+      "pos": [
+        539.1755981445312,
+        472.56610107421875
+      ],
+      "bbox": [
+        528,
+        448,
+        551,
+        499
+      ],
+      "side_px": 34.249087579087416,
+      "cls_prob": 0.9695226192474365,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 306,
+      "pos": [
+        553.9697146267154,
+        1136.8092104937014
+      ],
+      "bbox": [
+        519,
+        1093,
+        587,
+        1180
+      ],
+      "side_px": 86.90979906437929,
+      "yolo_conf": 0.5506490468978882
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 17549,
+      "first_idx": 303,
+      "confirm_idx": 307,
+      "pos": [
+        436.0421142578125,
+        254.5157928466797
+      ],
+      "bbox": [
+        431,
+        242,
+        439,
+        266
+      ],
+      "side_px": 16.0,
+      "cls_prob": 0.9757643938064575,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 307,
+      "pos": [
+        570.7804771871037,
+        1361.8541930492606
+      ],
+      "bbox": [
+        531,
+        1304,
+        610,
+        1419
+      ],
+      "side_px": 114.47256189808354,
+      "yolo_conf": 0.5506490468978882
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 17592,
+      "first_idx": 304,
+      "confirm_idx": 308,
+      "pos": [
+        527.8756103515625,
+        347.7512512207031
+      ],
+      "bbox": [
+        516,
+        333,
+        535,
+        361
+      ],
+      "side_px": 23.065125189341593,
+      "cls_prob": 0.9725052356719971,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 308,
+      "pos": [
+        591.4573185042931,
+        1658.989215014419
+      ],
+      "bbox": [
+        544,
+        1580,
+        638,
+        1737
+      ],
+      "side_px": 157.22847625385657,
+      "yolo_conf": 0.5506490468978882
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 17721,
+      "first_idx": 305,
+      "confirm_idx": 309,
+      "pos": [
+        532.901123046875,
+        383.9961853027344
+      ],
+      "bbox": [
+        522,
+        363,
+        540,
+        410
+      ],
+      "side_px": 29.086079144497972,
+      "cls_prob": 0.9580592751502991,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 309,
+      "pos": [
+        621.02909966386,
+        2079.7566228883734
+      ],
+      "bbox": [
+        563,
+        1964,
+        678,
+        2194
+      ],
+      "side_px": 229.81715997244464,
+      "yolo_conf": 0.5506490468978882
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 17750,
+      "first_idx": 306,
+      "confirm_idx": 310,
+      "pos": [
+        440.7213134765625,
+        618.5081787109375
+      ],
+      "bbox": [
+        438,
+        611,
+        445,
+        627
+      ],
+      "side_px": 10.583005244258363,
+      "cls_prob": 0.9440183758735656,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 17802,
+      "first_idx": 306,
+      "confirm_idx": 310,
+      "pos": [
+        531.4938354492188,
+        323.6954650878906
+      ],
+      "bbox": [
+        519,
+        295,
+        538,
+        342
+      ],
+      "side_px": 29.88310559496787,
+      "cls_prob": 0.9785483956336976,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 310,
+      "pos": [
+        698.8001745178422,
+        3096.085196034774
+      ],
+      "bbox": [
+        613,
+        2869,
+        784,
+        3322
+      ],
+      "side_px": 453.790099650143,
+      "yolo_conf": 0.5506490468978882
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 17874,
+      "first_idx": 307,
+      "confirm_idx": 311,
+      "pos": [
+        650.8283081054688,
+        657.6180419921875
+      ],
+      "bbox": [
+        644,
+        648,
+        659,
+        669
+      ],
+      "side_px": 17.74823934929885,
+      "cls_prob": 0.9791818022727966,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 17888,
+      "first_idx": 307,
+      "confirm_idx": 311,
+      "pos": [
+        601.2763671875,
+        401.9598083496094
+      ],
+      "bbox": [
+        592,
+        380,
+        609,
+        424
+      ],
+      "side_px": 30.5,
+      "cls_prob": 0.9939180493354798,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 311,
+      "pos": [
+        801.0420061701,
+        4489.161808503222
+      ],
+      "bbox": [
+        672,
+        4044,
+        929,
+        4933
+      ],
+      "side_px": 888.8554735636872,
+      "yolo_conf": 0.5506490468978882
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 17878,
+      "first_idx": 307,
+      "confirm_idx": 313,
+      "pos": [
+        453.624267578125,
+        523.8786010742188
+      ],
+      "bbox": [
+        447,
+        507,
+        461,
+        539
+      ],
+      "side_px": 23.0,
+      "cls_prob": 0.9775855422019959,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 18264,
+      "first_idx": 312,
+      "confirm_idx": 320,
+      "pos": [
+        568.089111328125,
+        582.474365234375
+      ],
+      "bbox": [
+        555,
+        558,
+        578,
+        607
+      ],
+      "side_px": 33.57082066318904,
+      "cls_prob": 0.9757728338241577,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 19324,
+      "first_idx": 323,
+      "confirm_idx": 327,
+      "pos": [
+        640.8905029296875,
+        677.4381103515625
+      ],
+      "bbox": [
+        635,
+        667,
+        650,
+        691
+      ],
+      "side_px": 18.973665961010276,
+      "cls_prob": 0.9670175909996033,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 352,
+      "pos": [
+        731.5195617675781,
+        163.8871307373047
+      ],
+      "bbox": [
+        722,
+        156,
+        740,
+        171
+      ],
+      "side_px": 17.32781982421875,
+      "yolo_conf": 0.6920900344848633
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 353,
+      "pos": [
+        752.0906936190082,
+        208.96311162913054
+      ],
+      "bbox": [
+        742,
+        200,
+        761,
+        217
+      ],
+      "side_px": 19.09715970397997,
+      "yolo_conf": 0.6920900344848633
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 21621,
+      "first_idx": 350,
+      "confirm_idx": 354,
+      "pos": [
+        453.15643310546875,
+        451.4692687988281
+      ],
+      "bbox": [
+        444,
+        439,
+        461,
+        464
+      ],
+      "side_px": 20.615528128088304,
+      "cls_prob": 0.9740893602371216,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 354,
+      "pos": [
+        767.6039872110352,
+        243.17150509292986
+      ],
+      "bbox": [
+        757,
+        233,
+        777,
+        252
+      ],
+      "side_px": 20.510737311691514,
+      "yolo_conf": 0.6920900344848633
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 355,
+      "pos": [
+        794.3959875504005,
+        301.7671354191625
+      ],
+      "bbox": [
+        782,
+        290,
+        805,
+        312
+      ],
+      "side_px": 23.0508817909124,
+      "yolo_conf": 0.6920900344848633
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 21931,
+      "first_idx": 354,
+      "confirm_idx": 356,
+      "pos": [
+        814.0323486328125,
+        347.7769775390625
+      ],
+      "bbox": [
+        805,
+        336,
+        825,
+        360
+      ],
+      "side_px": 21.908902300206645,
+      "cls_prob": 0.9993800123532613,
+      "pos_frac": 1.0,
+      "hits": 3,
+      "yolo_boosted": true
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 21793,
+      "first_idx": 352,
+      "confirm_idx": 358,
+      "pos": [
+        454.22784423828125,
+        751.6993408203125
+      ],
+      "bbox": [
+        446,
+        734,
+        465,
+        775
+      ],
+      "side_px": 27.910571473905726,
+      "cls_prob": 0.954339611530304,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 360,
+      "pos": [
+        953.6574096679688,
+        644.21630859375
+      ],
+      "bbox": [
+        939,
+        624,
+        967,
+        663
+      ],
+      "side_px": 39.326416015625,
+      "yolo_conf": 0.7506310939788818
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 361,
+      "pos": [
+        999.051029942241,
+        745.3874702787616
+      ],
+      "bbox": [
+        982,
+        721,
+        1015,
+        768
+      ],
+      "side_px": 47.10756999848775,
+      "yolo_conf": 0.7506310939788818
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 362,
+      "pos": [
+        999.5104486667481,
+        745.5485496459082
+      ],
+      "bbox": [
+        983,
+        723,
+        1015,
+        767
+      ],
+      "side_px": 44.76771403918008,
+      "yolo_conf": 0.7506310939788818
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 363,
+      "pos": [
+        1053.094562482027,
+        866.1580365365205
+      ],
+      "bbox": [
+        1034,
+        838,
+        1071,
+        893
+      ],
+      "side_px": 54.54864645005807,
+      "yolo_conf": 0.7506310939788818
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 364,
+      "pos": [
+        1106.0403567176927,
+        988.4580306280159
+      ],
+      "bbox": [
+        1084,
+        956,
+        1127,
+        1020
+      ],
+      "side_px": 63.28606242969636,
+      "yolo_conf": 0.7506310939788818
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 365,
+      "pos": [
+        1187.1955727763434,
+        1163.6363724231533
+      ],
+      "bbox": [
+        1161,
+        1123,
+        1212,
+        1203
+      ],
+      "side_px": 80.12410833676813,
+      "yolo_conf": 0.7506310939788818
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 366,
+      "pos": [
+        1278.829161108004,
+        1368.588071431127
+      ],
+      "bbox": [
+        1247,
+        1317,
+        1310,
+        1419
+      ],
+      "side_px": 101.42918175790373,
+      "yolo_conf": 0.7506310939788818
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 22344,
+      "first_idx": 359,
+      "confirm_idx": 367,
+      "pos": [
+        444.6933288574219,
+        243.06666564941406
+      ],
+      "bbox": [
+        440,
+        231,
+        452,
+        251
+      ],
+      "side_px": 16.0,
+      "cls_prob": 0.962553870677948,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 367,
+      "pos": [
+        1170.2366664635365,
+        1132.403627579969
+      ],
+      "bbox": [
+        1149,
+        1102,
+        1191,
+        1162
+      ],
+      "side_px": 60.512611945628805,
+      "yolo_conf": 0.7506310939788818
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 22412,
+      "first_idx": 360,
+      "confirm_idx": 368,
+      "pos": [
+        453.30255126953125,
+        374.28717041015625
+      ],
+      "bbox": [
+        449,
+        356,
+        462,
+        391
+      ],
+      "side_px": 21.330729007701542,
+      "cls_prob": 0.9730074644088745,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 22619,
+      "first_idx": 363,
+      "confirm_idx": 370,
+      "pos": [
+        454.75860595703125,
+        441.6293029785156
+      ],
+      "bbox": [
+        449,
+        423,
+        461,
+        454
+      ],
+      "side_px": 19.28730152198591,
+      "cls_prob": 0.969874382019043,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 22620,
+      "first_idx": 363,
+      "confirm_idx": 371,
+      "pos": [
+        446.67987060546875,
+        356.1554870605469
+      ],
+      "bbox": [
+        434,
+        341,
+        461,
+        369
+      ],
+      "side_px": 27.49545416973504,
+      "cls_prob": 0.9839908242225647,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 22972,
+      "first_idx": 368,
+      "confirm_idx": 375,
+      "pos": [
+        368.9909973144531,
+        398.1982116699219
+      ],
+      "bbox": [
+        364,
+        389,
+        377,
+        406
+      ],
+      "side_px": 14.866068747318506,
+      "cls_prob": 0.9761516690254212,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 23100,
+      "first_idx": 369,
+      "confirm_idx": 378,
+      "pos": [
+        360.81109619140625,
+        467.25
+      ],
+      "bbox": [
+        354,
+        456,
+        367,
+        487
+      ],
+      "side_px": 20.074859899884732,
+      "cls_prob": 0.9457927227020264,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 23445,
+      "first_idx": 374,
+      "confirm_idx": 381,
+      "pos": [
+        436.546875,
+        265.828125
+      ],
+      "bbox": [
+        427,
+        240,
+        448,
+        287
+      ],
+      "side_px": 31.416556144810016,
+      "cls_prob": 0.943095588684082,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 384,
+      "pos": [
+        309.4299621582031,
+        375.3079833984375
+      ],
+      "bbox": [
+        296,
+        362,
+        322,
+        387
+      ],
+      "side_px": 25.5445556640625,
+      "yolo_conf": 0.2524833083152771
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 385,
+      "pos": [
+        294.6842757201674,
+        455.940153066606
+      ],
+      "bbox": [
+        280,
+        440,
+        308,
+        471
+      ],
+      "side_px": 30.568606880286666,
+      "yolo_conf": 0.2524833083152771
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 386,
+      "pos": [
+        283.5482869070314,
+        519.7788919103698
+      ],
+      "bbox": [
+        269,
+        502,
+        298,
+        537
+      ],
+      "side_px": 35.2451965332948,
+      "yolo_conf": 0.2524833083152771
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 24183,
+      "first_idx": 383,
+      "confirm_idx": 387,
+      "pos": [
+        815.8067016601562,
+        437.71429443359375
+      ],
+      "bbox": [
+        812,
+        428,
+        822,
+        448
+      ],
+      "side_px": 14.142135623730951,
+      "cls_prob": 0.9866448640823364,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 387,
+      "pos": [
+        270.5754081310382,
+        594.9276212525695
+      ],
+      "bbox": [
+        255,
+        574,
+        285,
+        615
+      ],
+      "side_px": 41.04381972221029,
+      "yolo_conf": 0.2524833083152771
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 388,
+      "pos": [
+        244.9303272041344,
+        728.4207078413858
+      ],
+      "bbox": [
+        228,
+        701,
+        261,
+        754
+      ],
+      "side_px": 52.897643752996146,
+      "yolo_conf": 0.2524833083152771
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 389,
+      "pos": [
+        223.5228350774603,
+        839.8181107046904
+      ],
+      "bbox": [
+        205,
+        807,
+        241,
+        871
+      ],
+      "side_px": 63.856731849833295,
+      "yolo_conf": 0.2524833083152771
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 390,
+      "pos": [
+        198.34402093358258,
+        975.7008077655212
+      ],
+      "bbox": [
+        179,
+        936,
+        217,
+        1015
+      ],
+      "side_px": 78.61288540023554,
+      "yolo_conf": 0.2524833083152771
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 391,
+      "pos": [
+        147.46257866994586,
+        1240.5394510756312
+      ],
+      "bbox": [
+        126,
+        1184,
+        168,
+        1296
+      ],
+      "side_px": 111.88466397984894,
+      "yolo_conf": 0.2524833083152771
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 24589,
+      "first_idx": 387,
+      "confirm_idx": 392,
+      "pos": [
+        339.8666687011719,
+        820.8916625976562
+      ],
+      "bbox": [
+        333,
+        804,
+        346,
+        830
+      ],
+      "side_px": 18.384776310850235,
+      "cls_prob": 0.9527970671653747,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 24686,
+      "first_idx": 388,
+      "confirm_idx": 392,
+      "pos": [
+        420.9705810546875,
+        374.73529052734375
+      ],
+      "bbox": [
+        418,
+        369,
+        425,
+        384
+      ],
+      "side_px": 10.246950765959598,
+      "cls_prob": 0.9553932547569275,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 25223,
+      "first_idx": 394,
+      "confirm_idx": 398,
+      "pos": [
+        390.8617858886719,
+        683.7154541015625
+      ],
+      "bbox": [
+        388,
+        671,
+        397,
+        698
+      ],
+      "side_px": 15.588457268119896,
+      "cls_prob": 0.9756780982017517,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 25325,
+      "first_idx": 395,
+      "confirm_idx": 401,
+      "pos": [
+        643.5084228515625,
+        398.185546875
+      ],
+      "bbox": [
+        633,
+        382,
+        657,
+        417
+      ],
+      "side_px": 28.982753492378876,
+      "cls_prob": 0.9617674589157105,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 26316,
+      "first_idx": 406,
+      "confirm_idx": 410,
+      "pos": [
+        434.1666564941406,
+        679.6904907226562
+      ],
+      "bbox": [
+        429,
+        672,
+        440,
+        691
+      ],
+      "side_px": 14.45683229480096,
+      "cls_prob": 0.9729333281517029,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 26358,
+      "first_idx": 407,
+      "confirm_idx": 411,
+      "pos": [
+        436.6000061035156,
+        737.9378051757812
+      ],
+      "bbox": [
+        426,
+        719,
+        452,
+        756
+      ],
+      "side_px": 31.016124838541646,
+      "cls_prob": 0.9554286003112793,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 26419,
+      "first_idx": 407,
+      "confirm_idx": 413,
+      "pos": [
+        414.13482666015625,
+        775.8202514648438
+      ],
+      "bbox": [
+        409,
+        769,
+        420,
+        784
+      ],
+      "side_px": 12.84523257866513,
+      "cls_prob": 0.958915114402771,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 26329,
+      "first_idx": 407,
+      "confirm_idx": 414,
+      "pos": [
+        636.5271606445312,
+        576.69970703125
+      ],
+      "bbox": [
+        628,
+        559,
+        645,
+        594
+      ],
+      "side_px": 24.392621835300936,
+      "cls_prob": 0.9423110708594322,
+      "pos_frac": 1.0,
+      "hits": 8,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 26429,
+      "first_idx": 408,
+      "confirm_idx": 415,
+      "pos": [
+        637.15576171875,
+        505.1065673828125
+      ],
+      "bbox": [
+        631,
+        498,
+        647,
+        516
+      ],
+      "side_px": 16.97056274847714,
+      "cls_prob": 0.9475273191928864,
+      "pos_frac": 1.0,
+      "hits": 6,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 26716,
+      "first_idx": 411,
+      "confirm_idx": 415,
+      "pos": [
+        428.6027526855469,
+        540.9451904296875
+      ],
+      "bbox": [
+        421,
+        533,
+        434,
+        550
+      ],
+      "side_px": 14.866068747318506,
+      "cls_prob": 0.9565087199211121,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 26794,
+      "first_idx": 412,
+      "confirm_idx": 416,
+      "pos": [
+        604.0072021484375,
+        312.7009582519531
+      ],
+      "bbox": [
+        595,
+        295,
+        613,
+        334
+      ],
+      "side_px": 28.5,
+      "cls_prob": 0.985741126537323,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 26868,
+      "first_idx": 413,
+      "confirm_idx": 417,
+      "pos": [
+        895.673095703125,
+        349.3461608886719
+      ],
+      "bbox": [
+        890,
+        345,
+        901,
+        357
+      ],
+      "side_px": 11.489125293076057,
+      "cls_prob": 0.9541823983192443,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 26803,
+      "first_idx": 412,
+      "confirm_idx": 419,
+      "pos": [
+        841.7567749023438,
+        244.94595336914062
+      ],
+      "bbox": [
+        837,
+        240,
+        846,
+        252
+      ],
+      "side_px": 10.5,
+      "cls_prob": 0.9469181060791015,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 27410,
+      "first_idx": 420,
+      "confirm_idx": 424,
+      "pos": [
+        563.8460083007812,
+        254.32427978515625
+      ],
+      "bbox": [
+        554,
+        224,
+        575,
+        283
+      ],
+      "side_px": 40.0,
+      "cls_prob": 0.9890722632408142,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 432,
+      "pos": [
+        722.9909362792969,
+        511.2851867675781
+      ],
+      "bbox": [
+        705,
+        503,
+        740,
+        518
+      ],
+      "side_px": 34.56719970703125,
+      "yolo_conf": 0.45557132363319397
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 433,
+      "pos": [
+        742.9572816994287,
+        585.2213322397519
+      ],
+      "bbox": [
+        724,
+        576,
+        761,
+        593
+      ],
+      "side_px": 37.6376737000719,
+      "yolo_conf": 0.45557132363319397
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 28161,
+      "first_idx": 430,
+      "confirm_idx": 434,
+      "pos": [
+        511.4469909667969,
+        561.4193725585938
+      ],
+      "bbox": [
+        503,
+        553,
+        526,
+        575
+      ],
+      "side_px": 22.494443758403985,
+      "cls_prob": 0.9661093711853027,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 434,
+      "pos": [
+        780.57177857275,
+        720.0367183070466
+      ],
+      "bbox": [
+        758,
+        708,
+        802,
+        731
+      ],
+      "side_px": 43.37839044794646,
+      "yolo_conf": 0.45557132363319397
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 435,
+      "pos": [
+        812.0631936336981,
+        831.6291867546574
+      ],
+      "bbox": [
+        787,
+        818,
+        836,
+        845
+      ],
+      "side_px": 48.36337814318256,
+      "yolo_conf": 0.45557132363319397
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 28435,
+      "first_idx": 433,
+      "confirm_idx": 436,
+      "pos": [
+        862.7817993164062,
+        984.8363647460938
+      ],
+      "bbox": [
+        855,
+        978,
+        874,
+        989
+      ],
+      "side_px": 14.45683229480096,
+      "cls_prob": 0.7855785489082336,
+      "pos_frac": 1.0,
+      "hits": 3,
+      "yolo_boosted": true
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 437,
+      "pos": [
+        931.5697165978165,
+        1243.2465281390446
+      ],
+      "bbox": [
+        897,
+        1218,
+        965,
+        1267
+      ],
+      "side_px": 68.12330207533137,
+      "yolo_conf": 0.45557132363319397
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 438,
+      "pos": [
+        1006.6919287518374,
+        1500.1750378473985
+      ],
+      "bbox": [
+        966,
+        1467,
+        1047,
+        1532
+      ],
+      "side_px": 81.35545127135958,
+      "yolo_conf": 0.45557132363319397
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 439,
+      "pos": [
+        1176.9763733108744,
+        2070.4952166319254
+      ],
+      "bbox": [
+        1120,
+        2014,
+        1233,
+        2126
+      ],
+      "side_px": 113.90578346057214,
+      "yolo_conf": 0.45557132363319397
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 456,
+      "pos": [
+        764.3931579589844,
+        812.6171569824219
+      ],
+      "bbox": [
+        753,
+        801,
+        774,
+        824
+      ],
+      "side_px": 23.17437744140625,
+      "yolo_conf": 0.5083310008049011
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 456,
+      "pos": [
+        813.7027282714844,
+        587.3157348632812
+      ],
+      "bbox": [
+        809,
+        581,
+        817,
+        592
+      ],
+      "side_px": 11.309814453125,
+      "yolo_conf": 0.36759883165359497
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 30576,
+      "first_idx": 455,
+      "confirm_idx": 457,
+      "pos": [
+        846.5755004882812,
+        672.6132202148438
+      ],
+      "bbox": [
+        843,
+        665,
+        851,
+        681
+      ],
+      "side_px": 11.313708498984761,
+      "cls_prob": 0.9989857276280721,
+      "pos_frac": 1.0,
+      "hits": 3,
+      "yolo_boosted": true
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 457,
+      "pos": [
+        800.519259408601,
+        943.8735130652288
+      ],
+      "bbox": [
+        788,
+        929,
+        812,
+        958
+      ],
+      "side_px": 28.58722493197706,
+      "yolo_conf": 0.5083310008049011
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 458,
+      "pos": [
+        863.8658085083979,
+        1184.3748662214362
+      ],
+      "bbox": [
+        848,
+        1164,
+        878,
+        1204
+      ],
+      "side_px": 39.26722097341326,
+      "yolo_conf": 0.5083310008049011
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 459,
+      "pos": [
+        928.5038520625068,
+        1417.7234753350913
+      ],
+      "bbox": [
+        910,
+        1391,
+        946,
+        1443
+      ],
+      "side_px": 52.02104593960894,
+      "yolo_conf": 0.5083310008049011
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 460,
+      "pos": [
+        1065.7501667792617,
+        1917.9434460283303
+      ],
+      "bbox": [
+        1040,
+        1875,
+        1091,
+        1960
+      ],
+      "side_px": 84.84265445058736,
+      "yolo_conf": 0.5083310008049011
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 460,
+      "pos": [
+        1050.4798048930368,
+        1215.4506910139735
+      ],
+      "bbox": [
+        1041,
+        1200,
+        1059,
+        1230
+      ],
+      "side_px": 30.03028425397929,
+      "yolo_conf": 0.36759883165359497
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 461,
+      "pos": [
+        1213.4682759771495,
+        2455.771599795516
+      ],
+      "bbox": [
+        1178,
+        2391,
+        1248,
+        2520
+      ],
+      "side_px": 129.3240736336984,
+      "yolo_conf": 0.5083310008049011
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 461,
+      "pos": [
+        1144.1906734070567,
+        1460.2347499037442
+      ],
+      "bbox": [
+        1132,
+        1440,
+        1155,
+        1480
+      ],
+      "side_px": 39.88249352030425,
+      "yolo_conf": 0.36759883165359497
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 462,
+      "pos": [
+        1446.629320196354,
+        3304.46306741392
+      ],
+      "bbox": [
+        1394,
+        3195,
+        1498,
+        3413
+      ],
+      "side_px": 217.74499013491186,
+      "yolo_conf": 0.5083310008049011
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 462,
+      "pos": [
+        1269.6021790308264,
+        1789.7222192093918
+      ],
+      "bbox": [
+        1254,
+        1762,
+        1284,
+        1817
+      ],
+      "side_px": 55.17112197019651,
+      "yolo_conf": 0.36759883165359497
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 463,
+      "pos": [
+        2082.9104542626756,
+        5600.5134169335615
+      ],
+      "bbox": [
+        1970,
+        5322,
+        2195,
+        5878
+      ],
+      "side_px": 556.9394145797023,
+      "yolo_conf": 0.5083310008049011
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 463,
+      "pos": [
+        1530.2388571830393,
+        2476.9521200713307
+      ],
+      "bbox": [
+        1506,
+        2430,
+        1553,
+        2523
+      ],
+      "side_px": 93.00700516943334,
+      "yolo_conf": 0.36759883165359497
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 32065,
+      "first_idx": 469,
+      "confirm_idx": 473,
+      "pos": [
+        548.3179931640625,
+        439.5391845703125
+      ],
+      "bbox": [
+        536,
+        407,
+        560,
+        466
+      ],
+      "side_px": 37.62977544445356,
+      "cls_prob": 0.968835997581482,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 488,
+      "pos": [
+        998.2539978027344,
+        235.84469604492188
+      ],
+      "bbox": [
+        976,
+        207,
+        1019,
+        264
+      ],
+      "side_px": 56.8626708984375,
+      "yolo_conf": 0.6739917397499084
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 489,
+      "pos": [
+        1029.4683958890782,
+        271.73609614925584
+      ],
+      "bbox": [
+        1005,
+        240,
+        1053,
+        303
+      ],
+      "side_px": 63.01791921300108,
+      "yolo_conf": 0.6739917397499084
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 490,
+      "pos": [
+        1083.9338996421302,
+        333.98623669907784
+      ],
+      "bbox": [
+        1055,
+        296,
+        1112,
+        371
+      ],
+      "side_px": 74.80219460095651,
+      "yolo_conf": 0.6739917397499084
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 491,
+      "pos": [
+        1125.4807631461777,
+        382.60789533167343
+      ],
+      "bbox": [
+        1092,
+        340,
+        1158,
+        424
+      ],
+      "side_px": 84.3888054651361,
+      "yolo_conf": 0.6739917397499084
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 492,
+      "pos": [
+        1172.9491588699811,
+        437.1827258224488
+      ],
+      "bbox": [
+        1135,
+        389,
+        1210,
+        485
+      ],
+      "side_px": 96.157946704469,
+      "yolo_conf": 0.6739917397499084
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 493,
+      "pos": [
+        1256.9211629994766,
+        534.05134918314
+      ],
+      "bbox": [
+        1209,
+        474,
+        1304,
+        593
+      ],
+      "side_px": 119.17925109058427,
+      "yolo_conf": 0.6739917397499084
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 494,
+      "pos": [
+        1324.108169297891,
+        612.0971573666569
+      ],
+      "bbox": [
+        1267,
+        542,
+        1380,
+        681
+      ],
+      "side_px": 139.6147730199025,
+      "yolo_conf": 0.6739917397499084
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 495,
+      "pos": [
+        1451.3199600733687,
+        757.3956109785544
+      ],
+      "bbox": [
+        1376,
+        666,
+        1525,
+        848
+      ],
+      "side_px": 181.73325892912112,
+      "yolo_conf": 0.6739917397499084
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 496,
+      "pos": [
+        22.666488647460938,
+        640.9909973144531
+      ],
+      "bbox": [
+        0,
+        589,
+        45,
+        692
+      ],
+      "side_px": 102.02313232421875,
+      "yolo_conf": 0.34227511286735535
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 497,
+      "pos": [
+        -32.821851424118805,
+        784.53325655754
+      ],
+      "bbox": [
+        -55,
+        718,
+        -10,
+        850
+      ],
+      "side_px": 132.32104155726984,
+      "yolo_conf": 0.34227511286735535
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 498,
+      "pos": [
+        -78.95562483634447,
+        905.5942918521368
+      ],
+      "bbox": [
+        -100,
+        825,
+        -57,
+        986
+      ],
+      "side_px": 160.82917043205123,
+      "yolo_conf": 0.34227511286735535
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 499,
+      "pos": [
+        -166.69259913104366,
+        1136.0587347247279
+      ],
+      "bbox": [
+        -185,
+        1025,
+        -148,
+        1247
+      ],
+      "side_px": 221.9206296431364,
+      "yolo_conf": 0.34227511286735535
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 500,
+      "pos": [
+        -246.94142322289633,
+        1350.6474025836828
+      ],
+      "bbox": [
+        -261,
+        1206,
+        -232,
+        1494
+      ],
+      "side_px": 288.52082584898994,
+      "yolo_conf": 0.34227511286735535
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 501,
+      "pos": [
+        -353.7373576793486,
+        1629.9754691574922
+      ],
+      "bbox": [
+        -359,
+        1435,
+        -348,
+        1824
+      ],
+      "side_px": 388.67545863644386,
+      "yolo_conf": 0.34227511286735535
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 502,
+      "pos": [
+        -596.1742917213783,
+        2264.2531205693654
+      ],
+      "bbox": [
+        -619,
+        1930,
+        -572,
+        2597
+      ],
+      "side_px": 667.1020229628994,
+      "yolo_conf": 0.34227511286735535
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 503,
+      "pos": [
+        -891.9980403013219,
+        3029.1206356491693
+      ],
+      "bbox": [
+        -913,
+        2473,
+        -870,
+        3585
+      ],
+      "side_px": 1111.8673739935025,
+      "yolo_conf": 0.34227511286735535
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 36391,
+      "first_idx": 513,
+      "confirm_idx": 517,
+      "pos": [
+        407.1492614746094,
+        417.9850769042969
+      ],
+      "bbox": [
+        403,
+        414,
+        413,
+        426
+      ],
+      "side_px": 10.954451150103322,
+      "cls_prob": 0.9418892502784729,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 36393,
+      "first_idx": 513,
+      "confirm_idx": 517,
+      "pos": [
+        450.5673828125,
+        472.9858093261719
+      ],
+      "bbox": [
+        441,
+        468,
+        461,
+        479
+      ],
+      "side_px": 14.832396974191326,
+      "cls_prob": 0.9868314504623413,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 38438,
+      "first_idx": 534,
+      "confirm_idx": 538,
+      "pos": [
+        702.3052978515625,
+        478.45794677734375
+      ],
+      "bbox": [
+        693,
+        468,
+        713,
+        493
+      ],
+      "side_px": 22.360679774997898,
+      "cls_prob": 0.9716928362846374,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 544,
+      "pos": [
+        18.193851470947266,
+        855.7237854003906
+      ],
+      "bbox": [
+        0,
+        805,
+        36,
+        906
+      ],
+      "side_px": 101.19940185546875,
+      "yolo_conf": 0.48330605030059814
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 544,
+      "pos": [
+        25.35115647315979,
+        823.1259460449219
+      ],
+      "bbox": [
+        5,
+        769,
+        45,
+        876
+      ],
+      "side_px": 106.50262451171875,
+      "yolo_conf": 0.4538997411727905
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 544,
+      "pos": [
+        22.38001251220703,
+        835.4694213867188
+      ],
+      "bbox": [
+        0,
+        779,
+        43,
+        891
+      ],
+      "side_px": 111.3580322265625,
+      "yolo_conf": 0.38673296570777893
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 545,
+      "pos": [
+        -25.973149932385773,
+        992.3831730577335
+      ],
+      "bbox": [
+        -44,
+        930,
+        -7,
+        1054
+      ],
+      "side_px": 124.11497581323817,
+      "yolo_conf": 0.48330605030059814
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 545,
+      "pos": [
+        -16.79076510856245,
+        952.5978541295171
+      ],
+      "bbox": [
+        -36,
+        887,
+        3,
+        1017
+      ],
+      "side_px": 129.90571665417144,
+      "yolo_conf": 0.4538997411727905
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 545,
+      "pos": [
+        -20.53373488618997,
+        967.6753536173424
+      ],
+      "bbox": [
+        -41,
+        899,
+        0,
+        1035
+      ],
+      "side_px": 136.11430305227952,
+      "yolo_conf": 0.38673296570777893
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 546,
+      "pos": [
+        -115.28340852507868,
+        1264.1009367285465
+      ],
+      "bbox": [
+        -131,
+        1175,
+        -98,
+        1352
+      ],
+      "side_px": 176.66767755704655,
+      "yolo_conf": 0.48330605030059814
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 546,
+      "pos": [
+        -101.29789621630988,
+        1207.9255194487055
+      ],
+      "bbox": [
+        -120,
+        1116,
+        -82,
+        1299
+      ],
+      "side_px": 182.8715702746549,
+      "yolo_conf": 0.4538997411727905
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 546,
+      "pos": [
+        -106.86046312252324,
+        1229.2508518926297
+      ],
+      "bbox": [
+        -126,
+        1133,
+        -86,
+        1325
+      ],
+      "side_px": 192.4246892155145,
+      "yolo_conf": 0.38673296570777893
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 547,
+      "pos": [
+        -195.96054763331125,
+        1510.2847194818507
+      ],
+      "bbox": [
+        -209,
+        1393,
+        -182,
+        1626
+      ],
+      "side_px": 232.72966047312775,
+      "yolo_conf": 0.48330605030059814
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 547,
+      "pos": [
+        -176.78175204137375,
+        1436.8189038234746
+      ],
+      "bbox": [
+        -192,
+        1317,
+        -160,
+        1556
+      ],
+      "side_px": 238.47885001476607,
+      "yolo_conf": 0.4538997411727905
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 547,
+      "pos": [
+        -184.3021937986106,
+        1464.7527764500783
+      ],
+      "bbox": [
+        -201,
+        1338,
+        -167,
+        1590
+      ],
+      "side_px": 251.9103036209542,
+      "yolo_conf": 0.38673296570777893
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 548,
+      "pos": [
+        -305.13733676152225,
+        1845.1360034029417
+      ],
+      "bbox": [
+        -313,
+        1684,
+        -297,
+        2005
+      ],
+      "side_px": 321.6291360910959,
+      "yolo_conf": 0.48330605030059814
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 548,
+      "pos": [
+        -277.75148490376984,
+        1744.491074004254
+      ],
+      "bbox": [
+        -288,
+        1581,
+        -266,
+        1907
+      ],
+      "side_px": 325.1633478444028,
+      "yolo_conf": 0.4538997411727905
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 548,
+      "pos": [
+        -288.35808668887853,
+        1782.8413374393472
+      ],
+      "bbox": [
+        -299,
+        1610,
+        -276,
+        1955
+      ],
+      "side_px": 345.25337371492583,
+      "yolo_conf": 0.38673296570777893
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 549,
+      "pos": [
+        -461.60376553369576,
+        2313.508037986396
+      ],
+      "bbox": [
+        -466,
+        2078,
+        -456,
+        2548
+      ],
+      "side_px": 470.4688581774244,
+      "yolo_conf": 0.48330605030059814
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 549,
+      "pos": [
+        -420.17636625246416,
+        2167.984492543523
+      ],
+      "bbox": [
+        -420,
+        1934,
+        -419,
+        2401
+      ],
+      "side_px": 466.7404062855858,
+      "yolo_conf": 0.4538997411727905
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 549,
+      "pos": [
+        -436.05583467325005,
+        2223.6046823903125
+      ],
+      "bbox": [
+        -436,
+        1974,
+        -435,
+        2473
+      ],
+      "side_px": 499.18447556216415,
+      "yolo_conf": 0.38673296570777893
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 39683,
+      "first_idx": 546,
+      "confirm_idx": 550,
+      "pos": [
+        660.620361328125,
+        388.6666564941406
+      ],
+      "bbox": [
+        651,
+        373,
+        670,
+        404
+      ],
+      "side_px": 25.0,
+      "cls_prob": 0.9586469888687134,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 550,
+      "pos": [
+        -857.7551430892281,
+        3517.5930717963693
+      ],
+      "bbox": [
+        -901,
+        3030,
+        -814,
+        4005
+      ],
+      "side_px": 974.9455153903491,
+      "yolo_conf": 0.48330605030059814
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 550,
+      "pos": [
+        -769.8005200023738,
+        3222.60841060882
+      ],
+      "bbox": [
+        -814,
+        2761,
+        -725,
+        3684
+      ],
+      "side_px": 922.990964944262,
+      "yolo_conf": 0.4538997411727905
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 550,
+      "pos": [
+        -803.3078150367917,
+        3336.153586777787
+      ],
+      "bbox": [
+        -852,
+        2833,
+        -754,
+        3838
+      ],
+      "side_px": 1004.9830659311565,
+      "yolo_conf": 0.38673296570777893
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 39454,
+      "first_idx": 544,
+      "confirm_idx": 551,
+      "pos": [
+        670.6133422851562,
+        390.04534912109375
+      ],
+      "bbox": [
+        655,
+        365,
+        681,
+        413
+      ],
+      "side_px": 35.32704346531139,
+      "cls_prob": 0.9823321342468262,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 551,
+      "pos": [
+        -1383.2256360320202,
+        5138.5927646779755
+      ],
+      "bbox": [
+        -1415,
+        4174,
+        -1350,
+        6102
+      ],
+      "side_px": 1928.3107554992512,
+      "yolo_conf": 0.48330605030059814
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 551,
+      "pos": [
+        -1209.000464449974,
+        4567.635762823815
+      ],
+      "bbox": [
+        -1226,
+        3708,
+        -1191,
+        5426
+      ],
+      "side_px": 1718.6639150057144,
+      "yolo_conf": 0.4538997411727905
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 551,
+      "pos": [
+        -1274.345617369594,
+        4789.19770263494
+      ],
+      "bbox": [
+        -1296,
+        3831,
+        -1252,
+        5746
+      ],
+      "side_px": 1915.6018320533904,
+      "yolo_conf": 0.38673296570777893
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 39788,
+      "first_idx": 548,
+      "confirm_idx": 552,
+      "pos": [
+        414.4948425292969,
+        947.9278564453125
+      ],
+      "bbox": [
+        409,
+        941,
+        420,
+        957
+      ],
+      "side_px": 13.2664991614216,
+      "cls_prob": 0.9938252329826355,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 552,
+      "pos": [
+        221.63610076904297,
+        285.21411895751953
+      ],
+      "bbox": [
+        201,
+        233,
+        242,
+        337
+      ],
+      "side_px": 103.86393737792969,
+      "yolo_conf": 0.28657981753349304
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 553,
+      "pos": [
+        204.08234876404237,
+        346.6641634557975
+      ],
+      "bbox": [
+        183,
+        285,
+        224,
+        407
+      ],
+      "side_px": 121.75277700631608,
+      "yolo_conf": 0.28657981753349304
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 554,
+      "pos": [
+        190.92684778992367,
+        392.190371909999
+      ],
+      "bbox": [
+        170,
+        324,
+        211,
+        460
+      ],
+      "side_px": 136.26058498437533,
+      "yolo_conf": 0.28657981753349304
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 555,
+      "pos": [
+        167.66850247446752,
+        470.52294546499616
+      ],
+      "bbox": [
+        147,
+        388,
+        187,
+        552
+      ],
+      "side_px": 163.44327312739694,
+      "yolo_conf": 0.28657981753349304
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 556,
+      "pos": [
+        149.52926326042973,
+        530.5318937220673
+      ],
+      "bbox": [
+        130,
+        437,
+        168,
+        623
+      ],
+      "side_px": 186.36568223008135,
+      "yolo_conf": 0.28657981753349304
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 557,
+      "pos": [
+        128.76279286594615,
+        598.8676129415803
+      ],
+      "bbox": [
+        110,
+        491,
+        147,
+        706
+      ],
+      "side_px": 214.5730654557887,
+      "yolo_conf": 0.28657981753349304
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 558,
+      "pos": [
+        93.24935164587568,
+        723.5540566182854
+      ],
+      "bbox": [
+        77,
+        588,
+        109,
+        858
+      ],
+      "side_px": 269.56594457066956,
+      "yolo_conf": 0.28657981753349304
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 559,
+      "pos": [
+        65.09711700914765,
+        823.1486726591
+      ],
+      "bbox": [
+        51,
+        664,
+        78,
+        982
+      ],
+      "side_px": 318.281820910217,
+      "yolo_conf": 0.28657981753349304
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 40540,
+      "first_idx": 556,
+      "confirm_idx": 560,
+      "pos": [
+        513.076416015625,
+        363.16278076171875
+      ],
+      "bbox": [
+        499,
+        354,
+        529,
+        376
+      ],
+      "side_px": 25.69046515733026,
+      "cls_prob": 0.9543122887611389,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 40652,
+      "first_idx": 557,
+      "confirm_idx": 561,
+      "pos": [
+        532.0855712890625,
+        277.2409973144531
+      ],
+      "bbox": [
+        522,
+        260,
+        543,
+        292
+      ],
+      "side_px": 25.92296279363144,
+      "cls_prob": 0.9452543377876281,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 40797,
+      "first_idx": 558,
+      "confirm_idx": 562,
+      "pos": [
+        521.8037719726562,
+        610.0528564453125
+      ],
+      "bbox": [
+        513,
+        579,
+        537,
+        639
+      ],
+      "side_px": 37.94733192202055,
+      "cls_prob": 0.9820025205612183,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 41667,
+      "first_idx": 568,
+      "confirm_idx": 572,
+      "pos": [
+        721.794189453125,
+        502.4327087402344
+      ],
+      "bbox": [
+        712,
+        484,
+        734,
+        520
+      ],
+      "side_px": 28.142494558940577,
+      "cls_prob": 0.9937309384346008,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 41383,
+      "first_idx": 565,
+      "confirm_idx": 575,
+      "pos": [
+        400.5594177246094,
+        678.7623901367188
+      ],
+      "bbox": [
+        392,
+        658,
+        408,
+        696
+      ],
+      "side_px": 24.657656011875904,
+      "cls_prob": 0.940686513077129,
+      "pos_frac": 1.0,
+      "hits": 11,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 42274,
+      "first_idx": 575,
+      "confirm_idx": 579,
+      "pos": [
+        358.16326904296875,
+        936.3673706054688
+      ],
+      "bbox": [
+        353,
+        928,
+        364,
+        948
+      ],
+      "side_px": 14.832396974191326,
+      "cls_prob": 0.9518993258476257,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 42381,
+      "first_idx": 577,
+      "confirm_idx": 583,
+      "pos": [
+        404.396240234375,
+        822.8867797851562
+      ],
+      "bbox": [
+        400,
+        817,
+        408,
+        835
+      ],
+      "side_px": 12.0,
+      "cls_prob": 0.9745259284973145,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 616,
+      "pos": [
+        13.844224125146866,
+        762.4363708496094
+      ],
+      "bbox": [
+        0,
+        730,
+        27,
+        794
+      ],
+      "side_px": 64.53851318359375,
+      "yolo_conf": 0.261288046836853
+    },
+    {
+      "source": "tbd_solo",
+      "track_id": 45238,
+      "first_idx": 613,
+      "confirm_idx": 617,
+      "pos": [
+        476.12799072265625,
+        845.7999877929688
+      ],
+      "bbox": [
+        470,
+        837,
+        483,
+        857
+      ],
+      "side_px": 16.1245154965971,
+      "cls_prob": 0.9914175152778626,
+      "pos_frac": 1.0,
+      "hits": 5,
+      "yolo_boosted": false
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 617,
+      "pos": [
+        15.859299541343827,
+        818.2380963796452
+      ],
+      "bbox": [
+        1,
+        782,
+        29,
+        853
+      ],
+      "side_px": 71.18310418627118,
+      "yolo_conf": 0.261288046836853
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 618,
+      "pos": [
+        20.946531541872822,
+        910.3062329130852
+      ],
+      "bbox": [
+        6,
+        868,
+        35,
+        951
+      ],
+      "side_px": 83.0832031312425,
+      "yolo_conf": 0.261288046836853
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 619,
+      "pos": [
+        26.33840295105903,
+        979.0956834793142
+      ],
+      "bbox": [
+        10,
+        932,
+        41,
+        1025
+      ],
+      "side_px": 92.50714386450966,
+      "yolo_conf": 0.261288046836853
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 620,
+      "pos": [
+        32.82295402014767,
+        1054.873493357672
+      ],
+      "bbox": [
+        16,
+        1003,
+        48,
+        1106
+      ],
+      "side_px": 103.59736581716606,
+      "yolo_conf": 0.261288046836853
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 621,
+      "pos": [
+        41.112903989478795,
+        1138.6230131531433
+      ],
+      "bbox": [
+        24,
+        1080,
+        57,
+        1196
+      ],
+      "side_px": 116.51937758078452,
+      "yolo_conf": 0.261288046836853
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 622,
+      "pos": [
+        54.46661664855635,
+        1284.0831065773914
+      ],
+      "bbox": [
+        36,
+        1213,
+        72,
+        1354
+      ],
+      "side_px": 140.69811293791304,
+      "yolo_conf": 0.261288046836853
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 623,
+      "pos": [
+        65.40061978429628,
+        1396.0356788955123
+      ],
+      "bbox": [
+        46,
+        1315,
+        84,
+        1476
+      ],
+      "side_px": 161.18752018671512,
+      "yolo_conf": 0.261288046836853
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 632,
+      "pos": [
+        997.8562316894531,
+        516.6545104980469
+      ],
+      "bbox": [
+        980,
+        468,
+        1014,
+        564
+      ],
+      "side_px": 96.29766845703125,
+      "yolo_conf": 0.2911882698535919
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 633,
+      "pos": [
+        1052.231111896539,
+        552.5824721532972
+      ],
+      "bbox": [
+        1032,
+        500,
+        1072,
+        604
+      ],
+      "side_px": 104.04709242886236,
+      "yolo_conf": 0.2911882698535919
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 634,
+      "pos": [
+        1112.4442410981555,
+        593.0209886385487
+      ],
+      "bbox": [
+        1088,
+        536,
+        1136,
+        649
+      ],
+      "side_px": 112.8818166449563,
+      "yolo_conf": 0.2911882698535919
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 635,
+      "pos": [
+        1179.7644605128041,
+        637.5847131837961
+      ],
+      "bbox": [
+        1151,
+        576,
+        1207,
+        699
+      ],
+      "side_px": 123.1326005773426,
+      "yolo_conf": 0.2911882698535919
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 636,
+      "pos": [
+        1295.0509553316729,
+        714.5624470885086
+      ],
+      "bbox": [
+        1258,
+        643,
+        1331,
+        785
+      ],
+      "side_px": 141.87898292075113,
+      "yolo_conf": 0.2911882698535919
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 637,
+      "pos": [
+        1382.9113719287657,
+        774.7554880829887
+      ],
+      "bbox": [
+        1339,
+        696,
+        1426,
+        853
+      ],
+      "side_px": 157.4824580778053,
+      "yolo_conf": 0.2911882698535919
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 638,
+      "pos": [
+        1482.1795460901667,
+        843.5736846678035
+      ],
+      "bbox": [
+        1430,
+        755,
+        1533,
+        931
+      ],
+      "side_px": 176.34402934455102,
+      "yolo_conf": 0.2911882698535919
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 639,
+      "pos": [
+        1593.9391527350404,
+        922.6800057515509
+      ],
+      "bbox": [
+        1531,
+        823,
+        1656,
+        1022
+      ],
+      "side_px": 199.09838354345118,
+      "yolo_conf": 0.2911882698535919
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 656,
+      "pos": [
+        836.6874084472656,
+        511.55812072753906
+      ],
+      "bbox": [
+        830,
+        502,
+        843,
+        520
+      ],
+      "side_px": 18.253509521484375,
+      "yolo_conf": 0.45048320293426514
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 657,
+      "pos": [
+        923.562120586887,
+        575.0607111353099
+      ],
+      "bbox": [
+        915,
+        564,
+        931,
+        585
+      ],
+      "side_px": 21.001382938029224,
+      "yolo_conf": 0.45048320293426514
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 658,
+      "pos": [
+        988.6544839089931,
+        623.7769569127447
+      ],
+      "bbox": [
+        979,
+        612,
+        997,
+        635
+      ],
+      "side_px": 23.227039059631238,
+      "yolo_conf": 0.45048320293426514
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 659,
+      "pos": [
+        1060.8745843636868,
+        677.732045848091
+      ],
+      "bbox": [
+        1050,
+        664,
+        1070,
+        690
+      ],
+      "side_px": 25.833727124080838,
+      "yolo_conf": 0.45048320293426514
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 660,
+      "pos": [
+        1184.7938629580224,
+        771.3039882708651
+      ],
+      "bbox": [
+        1172,
+        755,
+        1197,
+        786
+      ],
+      "side_px": 30.6982534262703,
+      "yolo_conf": 0.45048320293426514
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 661,
+      "pos": [
+        1279.6898640004686,
+        845.041092250165
+      ],
+      "bbox": [
+        1265,
+        827,
+        1294,
+        862
+      ],
+      "side_px": 34.861232339985236,
+      "yolo_conf": 0.45048320293426514
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 662,
+      "pos": [
+        1389.9368368416385,
+        931.3515922516908
+      ],
+      "bbox": [
+        1372,
+        911,
+        1406,
+        951
+      ],
+      "side_px": 40.14837121967719,
+      "yolo_conf": 0.45048320293426514
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 663,
+      "pos": [
+        1515.9858196194702,
+        1031.1167980001148
+      ],
+      "bbox": [
+        1495,
+        1007,
+        1536,
+        1054
+      ],
+      "side_px": 46.68334532707797,
+      "yolo_conf": 0.45048320293426514
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 696,
+      "pos": [
+        780.023681640625,
+        530.6934204101562
+      ],
+      "bbox": [
+        768,
+        520,
+        791,
+        541
+      ],
+      "side_px": 22.993408203125,
+      "yolo_conf": 0.4154013693332672
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 697,
+      "pos": [
+        838.1411754084461,
+        577.7042838849028
+      ],
+      "bbox": [
+        825,
+        566,
+        850,
+        589
+      ],
+      "side_px": 25.329204138766386,
+      "yolo_conf": 0.4154013693332672
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 698,
+      "pos": [
+        900.8320187617551,
+        630.5755756103214
+      ],
+      "bbox": [
+        886,
+        617,
+        914,
+        643
+      ],
+      "side_px": 28.075721798793325,
+      "yolo_conf": 0.4154013693332672
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 699,
+      "pos": [
+        969.1957382001667,
+        689.5808702696177
+      ],
+      "bbox": [
+        953,
+        675,
+        984,
+        704
+      ],
+      "side_px": 31.364660168209753,
+      "yolo_conf": 0.4154013693332672
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 700,
+      "pos": [
+        1044.7876425094378,
+        756.7082249053492
+      ],
+      "bbox": [
+        1027,
+        740,
+        1062,
+        773
+      ],
+      "side_px": 35.351283715961245,
+      "yolo_conf": 0.4154013693332672
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 701,
+      "pos": [
+        1175.224793837713,
+        876.2114346908983
+      ],
+      "bbox": [
+        1153,
+        855,
+        1196,
+        896
+      ],
+      "side_px": 42.993847976456436,
+      "yolo_conf": 0.4154013693332672
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 702,
+      "pos": [
+        1278.2363222988931,
+        971.8329744920125
+      ],
+      "bbox": [
+        1253,
+        948,
+        1303,
+        995
+      ],
+      "side_px": 49.818250172497756,
+      "yolo_conf": 0.4154013693332672
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 703,
+      "pos": [
+        1396.3012251590167,
+        1084.926466788987
+      ],
+      "bbox": [
+        1367,
+        1056,
+        1425,
+        1113
+      ],
+      "side_px": 58.40426223131385,
+      "yolo_conf": 0.4154013693332672
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 704,
+      "pos": [
+        496.8770751953125,
+        64.24093246459961
+      ],
+      "bbox": [
+        489,
+        57,
+        504,
+        71
+      ],
+      "side_px": 15.3033447265625,
+      "yolo_conf": 0.36937814950942993
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 705,
+      "pos": [
+        520.5060198934623,
+        76.11168921710109
+      ],
+      "bbox": [
+        512,
+        68,
+        528,
+        83
+      ],
+      "side_px": 16.02525068512159,
+      "yolo_conf": 0.36937814950942993
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 706,
+      "pos": [
+        557.1358506420138,
+        95.53691813294321
+      ],
+      "bbox": [
+        548,
+        87,
+        565,
+        103
+      ],
+      "side_px": 17.232987906515973,
+      "yolo_conf": 0.36937814950942993
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 707,
+      "pos": [
+        582.0589860516957,
+        110.713161934979
+      ],
+      "bbox": [
+        572,
+        102,
+        591,
+        118
+      ],
+      "side_px": 18.13594875927356,
+      "yolo_conf": 0.36937814950942993
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 708,
+      "pos": [
+        608.0391566350196,
+        126.09623504554148
+      ],
+      "bbox": [
+        598,
+        117,
+        617,
+        134
+      ],
+      "side_px": 19.12327366590125,
+      "yolo_conf": 0.36937814950942993
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 709,
+      "pos": [
+        634.9691999165996,
+        142.23857210739118
+      ],
+      "bbox": [
+        624,
+        133,
+        645,
+        151
+      ],
+      "side_px": 20.21959059689391,
+      "yolo_conf": 0.36937814950942993
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 710,
+      "pos": [
+        663.0178349636103,
+        158.25074061195824
+      ],
+      "bbox": [
+        652,
+        148,
+        673,
+        167
+      ],
+      "side_px": 21.446438170255078,
+      "yolo_conf": 0.36937814950942993
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 711,
+      "pos": [
+        706.808086990443,
+        184.9636716958674
+      ],
+      "bbox": [
+        695,
+        174,
+        718,
+        195
+      ],
+      "side_px": 23.52034673788694,
+      "yolo_conf": 0.36937814950942993
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 712,
+      "pos": [
+        741.0045166015625,
+        207.61890411376953
+      ],
+      "bbox": [
+        732,
+        198,
+        749,
+        216
+      ],
+      "side_px": 18.220779418945312,
+      "yolo_conf": 0.4832189679145813
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 713,
+      "pos": [
+        772.7994256332271,
+        228.87628477142758
+      ],
+      "bbox": [
+        763,
+        219,
+        781,
+        238
+      ],
+      "side_px": 19.485782310582067,
+      "yolo_conf": 0.4832189679145813
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 714,
+      "pos": [
+        806.4306348759899,
+        251.40935615433534
+      ],
+      "bbox": [
+        796,
+        240,
+        816,
+        261
+      ],
+      "side_px": 20.95147573610791,
+      "yolo_conf": 0.4832189679145813
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 715,
+      "pos": [
+        860.2684363059775,
+        290.4077794549835
+      ],
+      "bbox": [
+        849,
+        278,
+        871,
+        302
+      ],
+      "side_px": 23.522190650939763,
+      "yolo_conf": 0.4832189679145813
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 716,
+      "pos": [
+        898.8057938812698,
+        319.2098902829006
+      ],
+      "bbox": [
+        886,
+        306,
+        910,
+        331
+      ],
+      "side_px": 25.5070259254216,
+      "yolo_conf": 0.4832189679145813
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 717,
+      "pos": [
+        938.9535978924853,
+        349.8330768111213
+      ],
+      "bbox": [
+        925,
+        335,
+        952,
+        363
+      ],
+      "side_px": 27.75488718518386,
+      "yolo_conf": 0.4832189679145813
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 718,
+      "pos": [
+        981.2735921677099,
+        383.7598882687328
+      ],
+      "bbox": [
+        966,
+        368,
+        995,
+        398
+      ],
+      "side_px": 30.37708283445818,
+      "yolo_conf": 0.4832189679145813
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 719,
+      "pos": [
+        1026.6797344675995,
+        421.14923281657434
+      ],
+      "bbox": [
+        1010,
+        404,
+        1042,
+        437
+      ],
+      "side_px": 33.342631806252996,
+      "yolo_conf": 0.4832189679145813
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 728,
+      "pos": [
+        751.6827697753906,
+        913.6634521484375
+      ],
+      "bbox": [
+        733,
+        897,
+        770,
+        929
+      ],
+      "side_px": 36.76580810546875,
+      "yolo_conf": 0.383480042219162
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 728,
+      "pos": [
+        253.93606567382812,
+        489.1445617675781
+      ],
+      "bbox": [
+        243,
+        481,
+        264,
+        496
+      ],
+      "side_px": 20.4500732421875,
+      "yolo_conf": 0.37619566917419434
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 729,
+      "pos": [
+        793.480877831895,
+        1013.4903004939011
+      ],
+      "bbox": [
+        773,
+        994,
+        813,
+        1032
+      ],
+      "side_px": 40.573524491319745,
+      "yolo_conf": 0.383480042219162
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 729,
+      "pos": [
+        259.38601988324285,
+        532.4058541499044
+      ],
+      "bbox": [
+        248,
+        524,
+        270,
+        540
+      ],
+      "side_px": 21.357515919542152,
+      "yolo_conf": 0.37619566917419434
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 730,
+      "pos": [
+        840.301772071887,
+        1130.3639459531719
+      ],
+      "bbox": [
+        817,
+        1107,
+        862,
+        1152
+      ],
+      "side_px": 45.208314869231,
+      "yolo_conf": 0.383480042219162
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 730,
+      "pos": [
+        263.930504349345,
+        580.5929027376307
+      ],
+      "bbox": [
+        252,
+        571,
+        275,
+        589
+      ],
+      "side_px": 22.348322121560017,
+      "yolo_conf": 0.37619566917419434
+    },
+    {
+      "source": "tbd_boosted",
+      "track_id": 54235,
+      "first_idx": 720,
+      "confirm_idx": 731,
+      "pos": [
+        232.27691650390625,
+        397.015380859375
+      ],
+      "bbox": [
+        229,
+        389,
+        238,
+        405
+      ],
+      "side_px": 12.0,
+      "cls_prob": 0.7125674337148666,
+      "pos_frac": 0.6666666666666666,
+      "hits": 12,
+      "yolo_boosted": true
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 731,
+      "pos": [
+        892.6250460093734,
+        1267.9526543570548
+      ],
+      "bbox": [
+        867,
+        1241,
+        918,
+        1294
+      ],
+      "side_px": 53.439608819935074,
+      "yolo_conf": 0.383480042219162
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 732,
+      "pos": [
+        986.4382631277012,
+        1527.7142622734896
+      ],
+      "bbox": [
+        955,
+        1491,
+        1017,
+        1563
+      ],
+      "side_px": 71.82441858352536,
+      "yolo_conf": 0.383480042219162
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 733,
+      "pos": [
+        1064.6856123896728,
+        1752.8560191563636
+      ],
+      "bbox": [
+        1028,
+        1707,
+        1100,
+        1797
+      ],
+      "side_px": 89.93291132114928,
+      "yolo_conf": 0.383480042219162
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 734,
+      "pos": [
+        1161.49573398532,
+        2036.841382943125
+      ],
+      "bbox": [
+        1118,
+        1978,
+        1204,
+        2094
+      ],
+      "side_px": 115.69167433552184,
+      "yolo_conf": 0.383480042219162
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 735,
+      "pos": [
+        1366.4727470112375,
+        2644.8834871407853
+      ],
+      "bbox": [
+        1306,
+        2553,
+        1426,
+        2735
+      ],
+      "side_px": 182.21349951760385,
+      "yolo_conf": 0.383480042219162
+    },
+    {
+      "source": "yolo_only",
+      "confirm_idx": 735,
+      "pos": [
+        259.86293127262957,
+        1020.4068812911446
+      ],
+      "bbox": [
+        244,
+        1000,
+        275,
+        1039
+      ],
+      "side_px": 38.86886633885422,
+      "yolo_conf": 0.37619566917419434
+    }
+  ]
+}
