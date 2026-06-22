@@ -2,7 +2,7 @@ import axios from 'axios';
 import type { AxiosProgressEvent } from 'axios';
 import type { DetectionResponse } from '../types/detection';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,

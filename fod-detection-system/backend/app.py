@@ -6,35 +6,34 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from routes.detect import router as detect_router
-from services.detector import FODDetector
 
 
 BASE_DIR = Path(__file__).resolve().parent
 UPLOAD_DIR = BASE_DIR / "uploads"
+OUTPUT_DIR = BASE_DIR / "outputs"
 PROCESSED_DIR = BASE_DIR / "processed"
-MODEL_PATH = BASE_DIR / "models" / "fod_model.pt"
-CALIBRATION_PATH = BASE_DIR / "config" / "camera_calibration.json"
+HAWKEYE_DIR = BASE_DIR / "hawkeye"
+HAWKEYE_WEIGHTS = HAWKEYE_DIR / "detection" / "runs" / "fod_train" / "v5_spd_both" / "weights" / "best.pt"
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
-    detector = FODDetector(model_path=MODEL_PATH)
-    detector.load()
-
-    app.state.detector = detector
-    app.state.calibration_path = CALIBRATION_PATH
     app.state.upload_dir = UPLOAD_DIR
+    app.state.output_dir = OUTPUT_DIR
     app.state.processed_dir = PROCESSED_DIR
+    app.state.hawkeye_dir = HAWKEYE_DIR
+    app.state.hawkeye_weights = HAWKEYE_WEIGHTS
     yield
 
 
 app = FastAPI(
     title="IAF FOD Detection Backend",
     version="1.0.0",
-    description="Camera-only FOD detection backend using FastAPI, OpenCV, and YOLO.",
+    description="Camera-only FOD detection backend using FastAPI and the Hawkeye detector.",
     lifespan=lifespan,
 )
 

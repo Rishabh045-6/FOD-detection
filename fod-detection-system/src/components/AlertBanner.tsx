@@ -10,6 +10,7 @@ import {
 import WarningIcon from '@mui/icons-material/Warning';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import type { DetectionResult } from '../types/detection';
+import { formatNullableNumber } from '../utils/detectionFormat';
 
 interface AlertBannerProps {
   fodDetected: boolean;
@@ -20,6 +21,17 @@ export const AlertBanner: React.FC<AlertBannerProps> = ({
   fodDetected,
   detections,
 }) => {
+  const getClosestDetection = (items: DetectionResult[]) => {
+    const withDistance = items.filter((item) => item.distance_m != null);
+    if (withDistance.length > 0) {
+      return withDistance.reduce((prev, current) =>
+        (prev.distance_m ?? Number.POSITIVE_INFINITY) < (current.distance_m ?? Number.POSITIVE_INFINITY) ? prev : current
+      );
+    }
+
+    return items[0];
+  };
+
   if (!fodDetected) {
     return (
       <Alert
@@ -45,9 +57,8 @@ export const AlertBanner: React.FC<AlertBannerProps> = ({
     );
   }
 
-  const closestDetection = detections.reduce((prev, current) =>
-    prev.distance_m < current.distance_m ? prev : current
-  );
+  const closestDetection = getClosestDetection(detections);
+  const closestDistanceLabel = formatNullableNumber(closestDetection.distance_m, 1, 'm away');
 
   return (
     <Alert
@@ -75,7 +86,7 @@ export const AlertBanner: React.FC<AlertBannerProps> = ({
             size="small"
           />
           <Chip
-            label={`Closest: ${closestDetection.distance_m.toFixed(1)}m away`}
+            label={`Closest: ${closestDistanceLabel}`}
             color="error"
             variant="outlined"
             size="small"

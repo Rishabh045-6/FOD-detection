@@ -16,6 +16,7 @@ import {
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import type { DetectionResult } from '../types/detection';
+import { formatNullableNumber } from '../utils/detectionFormat';
 
 interface FODTableProps {
   detections: DetectionResult[];
@@ -158,14 +159,14 @@ export const FODTable: React.FC<FODTableProps> = ({ detections }) => {
                   </TableCell>
                   <TableCell align="right">
                     <Typography variant="body2" sx={{ color: 'warning.main', fontWeight: 'bold' }}>
-                      {detection.distance_m.toFixed(1)}
+                      {formatNullableNumber(detection.distance_m, 1)}
                     </Typography>
                   </TableCell>
                   <TableCell align="right">
-                    <Typography variant="body2">{detection.coordinates.x.toFixed(2)}</Typography>
+                    <Typography variant="body2">{formatNullableNumber(detection.coordinates.x, 2)}</Typography>
                   </TableCell>
                   <TableCell align="right">
-                    <Typography variant="body2">{detection.coordinates.y.toFixed(2)}</Typography>
+                    <Typography variant="body2">{formatNullableNumber(detection.coordinates.y, 2)}</Typography>
                   </TableCell>
                   <TableCell align="center">
                     <Chip

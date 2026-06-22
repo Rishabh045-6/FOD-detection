@@ -1,18 +1,18 @@
-from typing import List
+from typing import List, Optional
 
 from pydantic import BaseModel
 
 
 class RunwayCoordinates(BaseModel):
-    x: float
-    y: float
+    x: Optional[float]
+    y: Optional[float]
 
 
 class DetectionResult(BaseModel):
     id: str
     frame: int
     timestamp: str
-    distance_m: float
+    distance_m: Optional[float]
     coordinates: RunwayCoordinates
     confidence: float
 

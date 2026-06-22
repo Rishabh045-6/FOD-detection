@@ -77,7 +77,7 @@ class VideoProcessor:
 
         writer = cv2.VideoWriter(
             str(output_path),
-            cv2.VideoWriter_fourcc(*"mp4v"),
+            cv2.VideoWriter_fourcc(*"H264"),
             fps,
             (width, height),
         )

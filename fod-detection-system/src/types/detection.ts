@@ -1,13 +1,13 @@
 export interface Coordinates {
-  x: number;
-  y: number;
+  x: number | null;
+  y: number | null;
 }
 
 export interface DetectionResult {
   id: string;
   frame: number;
   timestamp: string;
-  distance_m: number;
+  distance_m: number | null;
   coordinates: Coordinates;
   confidence: number;
 }

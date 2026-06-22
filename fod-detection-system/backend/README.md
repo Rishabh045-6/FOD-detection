@@ -3,19 +3,11 @@
 ## Prerequisites
 
 - Python 3.8+
-- FFmpeg (for video processing)
-
-### Install FFmpeg
-
-**Windows**: `choco install ffmpeg`  
-**Linux**: `sudo apt-get install ffmpeg`  
-**macOS**: `brew install ffmpeg`
+- Hawkeye dependencies available in the backend environment
 
 ## Setup
 
-```bash
-pip install -r requirements.txt
-```
+Install the FastAPI backend dependencies in your environment, then install the Hawkeye stack from `hawkeye/requirements.txt`.
 
 ## Run
 
@@ -27,9 +19,9 @@ Run from the `backend` directory. Server runs at `http://localhost:8000`
 
 ## Configuration
 
-- **Model**: Place YOLO model at `backend/models/fod_model.pt`
-- **Camera Calibration**: Update `backend/config/camera_calibration.json` with your camera intrinsics and pose
-- **Output**: Processed videos served from `/processed/<file>.mp4`
+- **Detection Engine**: Hawkeye is the only detector used by the backend
+- **YOLO Weights**: `backend/hawkeye/detection/runs/fod_train/v5_spd_both/weights/best.pt`
+- **Output**: Processed videos are served from `/processed/<file>.mp4`
 
 ## Health Check
 
@@ -41,4 +33,9 @@ curl http://localhost:8000/health
 
 - **POST** `/api/detect` - Upload video for FOD detection
   - Body: multipart form with `video` file (MP4, AVI, MOV)
-  - Returns: JSON with detections, processed video URL, processing time
+  - Backend workflow:
+    - saves the upload to `backend/uploads/`
+    - runs `python tbd/detect_fused.py --video <uploaded_video> --yolo-weights detection/runs/fod_train/v5_spd_both/weights/best.pt --out <output_dir>`
+    - reads `<output_dir>/detections.json`
+    - copies the annotated output video into `backend/processed/`
+  - Returns: frontend-compatible JSON with `distance_m: null` and `coordinates: { "x": null, "y": null }`
