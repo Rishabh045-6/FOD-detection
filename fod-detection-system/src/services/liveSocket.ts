@@ -33,7 +33,12 @@ export class LiveSocketService {
     this.cleanUpTimers();
     this.isIntentionallyClosed = false;
     
-    const hostUrl = this.options.baseUrl || "ws://localhost:8000";
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:8001";
+    const defaultHostUrl = apiBaseUrl.startsWith("https://")
+      ? apiBaseUrl.replace(/^https:/, "wss:")
+      : apiBaseUrl.replace(/^http:/, "ws:");
+
+    const hostUrl = this.options.baseUrl || import.meta.env.VITE_WS_BASE_URL || defaultHostUrl;
     const encodedSource = encodeURIComponent(this.options.source);
     const fullUrl = `${hostUrl}/ws/live?source=${encodedSource}`;
 

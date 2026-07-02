@@ -1,4 +1,4 @@
-import type { LiveDetection } from "./livedetection";
+import type { LiveDetection } from "./LiveDetection";
 import type { CameraSource } from "./CameraSource";
 
 /**

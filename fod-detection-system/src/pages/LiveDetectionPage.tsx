@@ -3,20 +3,22 @@ import {
   Box,
   Grid,
   Typography,
-  Card, 
-  CardContent, 
-  Button, 
-  TextField, 
-  Chip, 
-  Table, 
-  TableBody, 
-  TableCell, 
-  TableContainer, 
-  TableHead, 
-  TableRow, 
+  Card,
+  CardContent,
+  Button,
+  TextField,
+  Chip,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
   Paper,
   LinearProgress,
-  Stack
+  Stack,
+  ToggleButton,
+  ToggleButtonGroup,
 } from "@mui/material";
 import {
   Videocam,
@@ -26,6 +28,7 @@ import {
   WarningAmber,
   CheckCircleOutlined,
 } from "@mui/icons-material";
+import { LiveVideo } from "../components/LiveVideo";
 import { toast } from "react-toastify";
 
 // Match the API structures passed via the WebSocket payload
@@ -44,12 +47,16 @@ interface LiveWSMessage {
   timestamp: string;
   fod_detected: boolean;
   detections: Detection[];
+  image: string;
 }
 
 export default function LiveDetectionPage() {
-  const [cameraSource, setCameraSource] = useState<string>("0");
+  const [cameraSource, setCameraSource] = useState<string>("mock");
+  const [selectedSourceType, setSelectedSourceType] = useState<string>("mock");
   const [isStreaming, setIsStreaming] = useState<boolean>(false);
+  const [socketStatus, setSocketStatus] = useState<string>("idle");
   const [lastMessage, setLastMessage] = useState<LiveWSMessage | null>(null);
+  const [frameData, setFrameData] = useState<string | null>(null);
   
   // Performance and UI tracking states
   const [fps, setFps] = useState<number>(0);
@@ -79,16 +86,29 @@ export default function LiveDetectionPage() {
   const startLiveStream = () => {
     if (wsRef.current) return;
 
-    const wsUrl = `ws://localhost:8000/ws/live?source=${encodeURIComponent(cameraSource)}`;
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:8001";
+    const defaultWsBaseUrl = apiBaseUrl.startsWith("https://")
+      ? apiBaseUrl.replace(/^https:/, "wss:")
+      : apiBaseUrl.replace(/^http:/, "ws:");
+
+    const wsBaseUrl = import.meta.env.VITE_WS_BASE_URL || defaultWsBaseUrl;
+    const wsUrl = `${wsBaseUrl}/ws/live?source=${encodeURIComponent(cameraSource)}`;
     const ws = new WebSocket(wsUrl);
     wsRef.current = ws;
     setIsStreaming(true);
+    setSocketStatus("connecting");
     toast.info(`Connecting to live runway stream [Source: ${cameraSource}]...`);
+
+    ws.onopen = () => {
+      setSocketStatus("open");
+      toast.success("Live runway stream connected.");
+    };
 
     ws.onmessage = (event) => {
       try {
         const data: LiveWSMessage = JSON.parse(event.data);
         setLastMessage(data);
+        setFrameData(data.image ?? null);
         frameCountRef.current += 1;
 
         // Process telemetry to quickly determine closest risk
@@ -104,11 +124,13 @@ export default function LiveDetectionPage() {
     };
 
     ws.onerror = () => {
+      setSocketStatus("error");
       toast.error("WebSocket connection encountered an execution failure.");
       stopLiveStream();
     };
 
     ws.onclose = () => {
+      setSocketStatus("closed");
       toast.warn("Live analytical hardware pipeline stream closed.");
       stopLiveStream();
     };
@@ -122,6 +144,7 @@ export default function LiveDetectionPage() {
     setIsStreaming(false);
     setFps(0);
     setLastMessage(null);
+    setFrameData(null);
     setClosestObject(null);
   };
 
@@ -147,6 +170,44 @@ export default function LiveDetectionPage() {
                 <Typography variant="h6" gutterBottom sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                   <CompassCalibration color="primary" /> Camera Interface Setup
                 </Typography>
+                <ToggleButtonGroup
+                  value={selectedSourceType}
+                  exclusive
+                  orientation="vertical"
+                  color="primary"
+                  fullWidth
+                  sx={{ mb: 2 }}
+                  onChange={(_, value) => {
+                    if (value) {
+                      setSelectedSourceType(value);
+                      switch (value) {
+                        case "mock":
+                          setCameraSource("mock");
+                          break;
+                        case "webcam":
+                          setCameraSource("0");
+                          break;
+                        case "usb":
+                          setCameraSource("1");
+                          break;
+                        case "pi":
+                          setCameraSource("rtsp://192.168.0.100:554/stream");
+                          break;
+                        case "ip":
+                          setCameraSource("rtsp://<camera-ip>/live.sdp");
+                          break;
+                        default:
+                          setCameraSource("0");
+                      }
+                    }
+                  }}
+                >
+                  <ToggleButton value="mock">Mock Video</ToggleButton>
+                  <ToggleButton value="webcam">Webcam</ToggleButton>
+                  <ToggleButton value="usb">USB Camera</ToggleButton>
+                  <ToggleButton value="pi">Pi Camera</ToggleButton>
+                  <ToggleButton value="ip">IP Camera</ToggleButton>
+                </ToggleButtonGroup>
                 <TextField
                   fullWidth
                   label="Target Stream Path / HW Index"
@@ -155,7 +216,7 @@ export default function LiveDetectionPage() {
                   value={cameraSource}
                   onChange={(e) => setCameraSource(e.target.value)}
                   disabled={isStreaming}
-                  placeholder="e.g., 0, rtsp://192.168.1.50/stream"
+                  placeholder="e.g., mock, 0, rtsp://192.168.1.50/stream"
                   sx={{ my: 2 }}
                 />
                 {!isStreaming ? (
@@ -215,6 +276,23 @@ export default function LiveDetectionPage() {
                   </Box>
 
                   <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <Typography color="text.secondary">WS Status:</Typography>
+                    <Chip
+                      label={socketStatus.toUpperCase()}
+                      color={
+                        socketStatus === "open"
+                          ? "success"
+                          : socketStatus === "connecting"
+                          ? "warning"
+                          : socketStatus === "error"
+                          ? "error"
+                          : "default"
+                      }
+                      size="small"
+                    />
+                  </Box>
+
+                  <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <Typography color="text.secondary">FOD Runway Status:</Typography>
                     {lastMessage?.fod_detected ? (
                       <Chip icon={<WarningAmber />} label="DEBRIS DETECTED" color="error" size="small" />
@@ -264,42 +342,12 @@ export default function LiveDetectionPage() {
           <Stack spacing={3}>
             {/* Camera Frame Feed Visualization Placeholder */}
             <Card elevation={2}>
-              <Box 
-                sx={{ 
-                  width: "100%", 
-                  height: "500px", 
-                  bgcolor: "black", 
-                  display: "flex", 
-                  flexDirection: "column",
-                  alignItems: "center", 
-                  justifyContent: "center",
-                  color: "grey.500",
-                  position: "relative",
-                  borderRadius: "4px 4px 0 0"
-                }}
-              >
-                {isStreaming ? (
-                  <>
-                    <Videocam sx={{ fontSize: 64, color: lastMessage?.fod_detected ? "error.main" : "success.main", mb: 2 }} />
-                    <Typography variant="h6" color="grey.300">
-                      Processing Stream via Hardware Matrix Channel
-                    </Typography>
-                    <Typography variant="body2" color="grey.500" sx={{ mt: 1, fontFamily: "monospace" }}>
-                      Timestamp Context: {lastMessage?.timestamp || "Syncing..."}
-                    </Typography>
-                    {lastMessage?.fod_detected && (
-                      <Box sx={{ position: "absolute", top: 16, right: 16, bgcolor: "error.main", color: "white", px: 2, py: 0.5, borderRadius: 1, fontWeight: "bold", animation: "pulse 1.5s infinite" }}>
-                        LIVE DETECTION ALARM
-                      </Box>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    <VideocamOff sx={{ fontSize: 64, mb: 2 }} />
-                    <Typography variant="h6">Pipeline Context Disengaged</Typography>
-                    <Typography variant="body2">Provide a valid stream configuration string to capture live frames.</Typography>
-                  </>
-                )}
+              <Box sx={{ width: "100%", height: "500px", bgcolor: "black", position: "relative", borderRadius: "4px 4px 0 0", overflow: "hidden" }}>
+                <LiveVideo
+                  isStreaming={isStreaming}
+                  frameData={frameData}
+                  fodDetected={lastMessage?.fod_detected ?? false}
+                />
               </Box>
               {isStreaming && <LinearProgress color={lastMessage?.fod_detected ? "error" : "primary"} />}
             </Card>

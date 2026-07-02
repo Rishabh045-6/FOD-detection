@@ -35,13 +35,23 @@ async def lifespan(app: FastAPI):
     app.state.processed_dir = PROCESSED_DIR
     app.state.hawkeye_dir = HAWKEYE_DIR
     app.state.hawkeye_weights = HAWKEYE_WEIGHTS
-
     # --- Live System Global Singleton Initialization ---
     # Instantiate engine structures exactly once on server initialization
     app.state.camera_manager = CameraManager()
     
     # Passing our specialized Hawkeye target weights directly to the inference agent
-    app.state.live_detector = LiveDetector(model_path=str(HAWKEYE_WEIGHTS))
+    app.state.live_detector = LiveDetector(
+        tbd_weights=str(
+            HAWKEYE_DIR /
+            "tbd" /
+            "runs" /
+            "cls_v7" /
+            "best.pt"
+        ),
+        yolo_weights=str(
+            HAWKEYE_WEIGHTS
+        ),
+    )
 
     yield
     

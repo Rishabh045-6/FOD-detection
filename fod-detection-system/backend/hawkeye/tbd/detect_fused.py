@@ -70,7 +70,7 @@ def yolo_near_track(yolo_boxes: list, pos, agree_dist: float, yolo_conf: float) 
         cx, cy = _center(b)
         if _near(cx, cy, pos, agree_dist):
             return True
-    return false
+    return False
 
 
 def near_confirmed(box, confirmed_tracks: list, agree_dist: float) -> bool:
@@ -130,19 +130,115 @@ class HawkeyeDetector:
         self.yolo_boxes: list = []
         self.frame_index = 0
         self.n_yolo_runs = 0
+        self.prev_gray = None
+        self.background = None
+    
+    def _generate_candidates(self, frame: np.ndarray):
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-    def process_frame(self, frame: np.ndarray, cands: list, H: Optional[np.ndarray]) -> Tuple[np.ndarray, List[Dict[str, Any]]]:
+        if self.prev_gray is None:
+            self.prev_gray = gray
+            self.background = gray.astype(np.float32)
+            return [], np.eye(3, dtype=np.float32)
+
+        pts = cv2.goodFeaturesToTrack(
+            self.prev_gray,
+            maxCorners=800,
+            qualityLevel=0.01,
+            minDistance=10,
+        )
+
+        H = np.eye(3, dtype=np.float32)
+
+        if pts is not None:
+            nxt, st, _ = cv2.calcOpticalFlowPyrLK(
+                self.prev_gray,
+                gray,
+                pts,
+                None,
+            )
+
+            if nxt is not None:
+                good_old = pts[st == 1]
+                good_new = nxt[st == 1]
+
+                if len(good_old) >= 4:
+                    H, _ = cv2.findHomography(
+                        good_old,
+                        good_new,
+                        cv2.RANSAC,
+                        3.0,
+                    )
+
+                    if H is None:
+                        H = np.eye(3, dtype=np.float32)
+
+        self.prev_gray = gray
+
+        cv2.accumulateWeighted(
+            gray,
+            self.background,
+            0.02,
+        )
+
+        bg = cv2.convertScaleAbs(self.background)
+        diff = cv2.absdiff(gray, bg)
+        _, mask = cv2.threshold(
+            diff,
+            25,
+            255,
+            cv2.THRESH_BINARY,
+        )
+        mask = cv2.morphologyEx(
+            mask,
+            cv2.MORPH_OPEN,
+            np.ones((3, 3), np.uint8),
+        )
+
+        contours, _ = cv2.findContours(
+            mask,
+            cv2.RETR_EXTERNAL,
+            cv2.CHAIN_APPROX_SIMPLE,
+        )
+
+        cands = []
+        for cnt in contours:
+            x, y, w, h = cv2.boundingRect(cnt)
+            if w * h < 16:
+                continue
+            cands.append(
+                {
+                    "bbox": [x, y, x + w, y + h],
+                    "centroid": (
+                        x + w / 2,
+                        y + h / 2,
+                    ),
+                    "side_px": max(w, h),
+                }
+            )
+
+        return cands, H
+
+    def process_frame(
+        self,
+        frame: np.ndarray,
+        cands: Optional[List[Dict[str, Any]]] = None,
+        H: Optional[np.ndarray] = None,
+    ) -> Tuple[np.ndarray, List[Dict[str, Any]]]:
         """
         Processes a single unified input frame matrix item.
         
         Args:
             frame: Raw BGR input frame image matrix.
-            cands: Extract list layout tracing local pixel candidates coordinates.
-            H: Optional 3x3 ego-motion frame registration Homography grid.
+            cands: Optional candidate list for legacy batch stream compatibility.
+            H: Optional homography matrix for legacy batch stream compatibility.
         """
         self.frame_index += 1
         detections_this_frame = []
         vis_frame = frame.copy()
+
+        if cands is None or H is None:
+            cands, H = self._generate_candidates(frame)
 
         # 1. Strided YOLO Inference Execution Pipeline
         run_yolo = ((self.frame_index - 1) % self.yolo_stride) == 0

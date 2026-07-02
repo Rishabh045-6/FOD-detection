@@ -1,163 +1,148 @@
 import asyncio
-import base64
 import logging
-import time
+from datetime import datetime
+from fastapi import APIRouter, WebSocket, WebSocketDisconnect
+from fastapi.encoders import jsonable_encoder
+from services.camera_manager import CameraManager
+from services.live_detector import LiveDetector
+from services.result_parser import HawkeyeResultParser
 import cv2
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Query
+import base64
 
-router = APIRouter(tags=["Live Analytics Stream"])
-logger = logging.getLogger("LiveStreamWebSocket")
+router = APIRouter(tags=["Live WebSocket Stream"])
+logger = logging.getLogger("LiveWebSocket")
 
-
-class StreamSessionWorker:
-
-    def __init__(self, websocket: WebSocket, camera_manager, result_parser):
-        self.websocket = websocket
-        self.camera = camera_manager
-        self.parser = result_parser
+class LiveStreamManager:
+    def __init__(self, detector: LiveDetector):
+        self.camera = CameraManager()
+        self.detector = detector
+        self.result_parser = HawkeyeResultParser()
         self.is_running = False
-        self.frame_counter = 0
+        self.frame_count = 0
 
-    async def run_pipeline_loop(self, target_fps: float = 30.0):
+    async def broadcast_loop(self, websocket: WebSocket, source: str):
         """
-        Runs the continuous high-speed extraction and push pipeline:
-        Frame -> Base64 Image Encode -> Telemetry Parse -> WebSocket Send.
+        Continuously captures camera frames, runs the Hawkeye inference pipeline,
+        and pipes the real-time telemetry payload down the WebSocket pipe.
         """
-        self.frame_counter = 0
-        frame_delay = 1.0 / target_fps
+        self.frame_count = 0
         
-        # Pull initial reference configurations out of the active hardware stream
-        camera_info = {
-            "source_type": getattr(self.camera, "source_type", "unknown"),
-            "target_source": getattr(self.camera, "current_source", "0"),
-        }
-
         while self.is_running:
-            loop_start = time.perf_counter()
-            self.frame_counter += 1
-
-            # 1. Capture Raw Image Array
-            # Executed in an executor thread to preserve async responsiveness
             loop = asyncio.get_running_loop()
-            frame = await loop.run_in_executor(None, self.camera.read)
+            ret, frame = await loop.run_in_executor(None, self.camera.read_frame)
 
-            if frame is None:
-                # Mirror system status update back to frontend if line stutters
-                try:
-                    await self.websocket.send_json({
-                        "frame": self.frame_counter,
-                        "status": "reconnecting",
-                        "camera_info": camera_info,
-                        "fod_detected": False,
-                        "detections": [],
-                        "image": "",
-                        "fps": 0
-                    })
-                except Exception:
-                    break
-                await asyncio.sleep(0.1)
+            if not ret or frame is None:
+                logger.warning("Camera stream returned an empty frame. Retrying...")
+                await asyncio.sleep(0.033)
                 continue
 
-            # 2. Performance Metric Tracking
-            loop_end = time.perf_counter()
-            elapsed = loop_end - loop_start
-            actual_fps = round(1.0 / elapsed, 1) if elapsed > 0 else target_fps
-
-            # 3. Dynamic Inference Processing Layer
-            # Diverting work onto the singleton live_detector inside app state
-            # (In a production flow, pass frame directly through the runner)
-            detector = self.websocket.app.state.live_detector
-            annotated_frame, raw_detections, fod_detected = await loop.run_in_executor(
-                None, detector.process_frame, frame, self.frame_counter
-            )
-
-            # 4. Telemetry Extraction and Structural Parsing
-            parsed_detections = []
-            for idx, det in enumerate(raw_detections):
-                # Map raw predictive lists onto unified tracking layouts
-                clean_det = self.parser.parse_live_detection(
-                    index=idx,
-                    raw_detection=det,
-                    frame_number=self.frame_counter,
-                    fps=actual_fps
-                )
-                parsed_detections.append(clean_det)
-
-            # 5. JPEG Array Compression & Base64 Text Transformation
-            # High quality value matching balanced compression constraints
-            success, jpeg_buffer = cv2.imencode(".jpg", annotated_frame, [int(cv2.IMWRITE_JPEG_QUALITY), 80])
-            if not success:
-                continue
-
-            base64_string = base64.b64encode(jpeg_buffer).decode("utf-8")
-            image_data_url = f"data:image/jpeg;base64,{base64_string}"
-
-            # 6. Dispatch Payload Pack to Frontend
-            payload = {
-                "frame": self.frame_counter,
-                "timestamp": parsed_detections[0]["timestamp"] if fod_detected else self.parser._format_timestamp(self.frame_counter, actual_fps),
-                "status": "active",
-                "fps": actual_fps,
-                "camera_info": camera_info,
-                "fod_detected": fod_detected,
-                "detections": parsed_detections,
-                "image": image_data_url,
-            }
-
+            self.frame_count += 1
             try:
-                await self.websocket.send_json(payload)
-            except Exception as exc:
-                logger.error(f"WebSocket socket write error dropped packet: {exc}")
+                annotated_frame, raw_detections, detected = await loop.run_in_executor(
+                    None,
+                    self.detector.process_frame,
+                    frame,
+                )
+
+                if annotated_frame is None:
+                    raise RuntimeError("Detector returned no annotated frame")
+
+                parsed_detections = []
+                for index, detection in enumerate(raw_detections, start=1):
+                    try:
+                        parsed_detections.append(
+                            self.result_parser.parse_live_detection(
+                                index,
+                                detection,
+                                self.frame_count,
+                                fps=30.0,
+                            )
+                        )
+                    except Exception as exc:
+                        logger.warning(
+                            "Failed to parse detection %s for frame %s: %s",
+                            index,
+                            self.frame_count,
+                            exc,
+                        )
+
+                success, buffer = cv2.imencode('.jpg', annotated_frame)
+                if not success or buffer is None:
+                    raise RuntimeError("Failed to encode annotated frame as JPEG")
+
+                jpg_as_text = base64.b64encode(buffer).decode('utf-8')
+                timestamp = datetime.utcnow().strftime("%H:%M:%S")
+
+                payload = {
+                    "frame": self.frame_count,
+                    "timestamp": timestamp,
+                    "status": "active",
+                    "fps": 0,
+                    "fod_detected": len(parsed_detections) > 0,
+                    "detections": parsed_detections,
+                    "image": f"data:image/jpeg;base64,{jpg_as_text}",
+                    "camera_info": {
+                        "hardware_type": self.camera.source_type,
+                        "target_source": str(source),
+                    },
+                }
+
+                safe_payload = jsonable_encoder(payload)
+                await websocket.send_json(safe_payload)
+
+            except WebSocketDisconnect:
+                logger.info(
+                    "Live WebSocket client disconnected during frame %s.",
+                    self.frame_count,
+                )
                 break
 
-            # 7. Adaptive Pacing Frame Governor
-            compute_time = time.perf_counter() - loop_start
-            sleep_time = max(0.0, frame_delay - compute_time)
-            await asyncio.sleep(sleep_time)
+            except Exception as e:
+                logger.exception(
+                    "Live WebSocket frame processing failed on frame %s: %s",
+                    self.frame_count,
+                    e,
+                )
+                break
 
+            # Enforce execution spacing to match standard camera hardware feed pacing (~30 FPS)
+            await asyncio.sleep(0.01)
 
 @router.websocket("/ws/live")
-async def live_analytic_websocket_endpoint(
-    websocket: WebSocket,
-    source: str = Query("0", description="Target hardware address index or remote RTSP pipeline line string")
-):
+async def websocket_endpoint(websocket: WebSocket, source: str = "0"):
     """
-    Accepts low-latency, streaming WebSocket pipes from control towers.
-    Coordinates device attachments cleanly via shared singletons.
+    WebSocket route for real-time runway streaming. Accepts an optional query
+    parameter to choose the active camera source.
     """
     await websocket.accept()
-    logger.info("Control tower connection bound to live stream network socket.")
-
-    # Safely pull our singletons straight out of the shared application instance space
-    camera_manager = websocket.app.state.camera_manager
+    logger.info("Frontend connected to live analytics stream via WebSocket.")
     
-    # Initialize the parser using your custom class
-    from services.result_parser import HawkeyeResultParser
-    result_parser = HawkeyeResultParser()
-
-    # Dynamically mount the video track requested by the query string parameters
-    connection_success = camera_manager.open(source)
-    if not connection_success:
-        await websocket.send_json({
-            "status": "error",
-            "message": f"Hardware rejection. Failed opening channel location parameters: {source}"
-        })
+    detector = websocket.app.state.live_detector
+    stream_manager = LiveStreamManager(detector)
+    
+    # Open the camera stream source
+    success = stream_manager.camera.open(source)
+    if not success:
+        await websocket.send_json({"status": "error", "message": f"Could not connect to camera source: {source}"})
         await websocket.close(code=1011)
         return
 
-    worker = StreamSessionWorker(websocket, camera_manager, result_parser)
-    
     try:
-        worker.is_running = True
-        await worker.run_pipeline_loop()
+        stream_manager.is_running = True
+        # Run the broadcasting handler task
+        await stream_manager.broadcast_loop(websocket, source)
+        
     except WebSocketDisconnect:
-        logger.info("Live data consumer cleanly disconnected from endpoint pipeline.")
+        logger.info("Frontend client disconnected normally from live WebSocket stream.")
+        
     except Exception as e:
-        logger.error(f"Internal processing stream exception caught: {e}")
+        logger.error(f"Unexpected crash inside the live stream processing context: {e}")
+        
     finally:
-        worker.is_running = False
-        camera_manager.close()
+        # Resource cleanup guarantees hardware devices are freed
+        stream_manager.is_running = False
+        stream_manager.camera.close()
         try:
             await websocket.close()
         except Exception:
-            pass  # Socket connection killed
+            pass # Connection already destroyed cleanly

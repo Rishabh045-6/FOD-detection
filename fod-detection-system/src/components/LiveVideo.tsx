@@ -135,9 +135,9 @@ export const LiveVideo: React.FC<LiveVideoProps> = ({
           100% { transform: scale(0.9); opacity: 0.4; }
         }
         @keyframes alert-flash {
-          0% { bgcolor: #f44336; box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.4); }
-          50% { bgcolor: #d32f2f; box-shadow: 0 0 0 10px rgba(244, 67, 54, 0); }
-          100% { bgcolor: #f44336; box-shadow: 0 0 0 0 rgba(244, 67, 54, 0); }
+          0% { background-color: #f44336; box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.4); }
+          50% { background-color: #d32f2f; box-shadow: 0 0 0 10px rgba(244, 67, 54, 0); }
+          100% { background-color: #f44336; box-shadow: 0 0 0 0 rgba(244, 67, 54, 0); }
         }
       `}</style>
     </Box>
