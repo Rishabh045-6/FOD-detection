@@ -27,7 +27,7 @@
 ## Local Setup Checklist
 
 - [ ] Install frontend dependencies with `npm install`
-- [ ] Install backend dependencies with `pip install -r backend/requirements.txt`
+- [ ] Install backend dependencies with `pip install -r backend/hawkeye/requirements.txt`
 - [ ] Ensure FFmpeg is installed
 - [ ] Add trained model to `backend/models/fod_model.pt`
 - [ ] Set `VITE_API_BASE_URL` in `.env`
@@ -61,6 +61,6 @@
 
 ## Known Caveats
 
-- The frontend code falls back to `http://localhost:5000` if `VITE_API_BASE_URL` is not set.
+- The frontend base URL is controlled by `VITE_API_BASE_URL`; if not set it defaults to `http://localhost:8000` in code.
 - The included FastAPI backend usually runs on `http://localhost:8000` when started with `uvicorn`.
 - Set the environment variable explicitly to avoid local connection issues.

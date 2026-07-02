@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import type { ChipProps } from '@mui/material';
 import {
   Card,
   CardContent,
@@ -48,7 +49,7 @@ export const FODTable: React.FC<FODTableProps> = ({ detections }) => {
     page * rowsPerPage + rowsPerPage
   );
 
-  const getConfidenceColor = (confidence: number) => {
+  const getConfidenceColor = (confidence: number): ChipProps['color'] => {
     if (confidence >= 0.9) return 'success';
     if (confidence >= 0.8) return 'warning';
     return 'error';
@@ -171,7 +172,7 @@ export const FODTable: React.FC<FODTableProps> = ({ detections }) => {
                   <TableCell align="center">
                     <Chip
                       label={`${(detection.confidence * 100).toFixed(1)}%`}
-                      color={getConfidenceColor(detection.confidence) as any}
+                      color={getConfidenceColor(detection.confidence)}
                       size="small"
                       variant="filled"
                     />

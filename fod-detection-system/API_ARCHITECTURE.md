@@ -14,6 +14,7 @@ The system is split into two layers:
 - `/` - upload page
 - `/processing` - upload and processing state
 - `/results` - processed video and detection results
+- `/live` - live detection stream page
 
 ### Main Frontend Modules
 
@@ -32,9 +33,12 @@ The system is split into two layers:
 
 - `backend/app.py` - FastAPI app, CORS, lifespan setup, static mount
 - `backend/routes/detect.py` - `/api/detect` endpoint
+- `backend/routes/live.py` - live camera control and stream management
+- `backend/websocket/live_stream.py` - WebSocket live stream route
 - `backend/models/schemas.py` - response models
-- `backend/services/detector.py` - model loading and inference
-- `backend/services/video_processor.py` - upload-to-result workflow
+- `backend/services/detector_runner.py` - inference runner wrapper
+- `backend/services/result_parser.py` - detection result parsing
+- `backend/services/video_locator.py` - annotated video discovery
 - `backend/services/annotation.py` - draw detections
 - `backend/services/calibration.py`
 - `backend/services/coordinate_transform.py`
@@ -45,7 +49,7 @@ The system is split into two layers:
 1. The user selects a video on the upload page.
 2. The frontend stores the file and navigates to `/processing`.
 3. `src/services/api.ts` posts the file to `/api/detect`.
-4. The backend saves the upload, runs detection, annotates frames, and writes a processed video.
+4. The backend saves the upload, runs detection through `HawkeyeRunner`, parses JSON detections, and writes a processed video.
 5. The backend returns summary fields plus a `detections` array.
 6. The frontend navigates to `/results` and renders the returned data.
 
@@ -54,7 +58,7 @@ The system is split into two layers:
 The frontend uses:
 
 - `VITE_API_BASE_URL` when set
-- Otherwise `http://localhost:5000` as a fallback in code
+- Otherwise `http://localhost:8000` as the default in current code
 
 If you start the included FastAPI backend with `uvicorn`, its default local URL is usually:
 
@@ -143,6 +147,18 @@ Returns:
 }
 ```
 
+### `POST /live/start`
+
+Starts the live camera/control pipeline.
+
+### `POST /live/stop`
+
+Stops the live capture pipeline.
+
+### `GET /live/status`
+
+Returns live camera status and connection health.
+
 ## Error Handling Notes
 
 The route currently raises:
@@ -163,7 +179,7 @@ The frontend converts Axios errors into readable messages before surfacing them 
 
 One configuration detail still requires attention during local setup:
 
-- Frontend fallback URL in code: `http://localhost:5000`
+- Frontend base URL in code resolves `VITE_API_BASE_URL` and defaults to `http://localhost:8000`.
 - Default `uvicorn` backend URL: `http://localhost:8000`
 
-Set `VITE_API_BASE_URL` explicitly to avoid that mismatch.
+Set `VITE_API_BASE_URL` explicitly during local development.

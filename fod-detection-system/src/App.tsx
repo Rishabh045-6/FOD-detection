@@ -5,19 +5,27 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { darkTheme } from './styles/theme';
-import { UploadPage, ProcessingPage, ResultsPage } from './pages';
+import { UploadPage, ProcessingPage, ResultsPage, LiveDetectionPage } from './pages';
+// Inside src/App.tsx
+import { Navigation } from './components/Navigation';
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <Router>
-        <Routes>
-          <Route path="/" element={<UploadPage />} />
-          <Route path="/processing" element={<ProcessingPage />} />
-          <Route path="/results" element={<ResultsPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <Navigation>
+          <Routes>
+            <Route path="/" element={<UploadPage />} />
+            <Route path="/processing" element={<ProcessingPage />} />
+            <Route path="/results" element={<ResultsPage />} />
+
+            {/* New Live Hardware Stream Route */}
+            <Route path="/live" element={<LiveDetectionPage />} />
+
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </Navigation>
       </Router>
       <ToastContainer
         position="bottom-right"

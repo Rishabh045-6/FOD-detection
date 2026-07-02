@@ -1,4 +1,5 @@
 import React from 'react';
+import type { ChipProps } from '@mui/material';
 import {
   Box,
   Card,
@@ -25,7 +26,14 @@ export const DetectionSummary: React.FC<DetectionSummaryProps> = ({
   fodDetected,
   processingTime,
 }) => {
-  const summaryCards = [
+  type SummaryCardColor = ChipProps['color'];
+
+  const summaryCards: Array<{
+    title: string;
+    value: string;
+    icon: typeof CropOriginalIcon;
+    color: SummaryCardColor;
+  }> = [
     {
       title: 'Total Frames Processed',
       value: totalFrames.toLocaleString(),
@@ -107,7 +115,7 @@ export const DetectionSummary: React.FC<DetectionSummaryProps> = ({
 
                 <Chip
                   label={card.color === 'error' ? 'Critical' : 'Normal'}
-                  color={card.color as any}
+                  color={card.color}
                   size="small"
                   variant="outlined"
                   sx={{ alignSelf: 'flex-start', mt: 'auto' }}

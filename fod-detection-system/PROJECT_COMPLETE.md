@@ -40,16 +40,17 @@ This repository contains a working frontend and a structured backend implementat
 ## Verified Behavior
 
 - `npm run build` passes
-- Frontend routes are defined for `/`, `/processing`, and `/results`
+- Frontend routes are defined for `/`, `/processing`, `/results`, and `/live`
 - Backend serves `/health`
 - Backend mounts `/processed` static output
+- Backend has `/api/live` control routes and WebSocket scaffolding
 - Frontend and backend share the same response shape for detections
 
 ## Remaining Integration Dependencies
 
 The main operational dependency is external model/runtime setup:
 
-- Install backend Python dependencies
+- Install backend Python dependencies from `backend/hawkeye/requirements.txt`
 - Ensure FFmpeg is available on the machine
 - Place the trained model at `backend/models/fod_model.pt`
 - Point the frontend to the correct backend base URL
@@ -62,12 +63,11 @@ The backend typically runs on `http://localhost:8000` when started with:
 uvicorn app:app --reload
 ```
 
-The frontend API fallback is currently `http://localhost:5000` unless overridden by `VITE_API_BASE_URL`, so the `.env` value should be set explicitly during local development.
-
+The frontend API base URL is resolved in `src/services/api.ts` using `import.meta.env.VITE_API_BASE_URL`. When unset, the code defaults to `http://localhost:8000`.
 ## Recommended Next Steps
 
 1. Update `.env` to match your backend port.
-2. Install backend requirements from `backend/requirements.txt`.
+2. Install backend requirements from `backend/hawkeye/requirements.txt`.
 3. Run both services locally.
 4. Upload a test runway video.
 5. Validate output video, detections, and distances.

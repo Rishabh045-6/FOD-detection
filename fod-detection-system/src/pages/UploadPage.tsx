@@ -7,13 +7,18 @@ import {
   Button,
   Stack,
   Paper,
+  Tabs,
+  Tab,
 } from '@mui/material';
 import { VideoUploader } from '../components';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import LiveTvIcon from '@mui/icons-material/LiveTv';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
 export const UploadPage: React.FC = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<number>(0); // 0 = File Upload, 1 = Live Camera
   const navigate = useNavigate();
 
   const handleFileSelect = (file: File) => {
@@ -30,6 +35,10 @@ export const UploadPage: React.FC = () => {
     }
   };
 
+  const handleLaunchLiveStream = () => {
+    navigate('/live');
+  };
+
   return (
     <Box
       sx={{
@@ -42,7 +51,7 @@ export const UploadPage: React.FC = () => {
       <Container maxWidth="lg">
         <Stack spacing={4}>
           {/* Header */}
-          <Box sx={{ textAlign: 'center', mb: 4 }}>
+          <Box sx={{ textAlign: 'center', mb: 2 }}>
             <Typography
               variant="h3"
               sx={{
@@ -61,88 +70,190 @@ export const UploadPage: React.FC = () => {
             </Typography>
           </Box>
 
-          {/* Info Cards */}
-          <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
-            <Paper
+          {/* Operational Mode Selection Bar */}
+          <Paper 
+            elevation={4} 
+            sx={{ 
+              background: 'rgba(19, 26, 46, 0.8)', 
+              backdropFilter: 'blur(8px)',
+              border: '1px solid rgba(255, 255, 255, 0.05)',
+              borderRadius: 2
+            }}
+          >
+            <Tabs
+              value={activeTab}
+              onChange={(_, newValue) => setActiveTab(newValue)}
+              variant="fullWidth"
+              indicatorColor="primary"
+              textColor="primary"
               sx={{
-                p: 2.5,
-                flex: 1,
-                background: 'rgba(0, 188, 212, 0.1)',
-                border: '1px solid',
-                borderColor: 'primary.main',
+                '& .MuiTab-root': { py: 2, fontSize: '1rem', fontWeight: 'bold' }
               }}
             >
-              <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>
-                📹 Supported Formats
-              </Typography>
-              <Typography variant="body2" color="textSecondary">
-                MP4, AVI, MOV (Max 1GB)
-              </Typography>
-            </Paper>
-            <Paper
-              sx={{
-                p: 2.5,
-                flex: 1,
-                background: 'rgba(76, 175, 80, 0.1)',
-                border: '1px solid',
-                borderColor: 'success.main',
-              }}
-            >
-              <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>
-                ⚡ Real-time Analysis
-              </Typography>
-              <Typography variant="body2" color="textSecondary">
-                Fast frame extraction and object detection
-              </Typography>
-            </Paper>
-            <Paper
-              sx={{
-                p: 2.5,
-                flex: 1,
-                background: 'rgba(255, 152, 0, 0.1)',
-                border: '1px solid',
-                borderColor: 'warning.main',
-              }}
-            >
-              <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>
-                📊 Detailed Results
-              </Typography>
-              <Typography variant="body2" color="textSecondary">
-                Coordinates, confidence scores, and distances
-              </Typography>
-            </Paper>
-          </Stack>
+              <Tab icon={<CloudUploadIcon />} iconPosition="start" label="Upload Batch Video" />
+              <Tab icon={<LiveTvIcon />} iconPosition="start" label="Live Camera Stream" />
+            </Tabs>
+          </Paper>
 
-          {/* Upload Section */}
-          <Box>
-            <VideoUploader
-              onFileSelect={handleFileSelect}
-              onPreviewReady={handlePreviewReady}
-            />
-          </Box>
+          {/* Mode Viewport Switcher */}
+          {activeTab === 0 ? (
+            /* MODE 0: Video Upload Pipeline */
+            <Stack spacing={4}>
+              <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
+                <Paper
+                  sx={{
+                    p: 2.5,
+                    flex: 1,
+                    background: 'rgba(0, 188, 212, 0.1)',
+                    border: '1px solid',
+                    borderColor: 'primary.main',
+                  }}
+                >
+                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>
+                    📹 Supported Formats
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    MP4, AVI, MOV (Max 1GB)
+                  </Typography>
+                </Paper>
+                <Paper
+                  sx={{
+                    p: 2.5,
+                    flex: 1,
+                    background: 'rgba(76, 175, 80, 0.1)',
+                    border: '1px solid',
+                    borderColor: 'success.main',
+                  }}
+                >
+                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>
+                    ⚡ Batch Processing
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    Automated frame analysis and artifact extraction tracking
+                  </Typography>
+                </Paper>
+                <Paper
+                  sx={{
+                    p: 2.5,
+                    flex: 1,
+                    background: 'rgba(255, 152, 0, 0.1)',
+                    border: '1px solid',
+                    borderColor: 'warning.main',
+                  }}
+                >
+                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>
+                    📊 Detailed Reports
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    Coordinates, confidence scores, and distances
+                  </Typography>
+                </Paper>
+              </Stack>
 
-          {/* Action Button */}
-          {selectedFile && (
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                endIcon={<ArrowForwardIcon />}
-                onClick={handleRunDetection}
+              <Box>
+                <VideoUploader
+                  onFileSelect={handleFileSelect}
+                  onPreviewReady={handlePreviewReady}
+                />
+              </Box>
+
+              {selectedFile && (
+                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    endIcon={<ArrowForwardIcon />}
+                    onClick={handleRunDetection}
+                    sx={{
+                      px: 6,
+                      py: 1.5,
+                      fontSize: '1.1rem',
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    Run Video Analysis
+                  </Button>
+                </Box>
+              )}
+            </Stack>
+          ) : (
+            /* MODE 1: Live Hardware Camera Scanning Context */
+            <Stack spacing={4}>
+              <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
+                <Paper
+                  sx={{
+                    p: 2.5,
+                    flex: 1,
+                    background: 'rgba(156, 39, 176, 0.1)',
+                    border: '1px solid',
+                    borderColor: 'purple.main',
+                  }}
+                >
+                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>
+                    🔌 Multi-Hardware Support
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    Webcams, USB Devices, RTSP Network links, and PiCams
+                  </Typography>
+                </Paper>
+                <Paper
+                  sx={{
+                    p: 2.5,
+                    flex: 1,
+                    background: 'rgba(244, 67, 54, 0.1)',
+                    border: '1px solid',
+                    borderColor: 'error.main',
+                  }}
+                >
+                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>
+                    🚨 Millisecond Latency
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    Real-time safety alerting via dynamic WebSocket pipelines
+                  </Typography>
+                </Paper>
+              </Stack>
+
+              <Paper
+                elevation={2}
                 sx={{
-                  px: 6,
-                  py: 1.5,
-                  fontSize: '1.1rem',
-                  fontWeight: 'bold',
+                  p: 6,
+                  textAlign: 'center',
+                  background: 'rgba(19, 26, 46, 0.6)',
+                  border: '2px dashed rgba(0, 188, 212, 0.3)',
+                  borderRadius: 3,
                 }}
               >
-                Run Detection
-              </Button>
-            </Box>
+                <LiveTvIcon sx={{ fontSize: 80, color: 'primary.main', mb: 2 }} />
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold' }}>
+                  Direct Operational Scanners
+                </Typography>
+                <Typography variant="body1" color="textSecondary" sx={{ mb: 4, maxWidth: '600px', mx: 'auto' }}>
+                  Connect directly to local webcams or active airfield RTSP network nodes. 
+                  The engine will track ground objects dynamically without disk storage requirements.
+                </Typography>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  size="large"
+                  startIcon={<LiveTvIcon />}
+                  onClick={handleLaunchLiveStream}
+                  sx={{
+                    px: 6,
+                    py: 1.8,
+                    fontSize: '1.1rem',
+                    fontWeight: 'bold',
+                    boxShadow: '0 0 15px rgba(233, 30, 99, 0.3)'
+                  }}
+                >
+                  Launch Live Control Panel
+                </Button>
+              </Paper>
+            </Stack>
           )}
 
-          {/* Footer Info */}
+          {/* Footer Warning Info Box */}
           <Paper
             sx={{
               p: 3,
@@ -153,9 +264,8 @@ export const UploadPage: React.FC = () => {
             }}
           >
             <Typography variant="body2" color="textSecondary">
-              <strong>Important:</strong> Please ensure the video is clear and shows the runway area. The system will
-              analyze every frame to detect foreign object debris. Processing time depends on video duration and server
-              capacity.
+              <strong>Important Notification:</strong> Ensure the inspection parameters are calibrated prior to active operations. 
+              Live telemetry tracking metrics depend directly on the spatial mounting context configuration matrices.
             </Typography>
           </Paper>
         </Stack>

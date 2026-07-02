@@ -9,11 +9,26 @@ const apiClient = axios.create({
   timeout: 600000, // 10 minutes for large video uploads
 });
 
+// --- Structural Model Declarations matching the FastAPI Layer ---
+
 export interface UploadProgress {
   loaded: number;
   total: number;
   percent: number;
 }
+
+export interface LiveStatusResponse {
+  is_active: boolean;
+  current_source: string | null;
+  hardware_type: string;
+}
+
+export interface LiveActionResponse {
+  status: string;
+  message: string;
+}
+
+// --- Video Batch Processing API ---
 
 export const uploadVideoForDetection = async (
   file: File,
@@ -45,7 +60,71 @@ export const uploadVideoForDetection = async (
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || error.message || 'Failed to upload video');
+      throw new Error(
+        error.response?.data?.detail || error.response?.data?.message || error.message || 'Failed to upload video',
+        { cause: error }
+      );
+    }
+    throw error;
+  }
+};
+
+// --- Live Control Plane Operations APIs ---
+
+/**
+ * Commands the backend engine to initialize a communication channel 
+ * onto a physical index or an remote network RTSP address path.
+ */
+export const startLiveCamera = async (source: string = '0'): Promise<LiveActionResponse> => {
+  try {
+    const response = await apiClient.post<LiveActionResponse>('/api/live/start', {
+      source: source.trim()
+    });
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(
+        error.response?.data?.detail || 'Failed to initialize target hardware stream.',
+        { cause: error }
+      );
+    }
+    throw error;
+  }
+};
+
+/**
+ * Commands the backend to drop active hardware frames buffers 
+ * and disconnect the camera pipeline safely.
+ */
+export const stopLiveCamera = async (): Promise<LiveActionResponse> => {
+  try {
+    const response = await apiClient.post<LiveActionResponse>('/api/live/stop');
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(
+        error.response?.data?.detail || 'Failed to cleanly terminate camera capture.',
+        { cause: error }
+      );
+    }
+    throw error;
+  }
+};
+
+/**
+ * Interrogates the server interface regarding active connection channels 
+ * and operational stream health profiles.
+ */
+export const getLiveCameraStatus = async (): Promise<LiveStatusResponse> => {
+  try {
+    const response = await apiClient.get<LiveStatusResponse>('/api/live/status');
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(
+        error.response?.data?.detail || 'Failed to fetch hardware runtime status registries.',
+        { cause: error }
+      );
     }
     throw error;
   }

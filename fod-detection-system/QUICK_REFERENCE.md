@@ -22,7 +22,7 @@ npm run lint
 
 ```bash
 cd backend
-pip install -r requirements.txt
+pip install -r hawkeye/requirements.txt
 uvicorn app:app --reload
 ```
 
@@ -31,6 +31,7 @@ uvicorn app:app --reload
 - Frontend dev server: `http://localhost:5173`
 - Backend health check: `http://localhost:8000/health`
 - Processed video base path: `http://localhost:8000/processed`
+- Live detection page: `http://localhost:5173/live`
 
 ## Important Env Var
 
@@ -64,6 +65,7 @@ VITE_API_BASE_URL=http://localhost:8000
 | `/` | Video upload |
 | `/processing` | Progress state |
 | `/results` | Output review |
+| `/live` | Live camera/WebSocket monitoring |
 
 ## API
 

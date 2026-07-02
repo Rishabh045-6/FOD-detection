@@ -6,8 +6,9 @@ A full-stack runway inspection application for detecting Foreign Object Debris (
 
 The project includes:
 
-- A React + TypeScript frontend for uploading video, tracking processing progress, and reviewing detections
+- A React + TypeScript frontend for uploading videos, tracking processing progress, and reviewing detections
 - A FastAPI backend for video processing, object detection, annotation, and result delivery
+- A live hardware stream page for future real-time FOD monitoring
 
 ## Tech Stack
 
@@ -28,6 +29,7 @@ The project includes:
 - OpenCV
 - Pydantic
 - FFmpeg
+- Python services organized under `backend/services/`
 
 ## Project Structure
 
@@ -47,13 +49,14 @@ fod-detection-system/
 |-- backend/
 |   |-- app.py
 |   |-- config/
+|   |-- hawkeye/
+|   |   |-- requirements.txt
 |   |-- models/
 |   |-- routes/
 |   |-- services/
 |   |-- processed/
 |   |-- uploads/
 |   |-- README.md
-|   `-- requirements.txt
 |-- public/
 |-- dist/
 |-- .env
@@ -89,6 +92,12 @@ fod-detection-system/
 - Inspect detailed FOD table
 - Export detection data as JSON
 
+### `/live`
+
+- Connect to a live camera stream
+- View live detection status
+- Monitor nearest detected object in real time
+
 ## Quick Start
 
 ### 1. Install frontend dependencies
@@ -120,7 +129,7 @@ The Vite dev server is available at `http://localhost:5173`.
 
 ```bash
 cd backend
-pip install -r requirements.txt
+pip install -r hawkeye/requirements.txt
 uvicorn app:app --reload
 ```
 
@@ -179,8 +188,9 @@ npm run lint
 - [PROJECT_COMPLETE.md](./PROJECT_COMPLETE.md) - current project status
 - [BUILD_SUMMARY.md](./BUILD_SUMMARY.md) - latest build validation summary
 - [backend/README.md](./backend/README.md) - backend-specific setup
+- [API_ARCHITECTURE.md](./API_ARCHITECTURE.md) - API and architecture details
 
 ## Notes
 
-- The frontend fallback in `src/services/api.ts` is `http://localhost:5000`, so set `VITE_API_BASE_URL` explicitly if your backend runs on `8000`.
+- The frontend base URL is configured with `VITE_API_BASE_URL` in `.env`; defaults to `http://localhost:8000` when not set.
 - The current production build succeeds, but Vite reports a large client bundle warning for the main JavaScript chunk.

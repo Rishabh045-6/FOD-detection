@@ -7,7 +7,18 @@
 
 ## Setup
 
-Install the FastAPI backend dependencies in your environment, then install the Hawkeye stack from `hawkeye/requirements.txt`.
+From the repository root, run:
+
+```bash
+cd backend
+pip install -r hawkeye/requirements.txt
+```
+
+Or install directly from the path:
+
+```bash
+pip install -r backend/hawkeye/requirements.txt
+```
 
 ## Run
 

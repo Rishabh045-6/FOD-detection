@@ -4,8 +4,8 @@
 
 ### Frontend
 
-- Node.js 16 or newer
-- npm 7 or newer
+- Node.js 18 or newer
+- npm 8 or newer
 
 ### Backend
 
@@ -19,12 +19,13 @@ cd E:\IAF\fod-detection-system
 npm install
 ```
 
-Create or update `.env`:
+Create or update `.env` in the repo root:
 
 ```env
 VITE_API_BASE_URL=http://localhost:8000
-VITE_DEBUG=false
 ```
+
+If the backend runs on a different port, update the URL accordingly.
 
 Start the frontend:
 
@@ -38,7 +39,7 @@ Open `http://localhost:5173`.
 
 ```bash
 cd E:\IAF\fod-detection-system\backend
-pip install -r requirements.txt
+pip install -r hawkeye/requirements.txt
 ```
 
 Place your trained model here:
@@ -46,6 +47,8 @@ Place your trained model here:
 ```text
 backend/models/fod_model.pt
 ```
+
+If the repo currently includes a placeholder model, ensure the filename matches the backend loader.
 
 Start the backend:
 
@@ -59,14 +62,17 @@ The backend will typically be available at `http://localhost:8000`.
 
 The included backend requirements file currently contains:
 
-- `fastapi`
-- `uvicorn[standard]`
-- `python-multipart`
-- `opencv-python`
-- `ultralytics`
-- `numpy`
-- `pydantic`
-- `ffmpeg-python`
+- `torch==2.6.0+cu128`
+- `torchvision==0.21.0+cu128`
+- `ultralytics==8.3.145`
+- `sahi==0.11.20`
+- `pyyaml==6.0.2`
+- `python-dotenv==1.0.1`
+- `faiss-cpu==1.9.0`
+
+Install these from `backend/hawkeye/requirements.txt` after installing a compatible PyTorch wheel.
+
+Confirm the package list in `backend/hawkeye/requirements.txt` matches the installed backend environment.
 
 ## What the Frontend Expects
 
@@ -135,10 +141,10 @@ Expected response:
 - Confirm the backend is running
 - Confirm the model file exists at `backend/models/fod_model.pt`
 
-### The frontend still calls port 5000
+### The frontend still calls a mismatched backend port
 
 - Restart the Vite dev server after editing `.env`
-- Check `src/services/api.ts`, which falls back to `http://localhost:5000` only when `VITE_API_BASE_URL` is missing
+- Check `src/services/api.ts` and ensure `VITE_API_BASE_URL` points to the backend host and port
 
 ### Build passes but the backend fails later
 

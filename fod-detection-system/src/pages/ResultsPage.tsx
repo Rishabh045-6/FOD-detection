@@ -67,7 +67,8 @@ export const ResultsPage: React.FC = () => {
       document.body.removeChild(element);
 
       toast.success('Results downloaded successfully!');
-    } catch (error) {
+    } catch (err) {
+      console.error('Download results failed:', err);
       toast.error('Failed to download results');
     }
   };

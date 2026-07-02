@@ -23,17 +23,21 @@ npm run dev
 
 ```bash
 cd E:\IAF\fod-detection-system\backend
-pip install -r requirements.txt
+pip install -r hawkeye/requirements.txt
 uvicorn app:app --reload
 ```
 
+If the backend port differs, start uvicorn with `--port <port>`.
+
 ## Required Environment Setting
 
-In `.env`, use:
+Create or update `.env` with:
 
 ```env
 VITE_API_BASE_URL=http://localhost:8000
 ```
+
+If your backend runs on another port, adjust the URL accordingly.
 
 ## What Is Already In The Repo
 
@@ -51,6 +55,8 @@ VITE_API_BASE_URL=http://localhost:8000
 
 - FastAPI app
 - `/api/detect` route
+- `/api/live` control routes
+- WebSocket live stream scaffolding
 - Detector service
 - Video processor
 - Calibration config
