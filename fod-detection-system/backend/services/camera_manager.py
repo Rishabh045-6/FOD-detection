@@ -28,7 +28,16 @@ class CameraManager:
             source = int(source)
 
         try:
-            self.cap = cv2.VideoCapture(source)
+            if isinstance(source, str):
+
+                self.cap = cv2.VideoCapture(
+                    source,
+                    cv2.CAP_FFMPEG
+                )
+
+            else:
+
+                self.cap = cv2.VideoCapture(source)
         except Exception:
             self.cap = None
             return False
@@ -73,7 +82,17 @@ class CameraManager:
 
             return False, None
 
-        return self.cap.read()
+        ret, frame = self.cap.read()
+
+        print("----------------------------")
+        print("RET:", ret)
+
+        if frame is not None:
+            print("Shape:", frame.shape)
+        else:
+            print("Frame is None")
+
+        return ret, frame
 
     def read_frame(self):
         return self.read()
